@@ -1,0 +1,55 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Procrastination{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background-color: #f8f2ff;
+            vertical-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        /* New styles for the button */
+        .route-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+</head>
+<body>
+    <div style="text-align: center; margin:0; padding: 0;">
+        <div id="container" style="width:1000px; height: 100%; text-align: left; margin: 0 auto; background-color: white; padding:0">
+            <button id="routeProtectionButton" class="route-button">dev-disable-route-protection</button>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <script>
+        const routeProtectionButton = document.getElementById('routeProtectionButton');
+        routeProtectionButton.addEventListener('click', () => {
+            if (routeProtectionButton.textContent === 'dev-disable-route-protection') {
+                routeProtectionButton.textContent = 'dev-enable-route-protection';
+                routeProtectionButton.style.backgroundColor = 'green';
+                fetch('/toggle_route_protection', {
+                    method: 'POST',
+                    body: JSON.stringify({ taskStarted: false }),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+            } else {
+                routeProtectionButton.textContent = 'dev-disable-route-protection';
+                routeProtectionButton.style.backgroundColor = 'red';
+            }
+        });
+    </script>
+</body>
+</html>

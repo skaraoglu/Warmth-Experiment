@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f7f7f7;
+        }
+        .content {
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #dedeff; /* Frame border */
+            border-radius: 10px;
+            background-color: #f4f4ff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .flashes {
+            list-style: none;
+            padding: 0;
+        }
+        .flashes li {
+            color: rgb(209, 15, 15);
+        }
+        .scroll-box {
+            max-height: 500px;
+            overflow: auto;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #dedeff;
+            border-radius: 5px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome to the Investment Game Experiment!</h1>
+        <div class="separator" style="width: 98%; margin-left: 5px; border-top: 1px solid #dedeff;"></div>
+        <div style="text-align: left;">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            <form method="POST" action="{{ url_for('login') }}">
+                {{ form.csrf_token }}
+                <div style="color: #007bff; text-align: center; padding-top: 10px; ">
+                    {{ form.mturk_id.label(size=42) }}: {{ form.mturk_id(size=72, style="height: 24px;") }}
+                </div>
+                <div class="scroll-box" style="text-align: left;">
+                    <span>
+                        In this study, you will engage in the investment game across multiple rounds.
+                        <ul>
+                        <li>You will see a tutorial explaining the game, and you will be asked to fill the demographic questionnaire.</li>
+                        <li>Round 1: You'll play the Warm-Up game with an AI agent provides recommendations according to its own strategy. After the game, you will be asked to explain your strategy.</li>
+                        <li>Round 2: After the Warm-Up game, you'll be paired with another AI agent. In this game, your score will determine your extra earnings.</li>
+                        <li>Following the game completion, you will complete an evaluation survey.</li>
+                        </ul>
+                        It's important to note that maintaining attention is crucial. Failing to pass more than 30% of the attention checks will result in failing the experiment.
+
+                        Thank you for your participation and enjoy the Investment Game Experiment!
+                    </span>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    {{ form.submit(class="button") }}
+                </div>
+            </form>
+        </div> 
+    </div>
+</body>
+</html>
