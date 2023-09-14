@@ -18,6 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let intention = -1;
     let isIntention = false;
     let recommendationShown = false; // Track if recommendation is shown
+
+    // Database variables bc I don't wanna fuck things up
+
+    let dbIntention = null;
+    let dbRecommendation = null;
+    let dbSelection = null;
+    let dbReward = null;
   
     function setIntention(opt, i){
       intention = opt;

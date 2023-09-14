@@ -52,3 +52,14 @@ class TaskCompletion(db.Model):
     user_id = db.Column(db.String(64), db.ForeignKey('user.mturk_id'))
     task_type = db.Column(db.String(50))
     completed = db.Column(db.Boolean, default=False)
+    
+class Episode(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    mturk_id = db.Column(db.String(20), db.ForeignKey('user.mturk_id'))
+    episode_number = db.Column(db.Integer)
+    intention = db.Column(db.String(50))
+    recommendation = db.Column(db.String(50))
+    selection = db.Column(db.String(50))
+    reward = db.Column(db.Float)
+    start_time = db.Column(db.DateTime)  # Record when the episode was started
+    end_time = db.Column(db.DateTime)  # Record when the episode was completed

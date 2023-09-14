@@ -201,6 +201,28 @@ def get_reward():
 
     return jsonify({'reward': reward, 'banditS': bandit.S[selected_option], 'banditF': bandit.F[selected_option], 'agents': agents})
 
+@app.route('/save_episode/', methods=['POST'])
+def save_episode():
+    intention = int(request.args.get('intention', 0))
+    recommendation = int(request.args.get('recommendation', 0))
+    selection = int(request.args.get('selection', 0)) 
+    episode_number = np.sum(bandit.F) # episode number is sum
+    reward = float(request.args.get('reward', 0))
+    
+    # Create a new episode object and save it to the database
+    
+    if episode_number == 1:
+        episode = Episode(mturk_id=current_user.mturk_id, episode_number=episode_number, intention=intention, recommendation=recommendation, selection=selection, reward=reward, start_time=0, end_time=datetime.now())
+    else:
+        previous_episode = Episode.query.filter_by(mturk_id=current_user.mturk_id, episode_number=episode_number-1).first()
+        start_time = previous_episode.end_time
+        episode = Episode(mturk_id=current_user.mturk_id, episode_number=episode_number, intention=intention, recommendation=recommendation, selection=selection, reward=reward, start_time=start_time, end_time=datetime.now())
+    
+    db.session.add(episode)
+    db.session.commit()
+    
+    return jsonify({'success': True})
+
 
 
 
