@@ -176,6 +176,7 @@ def task():
         return redirect(url_for('login'))
     
     session['task_started'] = True
+    session['warmup_started'] = False
     print("Setting experiment page loaded.")
     session['task_page_loaded'] = True
     
@@ -211,12 +212,17 @@ def save_episode():
     
     # Create a new episode object and save it to the database
     
+    if session.get('warmup_started'):
+        day = 'warmup'
+    else:
+        day = 'task'
+    
     if episode_number == 1:
-        episode = Episode(mturk_id=current_user.mturk_id, episode_number=episode_number, intention=intention, recommendation=recommendation, selection=selection, reward=reward, start_time=0, end_time=datetime.now())
+        episode = Episode(mturk_id=current_user.mturk_id, day=day, episode_number=episode_number, intention=intention, recommendation=recommendation, selection=selection, reward=reward, start_time=0, end_time=datetime.now())
     else:
         previous_episode = Episode.query.filter_by(mturk_id=current_user.mturk_id, episode_number=episode_number-1).first()
         start_time = previous_episode.end_time
-        episode = Episode(mturk_id=current_user.mturk_id, episode_number=episode_number, intention=intention, recommendation=recommendation, selection=selection, reward=reward, start_time=start_time, end_time=datetime.now())
+        episode = Episode(mturk_id=current_user.mturk_id, day=day, episode_number=episode_number, intention=intention, recommendation=recommendation, selection=selection, reward=reward, start_time=start_time, end_time=datetime.now())
     
     db.session.add(episode)
     db.session.commit()

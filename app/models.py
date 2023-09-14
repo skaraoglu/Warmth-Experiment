@@ -56,6 +56,7 @@ class TaskCompletion(db.Model):
 class Episode(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     mturk_id = db.Column(db.String(20), db.ForeignKey('user.mturk_id'))
+    day = db.Column(db.String(20))
     episode_number = db.Column(db.Integer)
     intention = db.Column(db.String(50))
     recommendation = db.Column(db.String(50))
