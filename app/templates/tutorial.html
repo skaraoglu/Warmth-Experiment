@@ -1,6 +1,20 @@
 {% extends 'base.html' %}
 {% block title %}Tutorial{% endblock %}
 {% block content %}
-    Tutorial
-    <a href="{{ url_for('experiment') }}" class="button" style="width: 200px;">Experiment</a>
+    <div id="container" style="width: 100%; align-self: center; padding: 0px;">
+        <div id="header" style="width: 100%; padding: 10px;">
+            <div id="gametitle" style="width: 98%; text-align: center;">
+              <h1>Investment Game - Tutorial</h1>
+            </div>
+            <div class="separator" style="width: 98%;"></div>
+            <p style="color: #222;">Welcome to the Investment Game. Discover six different investment options and maximize your earnings over 30 episodes!</p>
+            <div class="separator" style="width: 98%;"></div>
+        </div>
+        <div id="tutorialscreen" style="">
+
+        </div>
+        <div id="complete" style="width: 100%; padding: 10px; text-align: center; display: none">
+            <a href="{{ url_for('experiment') }}" class="button" style="width: 200px;">Complete Tutorial</a>
+        </div>
+    </div>
 {% endblock %}

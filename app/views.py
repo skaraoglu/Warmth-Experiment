@@ -1,7 +1,7 @@
 import json
 import random
 from flask import (
-    url_for, redirect, render_template, flash, request, session, jsonify, 
+    url_for, redirect, render_template, flash, request, session, jsonify,
     current_app
 )
 from flask_login import login_user, logout_user, current_user, login_required
@@ -16,6 +16,7 @@ num_arms = 6  # Number of stock options
 num_episodes = 0
 bandit = bandit.Bandit(num_arms,beta_vals=_beta)
 bandit.reset()
+
 #Loads the user object from the database
 @lm.user_loader
 def load_user(mturk_id):
@@ -23,7 +24,7 @@ def load_user(mturk_id):
 
 #404 error page
 @app.errorhandler(404)
-def not_found_error(error):        
+def not_found_error(error):
     return render_template('404.html'), 404
 
 #Utility function to clear session data and logout
@@ -91,11 +92,11 @@ def login():
 
 @app.route('/experiment/')
 @login_required
-def experiment():    
+def experiment():
     if not current_user.is_authenticated:
         print("User not authenticated.")
         return redirect(url_for('login'))
-    
+
     if session.get('exp_page_loaded'):
         print("User is reloading experiment page.")
         return redirect(url_for('clear_session_and_logout'))
@@ -105,11 +106,11 @@ def experiment():
     session['exp_page_loaded'] = True
     t_c = is_task_completed('tutorial')
     w_c = is_task_completed('warmup')
-    
+
     mturk_id = session.get('mturk_id')
-    
+
     return render_template('experiment.html', mturk_id=mturk_id, tutorial_completed=t_c, warmup_completed=w_c)
-    
+
 def is_task_completed(task_type):
     task_completion = TaskCompletion.query.filter_by(user_id=current_user.mturk_id, task_type=task_type).first()
     if task_completion:
@@ -121,7 +122,7 @@ def is_task_completed(task_type):
 @login_required
 def tutorial():
     session['exp_page_loaded'] = False
-    
+
     if not current_user.is_authenticated:
         print("User not authenticated.")
         return redirect(url_for('login'))
@@ -136,7 +137,7 @@ def tutorial():
         db.session.commit()
 
     return render_template('tutorial.html', mturk_id=mturk_id)
-    
+
 @app.route('/warmup/')
 @login_required
 def warmup():
@@ -146,25 +147,28 @@ def warmup():
         print("User is reloading warmup page.")
         return redirect(url_for('clear_session_and_logout'))
 
+    #Get the warmup start time
+    session['warmup_start_time'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
     num_episodes = 10
     if not current_user.is_authenticated:
         print("User not authenticated.")
         return redirect(url_for('login'))
-    
+
     session['warmup_started'] = True
     print("Setting experiment page loaded.")
     session['warmup_loaded'] = True
-    
+
     bandit.reset()
 
     mturk_id = session.get('mturk_id')
-    
+
     warmup_completion = TaskCompletion.query.filter_by(user_id=current_user.mturk_id, task_type='warmup').first()
     if not warmup_completion:
         warmup_completion = TaskCompletion(user_id=mturk_id, task_type='warmup')
         db.session.add(warmup_completion)
         db.session.commit()
-    
+
     return render_template('warmup.html', mturk_id=mturk_id)
 
 @app.route('/task/')
@@ -174,11 +178,11 @@ def task():
     if not current_user.is_authenticated:
         print("User not authenticated.")
         return redirect(url_for('login'))
-    
+
     session['task_started'] = True
     print("Setting experiment page loaded.")
     session['task_page_loaded'] = True
-    
+
     bandit.reset()
 
     mturk_id = session.get('mturk_id')
@@ -195,7 +199,7 @@ def get_reward():
 
     agents = int(bandit.UCB())
     #print(agents)
-    
+
     if(np.sum(bandit.F)==num_episodes):
         bandit.reset()
 

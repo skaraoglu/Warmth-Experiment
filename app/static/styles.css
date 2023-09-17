@@ -112,6 +112,50 @@ form {
 }
 #warmupagents {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  vertical-align: bottom;
+  height: 100px;
+}
+
+.warmupagents-rec {
+  width: calc(16.666%);
+  background-color: transparent;
+  height: 50px;
+  padding-top: 100px;
+  position: relative; /* Position relative for absolute positioning */
+  z-index: 2;
+}
+#recommendation-text {
+  position: absolute;
+  width: 400px;
+  height: 120px;
+  background: radial-gradient(circle, #fff, #efe);
+  text-align: left;
+  display: none;
+  align-items: center;
+  justify-content: flex-start;
+  border: 2px solid #44ff55;
+  border-radius: 4px;
+  /*add subtle shadow to the div to make it look like it's floating*/
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.agent-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* Maintain aspect ratio */
+  margin-right: 16px; /* Adjust the margin as needed for spacing */
+}
+
+#recommendation-content {
+  flex-grow: 1; /* Take up the remaining width */
+  text-align: left; /* Align text content to the left */
+}
+#agents {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
@@ -119,7 +163,7 @@ form {
   vertical-align: bottom;
   height: 100px;
 }
-.warmupagents-rec {
+.agents-rec {
   width: calc(16.666% - 16px);
   background-color: #fff;
   height: 50px;
@@ -132,7 +176,7 @@ form {
   padding: 10px 20px 20px 20px;
 }
 .stock-option {
-  width: calc(16.666% - 16px);
+  width: calc(16.666%);
   background-color: #f0f0f0;
   padding: 15px;
   box-sizing: border-box;
@@ -141,6 +185,8 @@ form {
   transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
   border: 2px solid transparent;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2); /* Frame shadow */
+  margin-left: 8px;
+  margin-right: 8px;
 }
 .stock-option:hover {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
