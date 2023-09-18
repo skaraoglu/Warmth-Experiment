@@ -7,7 +7,7 @@ from flask import (
 from flask_login import login_user, logout_user, current_user, login_required
 from app import app, db, lm, bandit
 from app.forms import LoginForm
-from app.models import User, TaskCompletion
+from app.models import Survey, User, TaskCompletion
 from datetime import datetime, timedelta
 import numpy as np
 
@@ -80,7 +80,7 @@ def login():
             session['login_time'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             session['expiry_time'] = (datetime.now() + timedelta(minutes=45)).strftime('%Y-%m-%d %H:%M:%S')
 
-            return redirect(url_for('experiment'))
+            return redirect(url_for('consent'))
         else:
             if user.experiment_completed:
                 flash('Error! You have already completed the experiment.')
@@ -89,6 +89,79 @@ def login():
             return redirect(url_for('login'))
 
     return render_template('login.html', title='Sign In', form=form)
+
+@app.route('/consent/', methods=['GET', 'POST'])
+def consent():
+    if not current_user.is_authenticated or session.get('consent') == True:
+        clear_session_and_logout()
+
+    return render_template('consent.html')
+
+@app.route('/consent/submit/', methods=['POST'])
+def consent_submit():
+    if not current_user.is_authenticated or session.get('consent') == True:
+        print("Not authenticated or consent already given")
+        return redirect(url_for('login'))
+
+    if request.method == 'POST':
+        if request.form.get('consent') == 'True':
+            current_user.consent = True
+            session['consent'] = True
+            db.session.commit()
+                            
+            return redirect(url_for('demographics_survey'))
+        else:
+            print("Consent not given")
+            return clear_session_and_logout()
+        
+@app.route('/demographics_survey/', methods=['GET', 'POST'])
+def demographics_survey():
+    if not current_user.is_authenticated or not session.get('consent'):
+        return redirect(url_for('clear_session_and_logout'))
+    #elif Survey.query.filter_by(mturk_id=session['mturk_id'], type='demographics').first():
+        #return redirect(url_for('clear_session_and_logout'))
+    else:
+        session['survey_page_loaded'] = True
+        return render_template('demographics_survey.html')
+    
+@app.route('/demographics_survey/submit/', methods=['POST'])
+def demographics_survey_submit():
+    if not current_user.is_authenticated or not session.get('consent'):
+        return redirect(url_for('clear_session_and_logout'))
+    
+    # Check if the form was already submitted
+    #if Survey.query.filter_by(mturk_id=session['mturk_id'], type='demographics').first():
+        #return redirect(url_for('clear_session_and_logout'))
+    """
+    if request.method == 'POST':
+        
+        # Get data from the form as a dictionary
+        demographics = {}
+        demographics['age'] = request.form.get('q1')
+        demographics['gender'] = request.form.get('q2')
+        demographics['ethnicity'] = request.form.get('q3')
+        demographics['education'] = request.form.get('q4')
+        demographics['attention-check'] = request.form.get('q5')
+        
+        failed_attention_checks = 0
+        if demographics['attention-check'] != '4':
+            failed_attention_checks += 1
+        session['failed_attention_checks'] = failed_attention_checks
+        print("Failed attention checks: " + str(failed_attention_checks))
+        
+        # Save survey to database
+        survey = Survey(
+            mturk_id = session['mturk_id'],
+            type = 'demographics',
+            data = demographics,
+            timestamp = datetime.now()
+        )
+        db.session.add(survey)
+        db.session.commit()
+      
+        return redirect(url_for('experiment'))
+        """
+    return redirect(url_for('experiment'))
 
 @app.route('/experiment/')
 @login_required
@@ -187,6 +260,11 @@ def task():
 
     mturk_id = session.get('mturk_id')
     return render_template('task.html', mturk_id=mturk_id)
+
+@app.route('/gamecomplete/')
+@login_required
+def gamecomplete():
+    return render_template('gamecomplete.html', mturk_id=mturk_id)
 
 @app.route('/get_reward')
 def get_reward():
