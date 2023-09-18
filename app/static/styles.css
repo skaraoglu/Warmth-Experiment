@@ -156,7 +156,7 @@ form {
 }
 #agents {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 20px;
   text-align: center;
@@ -164,10 +164,12 @@ form {
   height: 100px;
 }
 .agents-rec {
-  width: calc(16.666% - 16px);
-  background-color: #fff;
+  width: calc(16.666%);
+  background-color: transparent;
   height: 50px;
   padding-top: 100px;
+  position: relative; /* Position relative for absolute positioning */
+  z-index: 2;
 }
 #stocks {
   display: flex;
@@ -282,10 +284,10 @@ form {
   position: relative;
   display: flex;
   justify-content: center;
-  width: 97%;
+  width: 99%;
   margin-top: -10px;
-  margin-right: 14px;
-  margin-left: 10px;
+  margin-right: 0px;
+  margin-left: -10px;
 }
 
 #warmupprogress {

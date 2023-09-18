@@ -151,7 +151,20 @@ document.addEventListener("DOMContentLoaded", function () {
         image.classList.add("slide-down");
         div.innerHTML = "";
         div.appendChild(image);
-  
+
+
+        const recommendationDiv = document.getElementById("recommendation-text");
+        // get recommendation-content div
+        const recommendationContent = document.getElementById("recommendation-content");
+        recommendationContent.innerHTML = "This is recommended";
+        recommendationDiv.style.display = "flex";
+        if (index === 0) {recommendationDiv.style.marginLeft = "-30%";}
+        else if (index === 1) {recommendationDiv.style.marginLeft = "-25%";}
+        else if (index === 2) {recommendationDiv.style.marginLeft = "-8.45%";}
+        else if (index === 3) {recommendationDiv.style.marginLeft = "8.45%";}
+        else if (index === 4) {recommendationDiv.style.marginLeft = "25%";}
+        else if (index === 5) {recommendationDiv.style.marginLeft = "30%";}
+        recommendationDiv.style.marginLeft = 
         // Set the recommendationShown flag to true
         recommendationShown = true;
       } else if (index === agents - 1) {
@@ -161,6 +174,8 @@ document.addEventListener("DOMContentLoaded", function () {
         image.classList.add("still");
         div.innerHTML = "";
         div.appendChild(image);
+        const recommendationDiv = document.getElementById("recommendation-text");
+        recommendationDiv.style.display = "none";
       } else {
         div.innerHTML = "";
       }
