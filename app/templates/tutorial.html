@@ -1,18 +1,79 @@
 {% extends 'base.html' %}
 {% block title %}Tutorial{% endblock %}
 {% block content %}
+    <style>
+        #tutorialScreen {
+            width: 98%;
+            overflow: hidden;
+        }
+        .page {
+            width: 100%;
+            display: none;
+        }
+        .page.active {
+            display: block;
+            animation: slidein 1s;
+        }
+        @keyframes slidein {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var pages = Array.from(document.querySelectorAll('.page'));
+            var currentIndex = 0;
+            var nextBtn = document.getElementById('nextBtn');
+            var finishBtn = document.getElementById('finishBtn');
+
+            document.getElementById('prevBtn').addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    pages[currentIndex--].classList.remove('active');
+                    pages[currentIndex].classList.add('active');
+                    nextBtn.style.display = 'inline-block';
+                    finishBtn.style.display = 'none';
+                }
+            });
+
+            nextBtn.addEventListener('click', function() {
+                if (currentIndex < pages.length - 1) {
+                    pages[currentIndex++].classList.remove('active');
+                    pages[currentIndex].classList.add('active');
+                    if (currentIndex === pages.length - 1) {
+                        nextBtn.style.display = 'none';
+                        finishBtn.style.display = 'inline-block';
+                    }
+                }
+            });
+        };
+    </script>
     <div id="container" style="width: 100%; align-self: center; padding: 0px;">
         <div id="header" style="width: 100%; padding: 10px;">
             <div id="gametitle" style="width: 98%; text-align: center;">
               <h1>Investment Game - Tutorial</h1>
             </div>
             <div class="separator" style="width: 98%;"></div>
-            <p style="color: #222;">Welcome to the Investment Game. Discover six different investment options and maximize your earnings over 30 episodes!</p>
+            <p style="color: #222;">Welcome to the Investment Game tutorial. This tutorial will provide you information about the Investment Game and how to play.</p>
             <div class="separator" style="width: 98%;"></div>
         </div>
-        <div id="tutorialscreen" style="">
-
-        </div>
+        <div class="tutorialScreen">
+            <div id="tutorialScreen" style="justify-content: center;">
+                <div class="page active">
+                    <img src="../static/tscreen1.png" style="width: 90%; height: auto; margin: 0 auto; display: block;"/>
+                </div>
+                <div class="page"><img src="../static/tscreen2.png" style="width: 90%; height: auto; margin: 0 auto; display: block;"/></div>
+                <div class="page"><img src="../static/tscreen3.png" style="width: 90%; height: auto; margin: 0 auto; display: block;"/></div>
+                <div class="page"><img src="../static/tscreen4.png" style="width: 90%; height: auto; margin: 0 auto; display: block;"/></div>
+                <div class="page"><img src="../static/tscreen5.png" style="width: 90%; height: auto; margin: 0 auto; display: block;"/></div>
+                <div class="page"><img src="../static/tscreen6.png" style="width: 90%; height: auto; margin: 0 auto; display: block;"/></div>
+            </div>
+            <div class="separator" style="width: 98%;"></div>
+            <div id="navButtons" style="width: 100%; text-align: center;">
+                <a id="prevBtn" class="button" style="width: 200px;">Previous</a>
+                <a id="nextBtn" class="button" style="width: 200px;">Next</a>
+                <a href="{{ url_for('experiment') }}" id="finishBtn" class="button" style="width: 200px; display: none;">Finish Tutorial</a>
+            </div>
+        </div>          
         <div id="complete" style="width: 100%; padding: 10px; text-align: center; display: none">
             <a href="{{ url_for('experiment') }}" class="button" style="width: 200px;">Complete Tutorial</a>
         </div>
