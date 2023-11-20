@@ -143,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       };    
       ar.forEach((div, index) => {
+        stockOptions[index].style.backgroundColor = "#f0f0f0";
         if (index === agents - 1 && !recommendationShown) {
           const image = document.createElement("img");
           image.src = "../static/hand_50.png";
@@ -163,7 +164,8 @@ document.addEventListener("DOMContentLoaded", function () {
           else if (index === 3) {recommendationDiv.style.marginLeft = "8.45%";}
           else if (index === 4) {recommendationDiv.style.marginLeft = "25%";}
           else if (index === 5) {recommendationDiv.style.marginLeft = "30%";}
-          recommendationDiv.style.marginLeft = 
+          stockOptions[index].style.backgroundColor = "#e6f4e6";
+          //recommendationDiv.style.marginLeft = 
           // Set the recommendationShown flag to true
           recommendationShown = true;
         } else if (index === agents - 1) {
@@ -175,8 +177,10 @@ document.addEventListener("DOMContentLoaded", function () {
           div.appendChild(image);
           const recommendationDiv = document.getElementById("recommendation-text");
           recommendationDiv.style.display = "none";
+          stockOptions[index].style.backgroundColor = "#e6f4e6";
         } else {
           div.innerHTML = "";
+          stockOptions[index].style.backgroundColor = "#f0f0f0";
         }
       
       });
@@ -188,6 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
     investButton.addEventListener("click", () => {
       if (isAnimating) return; // Prevent interaction during animation
       if (intendedOptionIndex !== null) {
+        for (let i = 0; i < 6; i++) {stockOptions[i].style.backgroundColor = "#f0f0f0";}        
         isAnimating = true;
         stocksDiv.style.pointerEvents = "none";
         ar.forEach((div, index) => {div.textContent = ""});
