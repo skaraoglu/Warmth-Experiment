@@ -275,13 +275,21 @@ def get_reward():
     bandit.S[selected_option] += reward
     bandit.F[selected_option] += 1
 
-    agents = int(bandit.UCB())
+    bandit.selections.append(selected_option)
+    # How to avoid division by zero
+    for i in range(num_arms):
+        if(bandit.F[i] != 0):
+            bandit.mean_rewards[i] = bandit.S[i] / (bandit.F[i])
+        else:
+            bandit.mean_rewards[i] = 0
+
+    agents = int(bandit.HILL_SOAAv(0))
     #print(agents)
 
     if(np.sum(bandit.F)==num_episodes):
         bandit.reset()
 
-    return jsonify({'reward': reward, 'banditS': bandit.S[selected_option], 'banditF': bandit.F[selected_option], 'agents': agents})
+    return jsonify({'reward': reward[0], 'banditS': bandit.S[selected_option], 'banditF': bandit.F[selected_option], 'agents': agents})
 
 
 
