@@ -1,4 +1,5 @@
 # this version
+# new comment
 import numpy as np
 from scipy.optimize import fsolve
 from scipy.integrate import quad
@@ -45,12 +46,16 @@ class Bandit:
     def HILL_SOAAv(self, factor=0):
         # see why recommendation is arm after selection
         for i in range(self.num_arms): # algorithm ignores unpulled arms when recommedning
-            if i not in self.selections: # self.F
+            # if i not in self.selections: # self.F
+            #     self.recommended[i] += 1
+            #     return i + 1
+            # elif self.recommended[i] < 2:
+            #     self.recommended[i] += 1
+            #     return i + 1
+            if (self.F[i] == 0) and (self.recommended[i] < 2):
                 self.recommended[i] += 1
                 return i + 1
-            elif self.recommended[i] < 2:
-                self.recommended[i] += 1
-                return i + 1
+
         # elif min(self.recommended) < 2:
         #     self.recommended[min(self.recommended)] += 1
         #     return min(self.recommended) + 1
@@ -69,7 +74,7 @@ class Bandit:
         # Select the minimum from the arms to pull. This will be the recommended arm.
         action = min(pull)
         # Remove the arm that will be pulled from the list
-        self.arms_to_pull.remove(action-1)
+        self.arms_to_pull.remove(action - 1)
         self.recommended[action] += 1
         
         return action

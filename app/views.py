@@ -285,6 +285,8 @@ def get_reward():
 
     agents = int(bandit.HILL_SOAAv(0))
     #print(agents)
+    if(selected_option == (agents-1)):
+        bandit.recommended[selected_option] = 0
 
     if(np.sum(bandit.F)==num_episodes):
         bandit.reset()
