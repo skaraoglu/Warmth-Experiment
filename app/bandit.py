@@ -4,6 +4,12 @@ import numpy as np
 from scipy.optimize import fsolve
 from scipy.integrate import quad
 from scipy.stats import expon
+from flask import (
+    url_for, redirect, render_template, flash, request, session, jsonify,
+    current_app
+)
+from app import app
+
 class Bandit:
     def __init__(self, num_arms, beta_vals=None):
         np.random.seed(seed=62)
@@ -25,6 +31,8 @@ class Bandit:
         self.arms_to_pull = []
         # Mean rewards of each arm (mu')
         self.mean_rewards = self.S / (self.F + 0.0000000001)
+        # Intention of the User
+        self.intent = 0
 
     
     def pull_arm(self, arm_index):
@@ -42,8 +50,15 @@ class Bandit:
         ucb_values = self.S + np.sqrt(2 * np.log(np.sum(self.F)) / (self.F))
         action = np.argmax(ucb_values) + 1
         return action            
+    
+    @app.route('/get_recommendation', methods=['POST'])
+    def get_recommendation(self):
+        user_curr_intention = request.json['intendedOptionIndex']
+        self.intent = user_curr_intention
+        
+    
     # If user ignores suggestion twice move on.
-    def HILL_SOAAv(self, factor=0):
+    def HILL_SOAAv(self, factor, intention):
         # see why recommendation is arm after selection
         for i in range(self.num_arms): # algorithm ignores unpulled arms when recommedning
             # if i not in self.selections: # self.F
@@ -52,7 +67,10 @@ class Bandit:
             # elif self.recommended[i] < 2:
             #     self.recommended[i] += 1
             #     return i + 1
-            if (self.F[i] == 0) and (self.recommended[i] < 2):
+            if (self.F[intention] == 0):
+                self.recommended[intention] += 1
+                return i + 1
+            elif (any(i < 2 for i in self.recommended) and (self.F[i] == 0)):
                 self.recommended[i] += 1
                 return i + 1
 

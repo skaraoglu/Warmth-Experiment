@@ -94,6 +94,23 @@ document.addEventListener("DOMContentLoaded", function () {
             opt.classList.add("intention");
             
             intendedOptionIndex = index;
+
+            fetch('/get_recommendation',{
+              method:'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                intendedOptionIndex:intendedOptionIndex
+              })
+            }).then(response => response.text())
+            .then(result => {
+              console.log(result);
+            })
+            .catch(error => {
+              console.error('Error:',error);
+            });
+
             const optionLabel = opt.querySelector(".option-label");
             const stockTitle = opt.querySelector(".stock-title");
             optionLabel.style.color = "#007bff";
@@ -199,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
       currentEpisode++;
       selectedList.push(selectedOptionIndex);
       
-      fetch(`/get_reward?selected_option=${selectedOptionIndex}`)
+      fetch(`/get_reward?selected_option=${selectedOptionIndex}`) // can use intention here
         .then(response => response.json())
         .then(data => {
           totalReward += data.reward;
