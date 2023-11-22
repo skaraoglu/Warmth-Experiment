@@ -35,6 +35,8 @@ class Bandit:
         self.mean_rewards = self.S / (self.F + 0.0000000001)
         # Intention of the User
         self.intent = 0
+        # Whether SOAAv can still be used
+        self.use_SOAAv = True
 
     
     def pull_arm(self, arm_index):
@@ -57,10 +59,12 @@ class Bandit:
     def get_recommendation(self):
         user_curr_intention = request.json['intendedOptionIndex']
         self.intent = user_curr_intention
-        
+
+    def HILL_UCB(self): #implement
+        return -1    
     
     # If user ignores suggestion twice move on.
-    def HILL_SOAAv(self, factor, intention):
+    def HILL_SOAAv(self, intention, factor=0):
         # see why recommendation is arm after selection
         for i in range(self.num_arms): # algorithm ignores unpulled arms when recommedning
             # if i not in self.selections: # self.F
@@ -90,6 +94,9 @@ class Bandit:
         pull = []
         for i in self.arms_to_pull:
             pull.append(self.F[i-1])
+        
+        # Check the number of pulls for each arm in pull[] to see whether SOAAv can still be used
+
         
         # Select the minimum from the arms to pull. This will be the recommended arm.
         action = min(pull)

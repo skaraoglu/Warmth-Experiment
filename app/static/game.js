@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
       currentEpisode++;
       selectedList.push(selectedOptionIndex);
       
-      fetch(`/get_reward?selected_option=${selectedOptionIndex}`) // can use intention here
+      fetch(`/get_reward?selected_option=${selectedOptionIndex}`) 
         .then(response => response.json())
         .then(data => {
           totalReward += data.reward;
