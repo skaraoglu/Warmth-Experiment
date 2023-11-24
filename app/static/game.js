@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
               })
             }).then(response => response.text())
             .then(result => {
+              agents = ar.agents
               console.log(result);
             })
             .catch(error => {

@@ -59,52 +59,70 @@ class Bandit:
     def get_recommendation(self):
         user_curr_intention = request.json['intendedOptionIndex']
         self.intent = user_curr_intention
+        if self.use_SOAAv:
+            return self.HILL_SOAAv()
+        else:
+            return self.HILL_UCB()
 
     def HILL_UCB(self): #implement
-        return -1    
+        if (self.F[self.intent] == 0):
+            self.recommended[self.intent] += 1
+            return self.intent + 1
+        elif (any(i < 2 for i in self.recommended)):
+            for i in range(6):
+                if i<2 and self.F[i]==0:
+                    self.recommended[i] += 1
+                    return i + 1 
+        else:
+            ucb_values = self.S + np.sqrt(2 * np.log(np.sum(self.F)) / (self.F))
+            action = np.argmax(ucb_values) + 1
+            return action
     
     # If user ignores suggestion twice move on.
-    def HILL_SOAAv(self, intention, factor=0):
+    def HILL_SOAAv(self, factor=0):
         # see why recommendation is arm after selection
-        for i in range(self.num_arms): # algorithm ignores unpulled arms when recommedning
+        # for i in range(self.num_arms): # algorithm ignores unpulled arms when recommedning
             # if i not in self.selections: # self.F
             #     self.recommended[i] += 1
             #     return i + 1
             # elif self.recommended[i] < 2:
             #     self.recommended[i] += 1
             #     return i + 1
-            if (self.F[intention] == 0):
-                self.recommended[intention] += 1
-                return i + 1
-            elif (any(i < 2 for i in self.recommended) and (self.F[i] == 0)):
-                self.recommended[i] += 1
-                return i + 1
-
+        if (self.F[self.intent] == 0):
+            self.recommended[self.intent] += 1
+            return self.intent + 1
+        elif (any(i < 2 for i in self.recommended)):
+            for i in range(6):
+                if i<2 and self.F[i]==0:
+                    self.recommended[i] += 1
+                    return i + 1
         # elif min(self.recommended) < 2:
         #     self.recommended[min(self.recommended)] += 1
         #     return min(self.recommended) + 1
-        
-        if self.arms_to_pull is None:
-            set_selections = set(self.selections)
-            average_reward = sum(self.mean_rewards) / len(set_selections)  
-            for i in set_selections:
-                if self.mean_rewards[i] >= (1 + factor) * average_reward:
-                    self.arms_to_pull.append(i + 1)
-                    print(self.arms_to_pull)
-        pull = []
-        for i in self.arms_to_pull:
-            pull.append(self.F[i-1])
-        
-        # Check the number of pulls for each arm in pull[] to see whether SOAAv can still be used
-
-        
-        # Select the minimum from the arms to pull. This will be the recommended arm.
-        action = min(pull)
-        # Remove the arm that will be pulled from the list
-        self.arms_to_pull.remove(action - 1)
-        self.recommended[action] += 1
-        
-        return action
+        else:
+            if self.arms_to_pull is None:
+                set_selections = set(self.selections)
+                average_reward = sum(self.mean_rewards) / len(set_selections)  
+                for i in set_selections:
+                    if self.mean_rewards[i] >= (1 + factor) * average_reward:
+                        self.arms_to_pull.append(i + 1)
+                        print(self.arms_to_pull)
+            pull = []
+            for i in self.arms_to_pull:
+                pull.append(self.F[i-1])
+            
+            # Check the number of pulls for each arm in pull[] to see whether SOAAv can still be used
+            if (max(pull) - min(pull) >= 2):
+                self.use_SOAAv = False
+                return self.HILL_UCB()
+            
+            # Select the minimum from the arms to pull. This will be the recommended arm.
+            action = min(pull)
+            # Remove the arm that will be pulled from the list
+            self.arms_to_pull.remove(action - 1)
+            self.recommended[action] += 1
+            
+            return action
 
     def KL(self, X, Y):
         # Define the integrand function for the KL divergence

@@ -282,8 +282,8 @@ def get_reward():
             bandit.mean_rewards[i] = bandit.S[i] / (bandit.F[i])
         else:
             bandit.mean_rewards[i] = 0
-
-    agents = int(bandit.HILL_SOAAv(0))
+    
+    agents = int(bandit.get_recommendation(self))
     #print(agents)
     if(selected_option == (agents-1)):
         bandit.recommended[selected_option] = 0
@@ -291,7 +291,7 @@ def get_reward():
     if(np.sum(bandit.F)==num_episodes):
         bandit.reset()
 
-    return jsonify({'reward': reward[0], 'banditS': bandit.S[selected_option], 'banditF': bandit.F[selected_option], 'agents': agents})
-
+    # return jsonify({'reward': reward[0], 'banditS': bandit.S[selected_option], 'banditF': bandit.F[selected_option], 'agents': agents})
+    return jsonify({'reward': reward[0], 'banditS': bandit.S[selected_option], 'banditF': bandit.F[selected_option]})
 
 
