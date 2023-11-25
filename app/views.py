@@ -266,9 +266,25 @@ def task():
 def gamecomplete():
     return render_template('gamecomplete.html', mturk_id=mturk_id)
 
+
+@app.route('/get_recommendation')
+def get_recommendation():
+    print("HI")
+    user_curr_intention = int(request.args.get('intendedOption', 10))
+    print("HELLO", user_curr_intention)
+    bandit.intent = user_curr_intention
+    print("Using SOAAv: ", bandit.use_SOAAv)
+    if bandit.use_SOAAv:
+        return jsonify({'agents' : bandit.HILL_SOAAv()});
+    else:
+        return jsonify({'agents' : bandit.HILL_UCB()}, default=int);
+
+
+
 @app.route('/get_reward')
 def get_reward():
     selected_option = int(request.args.get('selected_option', 0))
+    print("HOLA", selected_option)
     reward = bandit.pull_arm(selected_option)
 
     # Update self.S and self.F with the received reward
@@ -283,9 +299,11 @@ def get_reward():
         else:
             bandit.mean_rewards[i] = 0
     
-    agents = int(bandit.get_recommendation())
+    #agents = int(bandit.get_recommendation())
     #print(agents)
-    if(selected_option == (agents-1)):
+
+    # Reset the "recommended" to zero if the person listens
+    if(selected_option == (bandit.curr_recommendation-1)):
         bandit.recommended[selected_option] = 0
 
     if(np.sum(bandit.F)==num_episodes):

@@ -94,34 +94,14 @@ document.addEventListener("DOMContentLoaded", function () {
             opt.classList.add("intention");
             
             intendedOptionIndex = index;
+            console.log(intendedOptionIndex);
 
-            fetch(`/get_recommendation?intended_option=${intendedOptionIndex}`,{
-              method:'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-              },
-
-              body: JSON.stringify({
-                intendedOptionIndex:intendedOptionIndex
+            fetch(`/get_recommendation?intendedOption=${intendedOptionIndex}`)
+              .then(response => response.json())
+              .then(data=>{
+                agents = data.agents
+                console.log("recommendation: " + agents)
               })
-            }).then(response => {
-              if (response.ok) {
-                console.log(response)
-                return response.json()
-              }
-              else {
-                alert("oops")
-              }
-            })
-            .then(result => {
-              result.json()
-              // console.log(result);
-            })
-            .catch(error => {
-              console.error('Error:',error);
-            });
-
             const optionLabel = opt.querySelector(".option-label");
             const stockTitle = opt.querySelector(".stock-title");
             optionLabel.style.color = "#007bff";
@@ -234,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const rewardDiv = document.getElementById("reward");
           const rewardText = `Reward received: ${data.reward}`;
           
-          agents = data.agents;
+          //agents = data.agents;
           console.log(selectedOptionIndex);
           // Update times invested and average reward values using data attributes
           const selectedOption = stockOptions[selectedOptionIndex];
@@ -259,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const tl = gsap.timeline();
           tl.to(rollingNumber, {
             y: -40, // Adjust the distance based on your design
-            duration: 0.15, // Animation duration
+            duration: 0.075, // Animation duration
             onComplete: () => {
               // Update the rolling number with the new reward
               rollingNumber.textContent = data.reward.toFixed(2);
@@ -267,8 +247,8 @@ document.addEventListener("DOMContentLoaded", function () {
               // Complete the animation
               gsap.to(rollingNumber, {
                 y: 0, // Reset to original position
-                duration: 0.15, // Animation duration
-                delay: 0.05, // Delay before resetting
+                duration: 0.075, // Animation duration
+                delay: 0.03, // Delay before resetting
                 onComplete: () => {
                   // Clear the reward after the animation completes
                   setTimeout(() => {
@@ -284,7 +264,7 @@ document.addEventListener("DOMContentLoaded", function () {
                       stockTitle.style.color = "#222";
                     });
                     isAnimating = false; // Reset animation flag
-                  }, 3000);
+                  }, 1000);
                 },
               });
             },
