@@ -283,7 +283,7 @@ def get_reward():
         else:
             bandit.mean_rewards[i] = 0
     
-    agents = int(bandit.get_recommendation(self))
+    agents = int(bandit.get_recommendation())
     #print(agents)
     if(selected_option == (agents-1)):
         bandit.recommended[selected_option] = 0

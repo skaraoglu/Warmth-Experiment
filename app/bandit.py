@@ -55,14 +55,16 @@ class Bandit:
         action = np.argmax(ucb_values) + 1
         return action            
     
-    @app.route('/get_recommendation', methods=['POST'])
+    @app.route('/get_recommendation', methods=['GET', 'POST'])
     def get_recommendation(self):
-        user_curr_intention = request.json['intendedOptionIndex']
+        print("HI")
+        user_curr_intention = int(request.args.get('intended_option', 10))
+        print("HELLO", user_curr_intention)
         self.intent = user_curr_intention
         if self.use_SOAAv:
-            return self.HILL_SOAAv()
+            return jsonify({'agents' : self.HILL_SOAAv()});
         else:
-            return self.HILL_UCB()
+            return jsonify({'agents' : self.HILL_UCB()});
 
     def HILL_UCB(self): #implement
         if (self.F[self.intent] == 0):

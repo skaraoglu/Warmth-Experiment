@@ -95,18 +95,28 @@ document.addEventListener("DOMContentLoaded", function () {
             
             intendedOptionIndex = index;
 
-            fetch('/get_recommendation',{
+            fetch(`/get_recommendation?intended_option=${intendedOptionIndex}`,{
               method:'POST',
               headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
               },
+
               body: JSON.stringify({
                 intendedOptionIndex:intendedOptionIndex
               })
-            }).then(response => response.text())
+            }).then(response => {
+              if (response.ok) {
+                console.log(response)
+                return response.json()
+              }
+              else {
+                alert("oops")
+              }
+            })
             .then(result => {
-              agents = ar.agents
-              console.log(result);
+              result.json()
+              // console.log(result);
             })
             .catch(error => {
               console.error('Error:',error);
