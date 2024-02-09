@@ -14,7 +14,7 @@ import numpy as np
 _beta = [0.9, 0.85, 0.75, 0.8, 0.3, 0.2]
 num_arms = 6  # Number of stock options
 num_episodes = 0
-bandit = bandit.Bandit(num_arms,beta_vals=_beta)
+bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta)
 bandit.reset()
 
 #Loads the user object from the database
@@ -223,7 +223,8 @@ def warmup():
     #Get the warmup start time
     session['warmup_start_time'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-    num_episodes = 10
+    # Set experiment length
+    bandit.num_episodes = 10
     if not current_user.is_authenticated:
         print("User not authenticated.")
         return redirect(url_for('login'))
@@ -247,7 +248,8 @@ def warmup():
 @app.route('/task/')
 @login_required
 def task():
-    num_episodes = 30
+    # Set experiment length
+    bandit.num_episodes = 30
     if not current_user.is_authenticated:
         print("User not authenticated.")
         return redirect(url_for('login'))
@@ -272,6 +274,8 @@ def get_recommendation():
     user_curr_intention = int(request.args.get('intendedOption', 10))
     # update the intention
     bandit.i[bandit.t] = user_curr_intention
+    # get recommendation
+    bandit.r[bandit.t] = bandit.recommend_arm() # current pull is param
 
 @app.route('/get_reward')
 def get_reward():
@@ -280,19 +284,17 @@ def get_reward():
     # get reward
     reward = bandit.pull_arm(selected_option)
 
-    # Update self.x and self.y with the received reward
+    # Update bandit
+    bandit.s[bandit.t] = selected_option 
     bandit.y[selected_option] += reward
     bandit.x[selected_option] += 1
-    
-    # Update other bandit parameters
-    
-    agents = int(bandit.UCB())
-    #print(agents)
+    bandit.t += 1
+    bandit.updateLikelihood()
 
-    if(np.sum(bandit.F)==num_episodes):
+    if(np.sum(bandit.x)==bandit.num_episodes):
         bandit.reset()
 
-    return jsonify({'reward': reward, 'banditS': bandit.S[selected_option], 'banditF': bandit.F[selected_option], 'agents': agents})
+    return jsonify({'reward': reward, 'banditY': bandit.y[selected_option], 'banditX': bandit.x[selected_option]})
 
 
 

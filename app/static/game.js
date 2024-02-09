@@ -94,6 +94,14 @@ document.addEventListener("DOMContentLoaded", function () {
             opt.classList.add("intention");
             
             intendedOptionIndex = index;
+            console.log(intendedOptionIndex);
+
+            fetch(`/get_recommendation?intendedOption=${intendedOptionIndex}`)
+              .then(response => response.json())
+              .then(data=>{
+                agents = data.agents
+                console.log("recommendation: " + agents)
+              })
             const optionLabel = opt.querySelector(".option-label");
             const stockTitle = opt.querySelector(".stock-title");
             optionLabel.style.color = "#007bff";
@@ -210,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const rewardDiv = document.getElementById("reward");
           const rewardText = `Reward received: ${data.reward}`;
           
-          agents = data.agents;
+          // agents = data.agents;
           console.log(selectedOptionIndex);
           // Update times invested and average reward values using data attributes
           const selectedOption = stockOptions[selectedOptionIndex];
@@ -218,8 +226,8 @@ document.addEventListener("DOMContentLoaded", function () {
           const averageRewardElement = selectedOption.querySelector(".average-reward");
           
           if (timesInvestedElement && averageRewardElement) {
-            const timesInvestedValue = data.banditF;
-            const averageRewardValue = timesInvestedValue === 0 ? 0 : data.banditS / timesInvestedValue;
+            const timesInvestedValue = data.banditX;
+            const averageRewardValue = timesInvestedValue === 0 ? 0 : data.banditY / timesInvestedValue;
 
             timesInvestedElement.textContent = `${timesInvestedValue}`;
             averageRewardElement.textContent = `${averageRewardValue.toFixed(2)}`;
