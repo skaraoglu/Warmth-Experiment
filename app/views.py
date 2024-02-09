@@ -266,15 +266,26 @@ def task():
 def gamecomplete():
     return render_template('gamecomplete.html', mturk_id=mturk_id)
 
+@app.route('/get_recommendation')
+def get_recommendation():
+    # get user intention
+    user_curr_intention = int(request.args.get('intendedOption', 10))
+    # update the intention
+    bandit.i[bandit.t] = user_curr_intention
+
 @app.route('/get_reward')
 def get_reward():
+    # get user selection
     selected_option = int(request.args.get('selected_option', 0))
+    # get reward
     reward = bandit.pull_arm(selected_option)
 
-    # Update self.S and self.F with the received reward
-    bandit.S[selected_option] += reward
-    bandit.F[selected_option] += 1
-
+    # Update self.x and self.y with the received reward
+    bandit.y[selected_option] += reward
+    bandit.x[selected_option] += 1
+    
+    # Update other bandit parameters
+    
     agents = int(bandit.UCB())
     #print(agents)
 
