@@ -13,7 +13,7 @@ import numpy as np
 
 _beta = [0.9, 0.85, 0.75, 0.8, 0.3, 0.2]
 num_arms = 6  # Number of stock options
-num_episodes = 0
+num_episodes = 30
 bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta)
 bandit.reset()
 
@@ -266,6 +266,7 @@ def task():
 @app.route('/gamecomplete/')
 @login_required
 def gamecomplete():
+    mturk_id = session.get('mturk_id')
     return render_template('gamecomplete.html', mturk_id=mturk_id)
 
 @app.route('/get_recommendation')
@@ -273,9 +274,11 @@ def get_recommendation():
     # get user intention
     user_curr_intention = int(request.args.get('intendedOption', 10))
     # update the intention
-    bandit.i[bandit.t] = user_curr_intention
+    bandit.i[bandit.t] = int(user_curr_intention) 
     # get recommendation
-    bandit.r[bandit.t] = bandit.recommend_arm() # current pull is param
+    bandit.recommend_arm()
+    
+    return jsonify({'agents' : bandit.r[bandit.t] + 1, 'cases' : bandit.cases[bandit.t]});
 
 @app.route('/get_reward')
 def get_reward():

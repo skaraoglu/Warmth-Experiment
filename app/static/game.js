@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const progressDiv = document.getElementById("progress");
   const agentsDiv = document.getElementById("agents");
   const ar = agentsDiv.querySelectorAll(".agents-rec");
+  const recommendationDiv = document.getElementById("recommendation-text");
+  const recommendationContent = document.getElementById("recommendation-content");
   let intendedOptionIndex = null;
   let selectedOptionIndex = null;
   let isAnimating = false; // Flag for animation state
@@ -101,6 +103,45 @@ document.addEventListener("DOMContentLoaded", function () {
               .then(data=>{
                 agents = data.agents
                 console.log("recommendation: " + agents)
+                ar.forEach((div, index) => {
+                  stockOptions[index].style.backgroundColor = "#f0f0f0";
+                  console.log("agent: " + agents);
+                  if (index === agents - 1 && !recommendationShown) {
+                    const image = document.createElement("img");
+                    image.src = "../static/hand_50.png";
+                    image.classList.remove("still");
+                    image.classList.add("slide-down");
+                    div.innerHTML = "";
+                    div.appendChild(image);            
+                   
+                    recommendationContent.innerHTML = "This is recommended";
+                    recommendationDiv.style.display = "flex";
+                    if (index === 0) {recommendationDiv.style.marginLeft = "-30%";}
+                    else if (index === 1) {recommendationDiv.style.marginLeft = "-25%";}
+                    else if (index === 2) {recommendationDiv.style.marginLeft = "-8.45%";}
+                    else if (index === 3) {recommendationDiv.style.marginLeft = "8.45%";}
+                    else if (index === 4) {recommendationDiv.style.marginLeft = "25%";}
+                    else if (index === 5) {recommendationDiv.style.marginLeft = "30%";}
+                    stockOptions[index].style.backgroundColor = "#e6f4e6";
+                    //recommendationDiv.style.marginLeft = 
+                    // Set the recommendationShown flag to true
+                    recommendationShown = true;
+                  } else if (index === agents - 1) {
+                    const image = document.createElement("img");
+                    image.src = "../static/hand_50.png";        
+                    image.classList.remove("slide-down");          
+                    image.classList.add("still");
+                    div.innerHTML = "";
+                    div.appendChild(image);
+                    const recommendationDiv = document.getElementById("recommendation-text");
+                    recommendationDiv.style.display = "none";
+                    stockOptions[index].style.backgroundColor = "#e6f4e6";
+                  } else {
+                    div.innerHTML = "";
+                    stockOptions[index].style.backgroundColor = "#f0f0f0";
+                  }
+                
+                });
               })
             const optionLabel = opt.querySelector(".option-label");
             const stockTitle = opt.querySelector(".stock-title");
@@ -116,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }          
           isAnimating = false;          
         });
-      },1500)
+      },100)
       stocksDiv.style.pointerEvents = "auto";
     }
     else {
@@ -151,47 +192,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }        
       });
     };    
-    ar.forEach((div, index) => {
-      if (index === agents - 1 && !recommendationShown) {
-        const image = document.createElement("img");
-        image.src = "../static/hand_50.png";
-        image.classList.remove("still");
-        image.classList.add("slide-down");
-        div.innerHTML = "";
-        div.appendChild(image);
-
-
-        const recommendationDiv = document.getElementById("recommendation-text");
-        // get recommendation-content div
-        const recommendationContent = document.getElementById("recommendation-content");
-        recommendationContent.innerHTML = "This is recommended";
-        recommendationDiv.style.display = "flex";
-        if (index === 0) {recommendationDiv.style.marginLeft = "-30%";}
-        else if (index === 1) {recommendationDiv.style.marginLeft = "-25%";}
-        else if (index === 2) {recommendationDiv.style.marginLeft = "-8.45%";}
-        else if (index === 3) {recommendationDiv.style.marginLeft = "8.45%";}
-        else if (index === 4) {recommendationDiv.style.marginLeft = "25%";}
-        else if (index === 5) {recommendationDiv.style.marginLeft = "30%";}
-        stockOptions[index].style.backgroundColor = "#e6f4e6";
-        //recommendationDiv.style.marginLeft = 
-        // Set the recommendationShown flag to true
-        recommendationShown = true;
-      } else if (index === agents - 1) {
-        const image = document.createElement("img");
-        image.src = "../static/hand_50.png";        
-        image.classList.remove("slide-down");          
-        image.classList.add("still");
-        div.innerHTML = "";
-        div.appendChild(image);
-        const recommendationDiv = document.getElementById("recommendation-text");
-        recommendationDiv.style.display = "none";
-        stockOptions[index].style.backgroundColor = "#e6f4e6";
-      } else {
-        div.innerHTML = "";
-        stockOptions[index].style.backgroundColor = "#f0f0f0";
-      }
-    
-    });
   });
 
   const rollingNumber = document.querySelector(".rolling-number");
