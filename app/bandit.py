@@ -4,6 +4,7 @@ import math
 from scipy.optimize import fsolve
 from scipy.integrate import quad
 from scipy.stats import expon
+from recommendation import agent_recommender, agent_feedback
 
 class Bandit:
 
@@ -91,7 +92,7 @@ class Bandit:
         self.condition = 0 # Cold = 0 or Warm = 1
         self.cases = np.zeros(self.num_episodes)
 
-    def getExplanation4Recommendation():
+    def getExplanation4Recommendation(self):
         # self.condition is Condition
         # self.l is Complaint - Likelihood
         # self.i[self.t] is Intention for time t (Current)
@@ -99,8 +100,12 @@ class Bandit:
         # self.s[self.t] is Selection for time t (Current)
         # average reward for recommendation is sum(self.y[x]) / len(self.y[x])
         # self.y[self.t] is Reward for time t (Current)
-        return
-    def getExplanationPostSelection():
+
+        # QUESTION: self.l -> Likelihood ?? (line 97)
+        agent = agent_recommender(self.condition, self.i[self.t], self.r[self.t], self.l)
+        return agent.get_recommendation()
+
+    def getExplanationPostSelection(self):
         # self.condition is Condition
         # self.l is Complaint - Likelihood
         # self.i[self.t] is Intention for time t (Current)
@@ -108,7 +113,9 @@ class Bandit:
         # self.s[self.t] is Selection for time t (Current)
         # average reward for recommendation is sum(self.y[x]) / len(self.y[x])
         # self.y[self.t] is Reward for time t (Current)
-        return    
+
+        agent = agent_feedback(self.condition, self.s[self.t], self.r[self.t], self.y[self.t], sum(self.y) / len(self.y))
+        return agent.get_feedback()  
 
     def UCB(self):
         for i in range(self.num_arms):
