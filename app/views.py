@@ -277,8 +277,11 @@ def get_recommendation():
     bandit.i[bandit.t] = int(user_curr_intention) 
     # get recommendation
     bandit.recommend_arm()
+    # get explanation for recommendation
+    expForRec = bandit.getExplanation4Recommendation()
+    print(expForRec)
     
-    return jsonify({'agents' : bandit.r[bandit.t] + 1, 'cases' : bandit.cases[bandit.t]});
+    return jsonify({'agents' : bandit.r[bandit.t] + 1, 'cases' : bandit.cases[bandit.t], 'expForRec': expForRec});
 
 @app.route('/get_reward')
 def get_reward():
