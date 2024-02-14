@@ -1,7 +1,7 @@
 import numpy as np
 import random
 import math
-from recommendation import agent_recommender, agent_feedback
+from rec import agent_recommender, agent_feedback
 
 class Bandit:
 
