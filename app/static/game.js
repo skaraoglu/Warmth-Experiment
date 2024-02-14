@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let intention = -1;
   let isIntention = false;
   let recommendationShown = false; // Track if recommendation is shown
+  let curCase = -1;
+  let expForRec = "";
+  let expPostSel = "";
 
   function setIntention(opt, i){
     intention = opt;
@@ -101,11 +104,13 @@ document.addEventListener("DOMContentLoaded", function () {
             fetch(`/get_recommendation?intendedOption=${intendedOptionIndex}`)
               .then(response => response.json())
               .then(data=>{
-                agents = data.agents
-                console.log("recommendation: " + agents)
+                agents = data.agents;
+                curCase = data.cases;
+                expForRec = data.expForRec;
+                //console.log("exp: " + expForRec);
                 ar.forEach((div, index) => {
                   stockOptions[index].style.backgroundColor = "#f0f0f0";
-                  console.log("agent: " + agents);
+                  //console.log("agent: " + agents);
                   if (index === agents - 1 && !recommendationShown) {
                     const image = document.createElement("img");
                     image.src = "../static/hand_50.png";
@@ -114,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     div.innerHTML = "";
                     div.appendChild(image);            
                    
-                    recommendationContent.innerHTML = "This is recommended";
+                    recommendationContent.innerHTML = expForRec;
                     recommendationDiv.style.display = "flex";
                     if (index === 0) {recommendationDiv.style.marginLeft = "-30%";}
                     else if (index === 1) {recommendationDiv.style.marginLeft = "-25%";}
@@ -217,9 +222,9 @@ document.addEventListener("DOMContentLoaded", function () {
           totalReward += data.reward;
           const rewardDiv = document.getElementById("reward");
           const rewardText = `Reward received: ${data.reward}`;
-          
+          expPostSel = data.expPostSel;
           // agents = data.agents;
-          console.log(selectedOptionIndex);
+          //console.log(selectedOptionIndex);
           // Update times invested and average reward values using data attributes
           const selectedOption = stockOptions[selectedOptionIndex];
           const timesInvestedElement = selectedOption.querySelector(".times-invested");
@@ -234,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }          
           // Update the reward value for the rolling numbers
           const rewardContainer = document.querySelector(".reward-container");
-
+          recommendationContent.innerHTML = expPostSel;
           // Toggle the rolling class on the reward frame
           const rewardFrame = document.querySelector(".reward-frame");
           rewardFrame.classList.add("rolling");
@@ -266,6 +271,8 @@ document.addEventListener("DOMContentLoaded", function () {
                       const stockTitle = opt.querySelector(".stock-title");
                       optionLabel.style.color = "#222";
                       stockTitle.style.color = "#222";
+                      recommendationContent.innerHTML = "";
+                      recommendationDiv.style.display = "none";
                     });
                     isAnimating = false; // Reset animation flag
                   }, 3000);

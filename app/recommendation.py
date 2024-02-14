@@ -117,6 +117,7 @@ class agent_feedback:
     # Post-Recommendation
     def get_feedback(self):
         self.set_values()
+        print(self.condition)
         key = "#" + str(self.condition) + "#" + str(self.good_reward) + "#" + str(self.agreement)
         recommendation = random.choice(self.map_recommendation[key])
         return recommendation

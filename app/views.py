@@ -14,7 +14,7 @@ import numpy as np
 _beta = [0.9, 0.85, 0.75, 0.8, 0.3, 0.2]
 num_arms = 6  # Number of stock options
 num_episodes = 30
-bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta)
+bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=1)
 bandit.reset()
 
 #Loads the user object from the database
@@ -279,7 +279,6 @@ def get_recommendation():
     bandit.recommend_arm()
     # get explanation for recommendation
     expForRec = bandit.getExplanation4Recommendation()
-    print(expForRec)
     
     return jsonify({'agents' : bandit.r[bandit.t] + 1, 'cases' : bandit.cases[bandit.t], 'expForRec': expForRec});
 
@@ -291,16 +290,18 @@ def get_reward():
     reward = bandit.pull_arm(selected_option)
 
     # Update bandit
+    bandit.rewardPerRound[bandit.t] = reward;
     bandit.s[bandit.t] = selected_option 
     bandit.y[selected_option] += reward
     bandit.x[selected_option] += 1
     bandit.t += 1
     bandit.updateLikelihood()
+    expPostSel = bandit.getExplanationPostSelection()
 
     if(np.sum(bandit.x)==bandit.num_episodes):
         bandit.reset()
 
-    return jsonify({'reward': reward, 'banditY': bandit.y[selected_option], 'banditX': bandit.x[selected_option]})
+    return jsonify({'reward': reward, 'banditY': bandit.y[selected_option], 'banditX': bandit.x[selected_option], 'expPostSel': expPostSel})
 
 
 

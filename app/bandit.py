@@ -1,11 +1,11 @@
 import numpy as np
 import random
 import math
-from rec import agent_recommender, agent_feedback
+from .recommendation import agent_recommender, agent_feedback
 
 class Bandit:
 
-    def __init__(self, num_arms, num_episodes, beta_vals=None):
+    def __init__(self, num_arms, num_episodes, condition, beta_vals=None):
         np.random.seed(seed=62)
         self.num_arms = num_arms
         self.num_episodes = num_episodes
@@ -14,7 +14,8 @@ class Bandit:
         else:
             self.beta_vals = beta_vals
         self.x = np.zeros(num_arms) # Number of pulls for each arm
-        self.y = np.zeros(num_arms) # Rewards for each arm
+        self.y = np.zeros(num_arms) # Rewards received each round
+        self.rewardPerRound = np.zeros(num_episodes) # Rewards received each round        
         self.r = np.zeros(num_episodes) # Recommendations for each round
         self.i = np.zeros(num_episodes) # Intentions for each round
         self.s = np.zeros(num_episodes) # Selections for each round
@@ -22,7 +23,7 @@ class Bandit:
 
         self.l = np.zeros(num_episodes) # Likelihood that the user adopts
         #self.l[0] = 1 # Complaint - Likelihood
-        self.condition = 0 # Cold = 0 or Warm = 1
+        self.condition = condition # Cold = 0 or Warm = 1
         self.cases = np.zeros(num_episodes) # Cases for each round
 
     def updateLikelihood(self, delta=.75):
@@ -86,7 +87,7 @@ class Bandit:
         self.t = 0
         self.l = np.zeros(self.num_episodes) # Likelihood that the user adopts
         self.l[0] = 1 # Complaint - Likelihood
-        self.condition = 0 # Cold = 0 or Warm = 1
+        #self.condition = 0 # Cold = 0 or Warm = 1
         self.cases = np.zeros(self.num_episodes)
 
     def getExplanation4Recommendation(self):
@@ -97,7 +98,7 @@ class Bandit:
         # self.s[self.t] is Selection for time t (Current)
         # average reward for recommendation is sum(self.y[x]) / len(self.y[x])
         # self.y[self.t] is Reward for time t (Current)
-        agent = agent_recommender(self.condition, self.i[self.t], self.r[self.t], self.l)
+        agent = agent_recommender(self.condition, self.i[self.t], self.r[self.t], self.l[self.t])
         return agent.get_recommendation()
     
     def getExplanationPostSelection(self):
@@ -108,7 +109,8 @@ class Bandit:
         # self.s[self.t] is Selection for time t (Current)
         # average reward for recommendation is sum(self.y[x]) / len(self.y[x])
         # self.y[self.t] is Reward for time t (Current)
-        agent = agent_feedback(self.condition, self.s[self.t], self.r[self.t], self.y[self.t], sum(self.y) / len(self.y))
+        
+        agent = agent_feedback(self.condition, self.s[self.t], self.r[self.t], self.rewardPerRound[self.t], sum(self.y) / self.num_arms)
         return agent.get_feedback() 
 
     def UCB(self):
