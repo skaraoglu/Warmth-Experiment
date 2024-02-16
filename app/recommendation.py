@@ -26,30 +26,30 @@ class agent_recommender:
         # Warm: Agreement when I = R (Low level of Adoption)
         self.warm_low_equal = ["Your choice looks promising.", "Go ahead with your selection.", "This selection looks good.", "That looks like a good decision."]    
         # Warm: Agreement when I ≠ R (Low Level of Adoption)
-        self.warm_low_unequal = ["Choosing this option may benefit you in the long run."]
+        self.warm_low_unequal = ["Choosing this option may benefit you in the long run.", "You could consider this option instead as it could get you a higher reward.", "Let's do this together."]
         # Warm: Agreement when I ≠ R (High Level of Adoption)
-        self.warm_high_unequal = ["How about this choice since it may be promising?"]
+        self.warm_high_unequal = ["How about this choice since it may be promising?", "How about choosing this selection since it could lead us to success?", "Would you like to consider this option instead as it could be better?"]
         # Warm: encouragement when I ≠ R
-        self.warm_encourage_unequal = ["We can do this together."]
+        self.warm_encourage_unequal = ["We can do this together.", "We are better together", "Let's do this together."]
         # Warm: compliment when I ≠ R
-        self.warm_compliment_unequal = ["Love your efforts!"]
+        self.warm_compliment_unequal = ["Love your efforts!", "Your efforts are commendable.", "Nice decision!"]
         
         # Cold: Agreement when I = R (High Level of Adoption)
-        self.cold_compliment_equal = ["A decent choice.", "Not bad."]
+        self.cold_compliment_equal = ["A decent choice.", "Not bad.", "Well-made decision."]
         # Cold: Agreement when I = R (Low Level of Adoption)
-        self.cold_encourage_equal = ["Agreed."]
+        self.cold_encourage_equal = ["Agreed.", "Quite plausible.", "Logical decision."]
         # Cold: Suggestion when I != R (High Level of Adoption)
-        self.cold_compliment_unequal = ["The progress so far is commendable.", "I am happy with the teamwork.", "I see good progress so far."]
+        self.cold_compliment_unequal = ["The progress so far is commendable.", "I am pleased with the teamwork.", "I see good progress so far."]
         # Cold: Suggestion when I != R (Low Level of Adoption)
         self.cold_encourage_unequal = ["There may be a better choice.", "I believe cooperation is a better strategy.", "I recommend working with me on this."]
         # Cold: 2nd Sentence Agreement when I = R (High Level of Adoption)
-        self.cold_high_equal = ["I concur."]
+        self.cold_high_equal = ["I concur.", "I agree.", "I shall not disagree."]
         # Cold: 2nd Sentence Suggestion when I != R (High Level of Adoption)
-        self.cold_high_unequal = ["Having considered through the options, I suggest selecting this option."]
+        self.cold_high_unequal = ["Having considered through the options, I suggest selecting this option.", "I believe this one will be a more plausible choice based on my understanding.", "Taking previous performance into account, I suggest selecting this option.", "Based on my assessment, selecting this one is more plausible.", "Based on my evaluations, this one is more plausible."]
         # Cold: 2nd Sentence Agreement when I = R (Low Level of Adoption)
-        self.cold_low_equal = ["I believe your choice for this instance is plausible."]
+        self.cold_low_equal = ["I believe your choice for this instance is plausible.", "I concure with this selection.", "I see that a fair decision has been made."]
         # Cold: 2nd Sentence Suggestion when I != R (Low Level of Adoption)
-        self.cold_low_unequal = ["If this option is not selected, it may obtain a suboptimal outcome."]
+        self.cold_low_unequal = ["If this option is not selected, it may obtain a suboptimal outcome.", "If this option is selected, there may be a less desirable outcome.", "If this option is ignored, the optimal outcome may not be attained."]
 
         # Contains both warm and cold sentences
         ## "#warm_or_cold#likelihood_key#agreement"
