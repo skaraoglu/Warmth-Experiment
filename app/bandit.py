@@ -34,13 +34,10 @@ class Bandit:
         self.r[self.t] = 0
         # If arm pulled less than two times
         # fit this to our structure
-        currIntention = int(self.i[self.t])
-
-        print(self.x[currIntention])
+        
         if self.x[int(self.i[self.t])] < 2: # Why - 1?
             self.r[self.t] = self.i[self.t]
             self.cases[self.t] = 1
-            print("case1")
             return 
         
         arms_to_recommend = []
@@ -52,7 +49,6 @@ class Bandit:
         if arms_to_recommend:
             self.r[self.t] = random.choice(arms_to_recommend)
             self.cases[self.t] = 2
-            print("case2")
             return 
 
         min_weight = 0.5
@@ -71,7 +67,6 @@ class Bandit:
             
         self.cases[self.t] = 3
         self.r[self.t] = max_arm
-        print("case3")
         return
         
     def pull_arm(self, arm_index):

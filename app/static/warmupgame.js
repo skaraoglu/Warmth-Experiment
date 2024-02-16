@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const stocksDiv = document.getElementById("stocks");
     const stockOptions = stocksDiv.querySelectorAll(".stock-option");
     const investButton = document.getElementById("investButton");
+    const surveyDiv = document.getElementById("survey");
     const progressDiv = document.getElementById("warmupprogress");
     const agentsDiv = document.getElementById("warmupagents");
     const ar = agentsDiv.querySelectorAll(".warmupagents-rec");
@@ -20,7 +21,19 @@ document.addEventListener("DOMContentLoaded", function () {
     let intention = -1;
     let isIntention = false;
     let recommendationShown = false; // Track if recommendation is shown
+    const completeButton = document.querySelector('#complete .button');
+    const surveyAnswer = document.getElementById('strategy');
   
+    surveyAnswer.addEventListener('input', function() {
+      if (surveyAnswer.value.trim() !== '') {
+          // If the textarea is not empty, enable the button
+          completeButton.className = "button";
+      } else {
+          // If the textarea is empty, disable the button
+          completeButton.className = "inactive-button";
+      }
+    });
+
     function setIntention(opt, i){
       intention = opt;
       isIntention = true;
@@ -236,7 +249,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }                        
             // Update the reward value for the rolling numbers
             const rewardContainer = document.querySelector(".reward-container");
-            recommendationContent.innerHTML = expPostSel;  
+            recommendationContent.innerHTML = expPostSel;
+            recommendationDiv.style.margin = "";
             // Toggle the rolling class on the reward frame
             const rewardFrame = document.querySelector(".reward-frame");
             rewardFrame.classList.add("rolling");
@@ -285,6 +299,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       if (currentEpisode >= episodes) {
         investButton.style.display = "none";
+        recommendationDiv.style.display = 'none';
         setTimeout(function(){
           // Hide stock options and invest button
           const rtitle = document.getElementById("rtitle");
@@ -303,7 +318,11 @@ document.addEventListener("DOMContentLoaded", function () {
           rewardDiv.appendChild(rtitle);
           rewardDiv.appendChild(totalRewardFrame);
           const completeDiv = document.getElementById("complete");
-          completeDiv.style.display = "block";        
+          agentsDiv.style.display = "none";
+          surveyDiv.style.display = "block";
+          completeDiv.style.display = "block";
+          completeButton.className = "inactive-button";
+
   
           return;
         }, 2000);      

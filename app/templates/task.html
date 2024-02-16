@@ -19,7 +19,7 @@
     <div id="agents">
       <div id="recommendation-text">
         <img src="../static/agent.png" class="agent-avatar" alt="Agent Avatar">
-        <div id="recommendation-content">
+        <div id="recommendation-content" style="margin-right: 10px;">
           <!-- Your recommendation text goes here -->
           This is the recommendation text.
         </div>
@@ -75,26 +75,76 @@
       <div class="info" id="stock-option-5-F">Times Invested: <span class="times-invested">0</span></div>
       <div class="info" id="stock-option-5-S">Average Reward: <span class="average-reward">0</span></div>
     </div>
+  </div>
+
+  <div id="atnStocks" style="margin-top: 0px; display: none;">
+    <div class="stock-option" id="atnStock-option-0">
+      <span class="option-label" style="color: #222">1</span>
+      <div class="stock-title">A4PL</div>
+      <div class="separator"></div>
+      <div class="info" id="stock-option-0-F">Times Invested: <span class="times-invested">0</span></div>
+      <div class="info" id="stock-option-0-S">Average Reward: <span class="average-reward">0</span></div>
     </div>
-    <div id="reward" style="text-align: center; height: 160px;">
-      <span id="rtitle" style="height: 12px; color: #000; font-size: 16pt; font-weight: bold;">Episode Reward</span>
-      <div class="reward-frame">
-        <div class="reward-container">
-          <span class="rolling-number">0</span>
-        </div>
+    <div class="stock-option" id="atnStock-option-1">
+      <span class="option-label" style="color: #222">2</span>
+      <div class="stock-title">RF5T</div>
+      <div class="separator"></div>
+      <div class="info" id="stock-option-1-F">Times Invested: <span class="times-invested">0</span></div>
+      <div class="info" id="stock-option-1-S">Average Reward: <span class="average-reward">0</span></div>
+    </div>
+    <div class="stock-option" id="atnStock-option-2">
+      <span class="option-label" style="color: #222">3</span>
+      <div class="stock-title">DDG0</div>
+      <div class="separator"></div>
+      <div class="info" id="stock-option-2-F">Times Invested: <span class="times-invested">0</span></div>
+      <div class="info" id="stock-option-2-S">Average Reward: <span class="average-reward">0</span></div>
+    </div>
+    <div class="stock-option" id="atnStock-option-3">
+      <span class="option-label" style="color: #222">4</span>
+      <div class="stock-title">8HRD</div>
+      <div class="separator"></div>
+      <div class="info" id="stock-option-3-F">Times Invested: <span class="times-invested">0</span></div>
+      <div class="info" id="stock-option-3-S">Average Reward: <span class="average-reward">0</span></div>
+    </div>
+    <div class="stock-option" id="atnStock-option-4">
+      <span class="option-label" style="color: #222">5</span>
+      <div class="stock-title">3DSN</div>
+      <div class="separator"></div>
+      <div class="info" id="stock-option-4-F">Times Invested: <span class="times-invested">0</span></div>
+      <div class="info" id="stock-option-4-S">Average Reward: <span class="average-reward">0</span></div>
+    </div>
+    <div class="stock-option" id="atnStock-option-5">
+      <span class="option-label" style="color: #222">6</span>
+      <div class="stock-title">S3N5</div>
+      <div class="separator"></div>
+      <div class="info" id="stock-option-5-F">Times Invested: <span class="times-invested">0</span></div>
+      <div class="info" id="stock-option-5-S">Average Reward: <span class="average-reward">0</span></div>
+    </div>
+  </div>
+  <div id="survey" style="margin-left:0%; align-content:center; text-align:center; display: none;">
+    <h2>Warmup game strategy survey</h2><br>
+    <p>Can you explain your strategy briefly (with 2 or 3 sentences)?</p><br>
+    <textarea id="strategy" name="strategy" rows="4" cols="50"></textarea>
+  </div>  
+  <div id="reward" style="text-align: center; height: 160px;">
+    <span id="rtitle" style="height: 12px; color: #000; font-size: 16pt; font-weight: bold;">Episode Reward</span>
+    <div class="reward-frame">
+      <div class="reward-container">
+        <span class="rolling-number">0</span>
       </div>
     </div>
-    <div id="proceed" style="text-align: center;">
-        <button id="investButton" style="width: 160px;" class="button">Select Stock</button>
-        <div id="reward"></div>
-        <div id="episode"></div>
-    </div>
-    <div id="complete" style="display: none; text-align: center;">
-      <form action="{{ url_for('gamecomplete') }}">
-          <input type="hidden" name="task_type" value="task">
-          <button class="button" type="submit">Game Completed</button>
-      </form>
-    </div>
-    <div id="footer" style="height: 1px; margin-top:20px; background-color: #efefef;"></div>
+  </div>
+  <div id="proceed" style="text-align: center;">
+      <button id="investButton" style="width: 160px;" class="button">Select Stock</button>
+      <div id="reward"></div>
+      <div id="episode"></div>
+  </div>
+  <div id="complete" style="display: none; text-align: center;">
+    <form action="{{ url_for('gamecomplete') }}">
+        <input type="hidden" name="task_type" value="task">
+        <button class="button" type="submit">Game Completed</button>
+    </form>
+  </div>
+  <div id="footer" style="height: 1px; margin-top:20px; background-color: #efefef;"></div>
 </div>
 {% endblock %}

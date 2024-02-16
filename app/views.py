@@ -11,6 +11,7 @@ from app.models import Survey, User, TaskCompletion
 from datetime import datetime, timedelta
 import numpy as np
 
+attentionChecks = []
 _beta = [0.9, 0.85, 0.75, 0.8, 0.3, 0.2]
 num_arms = 6  # Number of stock options
 num_episodes = 30
@@ -269,6 +270,13 @@ def gamecomplete():
     mturk_id = session.get('mturk_id')
     return render_template('gamecomplete.html', mturk_id=mturk_id)
 
+@app.route('/attention_check')
+def attention_check():
+    attentionChecks.append(request.args.get('atn'))
+    print(attentionChecks)
+
+    return jsonify({'success' : 1})
+
 @app.route('/get_recommendation')
 def get_recommendation():
     # get user intention
@@ -280,7 +288,7 @@ def get_recommendation():
     # get explanation for recommendation
     expForRec = bandit.getExplanation4Recommendation()
     
-    return jsonify({'agents' : bandit.r[bandit.t] + 1, 'cases' : bandit.cases[bandit.t], 'expForRec': expForRec});
+    return jsonify({'agents' : bandit.r[bandit.t] + 1, 'cases' : bandit.cases[bandit.t], 'expForRec': expForRec})
 
 @app.route('/get_reward')
 def get_reward():
@@ -294,9 +302,11 @@ def get_reward():
     bandit.s[bandit.t] = selected_option 
     bandit.y[selected_option] += reward
     bandit.x[selected_option] += 1
+    
+    expPostSel = bandit.getExplanationPostSelection()
+
     bandit.t += 1
     bandit.updateLikelihood()
-    expPostSel = bandit.getExplanationPostSelection()
 
     if(np.sum(bandit.x)==bandit.num_episodes):
         bandit.reset()

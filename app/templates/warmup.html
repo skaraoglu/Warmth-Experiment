@@ -75,23 +75,28 @@
       <div class="info" id="stock-option-5-F">Times Invested: <span class="times-invested">0</span></div>
       <div class="info" id="stock-option-5-S">Average Reward: <span class="average-reward">0</span></div>
     </div>
-    </div>
-    <div id="reward" style="text-align: center; height: 160px;">
-      <span id="rtitle" style="height: 12px; color: #000; font-size: 16pt; font-weight: bold;">Episode Reward</span>
-      <div class="reward-frame">
-        <div class="reward-container">
-          <span class="rolling-number">0</span>
-        </div>
+  </div>
+  <div id="survey" style="margin-left:0%; align-content:center; text-align:center; display: none;">
+    <h2>Warmup game strategy survey</h2><br>
+    <p>Can you explain your strategy briefly (with 2 or 3 sentences)?</p><br>
+    <textarea id="strategy" name="strategy" rows="4" cols="50"></textarea>
+  </div>  
+  <div id="reward" style="text-align: center; height: 160px;">
+    <span id="rtitle" style="height: 12px; color: #000; font-size: 16pt; font-weight: bold;">Episode Reward</span>
+    <div class="reward-frame">
+      <div class="reward-container">
+        <span class="rolling-number">0</span>
       </div>
     </div>
-    <div id="proceed" style="text-align: center;">
-        <button id="investButton" style="width: 160px;" class="button">Select Stock</button>
-        <div id="reward"></div>
-        <div id="episode"></div>
-    </div>
-    <div id="complete" style="display: none; text-align: center;">
-        <a href="{{ url_for('experiment') }}" class="button" style="width: 200px;">Complete Warm-Up Game</a>
-    </div>
-    <div id="footer" style="height: 1px; margin-top:20px; background-color: #efefef;"></div>
+  </div>
+  <div id="proceed" style="text-align: center;">
+      <button id="investButton" style="width: 160px;" class="button">Select Stock</button>
+      <div id="reward"></div>
+      <div id="episode"></div>
+  </div>
+  <div id="complete" style="display: none; text-align: center;">
+      <a href="{{ url_for('experiment') }}" class="button" style="width: 200px;">Complete Warm-Up Game</a>
+  </div>
+  <div id="footer" style="height: 1px; margin-top:20px; background-color: #efefef;"></div>
 </div>
 {% endblock %}

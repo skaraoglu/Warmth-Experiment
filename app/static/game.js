@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const stocksDiv = document.getElementById("stocks");
+  const atnStocksDiv = document.getElementById("atnStocks");
   const stockOptions = stocksDiv.querySelectorAll(".stock-option");
+  const atnStockOptions = atnStocksDiv.querySelectorAll(".stock-option");
+  const surveyDiv = document.getElementById("survey");
   const investButton = document.getElementById("investButton");
   const progressDiv = document.getElementById("progress");
   const agentsDiv = document.getElementById("agents");
@@ -23,6 +26,20 @@ document.addEventListener("DOMContentLoaded", function () {
   let curCase = -1;
   let expForRec = "";
   let expPostSel = "";
+  let atnCheck = false;
+  let atnSelectedOptionIndex = null;
+  const completeButton = document.querySelector('#complete .button');
+  const surveyAnswer = document.getElementById('strategy');
+
+  surveyAnswer.addEventListener('input', function() {
+    if (surveyAnswer.value.trim() !== '') {
+        // If the textarea is not empty, enable the button
+        completeButton.className = "button";
+    } else {
+        // If the textarea is empty, disable the button
+        completeButton.className = "inactive-button";
+    }
+  });
 
   function setIntention(opt, i){
     intention = opt;
@@ -31,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (o === opt){
       o.classList.add("intention");
       intendedOptionIndex = index;
-      console.log(intendedOptionIndex);
     }})      
   }
 
@@ -81,7 +97,36 @@ document.addEventListener("DOMContentLoaded", function () {
       // Append the episode number span to the episode numbers div
       episodeNumbersDiv.appendChild(episodeNumber);
     });
-  }  
+  }
+
+  atnStocksDiv.addEventListener("click", (event) => {
+    if (isAnimating) return; // Prevent interaction during animation
+    const clickedOption = event.target.closest(".stock-option");
+    if (!clickedOption) return;
+    atnStockOptions.forEach((opt, index) => {
+      opt.classList.remove("selected");
+      if (opt === clickedOption) {       
+        opt.classList.add("selected");
+        atnSelectedOptionIndex = index;
+                  
+        // Activate the invest button when an option is selected
+        investButton.classList.remove("inactive-button");
+        investButton.innerText = "Invest";
+        // Change the color of the span element within the selected option
+        const optionLabel = opt.querySelector(".option-label");
+        const stockTitle = opt.querySelector(".stock-title");
+        optionLabel.style.color = "#007bff";
+        stockTitle.style.color = "#007bff";
+         
+      } else {
+        // Reset the color for other options
+        const optionLabel = opt.querySelector(".option-label");
+        const stockTitle = opt.querySelector(".stock-title");
+        optionLabel.style.color = "#222";
+        stockTitle.style.color = "#222";
+      }
+    }
+  )});
 
   stocksDiv.addEventListener("click", (event) => {
     if (isAnimating) return; // Prevent interaction during animation
@@ -99,18 +144,15 @@ document.addEventListener("DOMContentLoaded", function () {
             opt.classList.add("intention");
             
             intendedOptionIndex = index;
-            console.log(intendedOptionIndex);
-
+            
             fetch(`/get_recommendation?intendedOption=${intendedOptionIndex}`)
               .then(response => response.json())
               .then(data=>{
                 agents = data.agents;
                 curCase = data.cases;
                 expForRec = data.expForRec;
-                //console.log("exp: " + expForRec);
                 ar.forEach((div, index) => {
                   stockOptions[index].style.backgroundColor = "#f0f0f0";
-                  //console.log("agent: " + agents);
                   if (index === agents - 1 && !recommendationShown) {
                     const image = document.createElement("img");
                     image.src = "../static/hand_50.png";
@@ -120,6 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     div.appendChild(image);            
                    
                     recommendationContent.innerHTML = expForRec;
+                    recommendationDiv.style.width = "";
                     recommendationDiv.style.display = "flex";
                     if (index === 0) {recommendationDiv.style.marginLeft = "-30%";}
                     else if (index === 1) {recommendationDiv.style.marginLeft = "-25%";}
@@ -204,6 +247,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   investButton.addEventListener("click", () => {
     if (isAnimating) return; // Prevent interaction during animation
+    if (atnStocksDiv.style.display != 'none') {
+      stocksDiv.style.display = 'flex';
+      stocksDiv.style.pointerEvents = "auto";
+      atnStocksDiv.style.display = 'none';
+      atnStocksDiv.style.pointerEvents = "none";
+      recommendationContent.innerHTML = '';
+      recommendationDiv.style.display = 'none';
+      if (atnSelectedOptionIndex == 2 && currentEpisode == 10) {
+        atnCheck = true;
+      }
+      if (atnSelectedOptionIndex == 4 && currentEpisode == 20) {
+        atnCheck = true;
+      }
+      fetch(`/attention_check?atn=${atnCheck}`)
+        .then(response => response.json())
+        .then(data => {
+          let suc = data.success;});
+      atnCheck = false;
+    }
     if (intendedOptionIndex !== null) {
       for (let i = 0; i < 6; i++) {stockOptions[i].style.backgroundColor = "#f0f0f0";} 
       isAnimating = true;
@@ -223,12 +285,13 @@ document.addEventListener("DOMContentLoaded", function () {
           const rewardDiv = document.getElementById("reward");
           const rewardText = `Reward received: ${data.reward}`;
           expPostSel = data.expPostSel;
-          // agents = data.agents;
-          //console.log(selectedOptionIndex);
           // Update times invested and average reward values using data attributes
           const selectedOption = stockOptions[selectedOptionIndex];
+          const atnSelectedOption = atnStockOptions[selectedOptionIndex];
           const timesInvestedElement = selectedOption.querySelector(".times-invested");
           const averageRewardElement = selectedOption.querySelector(".average-reward");
+          const timesInvestedElementA = atnSelectedOption.querySelector(".times-invested");
+          const averageRewardElementA = atnSelectedOption.querySelector(".average-reward");
           
           if (timesInvestedElement && averageRewardElement) {
             const timesInvestedValue = data.banditX;
@@ -236,10 +299,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             timesInvestedElement.textContent = `${timesInvestedValue}`;
             averageRewardElement.textContent = `${averageRewardValue.toFixed(2)}`;
+            timesInvestedElementA.textContent = `${timesInvestedValue}`;
+            averageRewardElementA.textContent = `${averageRewardValue.toFixed(2)}`;
           }          
           // Update the reward value for the rolling numbers
           const rewardContainer = document.querySelector(".reward-container");
           recommendationContent.innerHTML = expPostSel;
+          recommendationDiv.style.margin = "";
           // Toggle the rolling class on the reward frame
           const rewardFrame = document.querySelector(".reward-frame");
           rewardFrame.classList.add("rolling");
@@ -273,6 +339,19 @@ document.addEventListener("DOMContentLoaded", function () {
                       stockTitle.style.color = "#222";
                       recommendationContent.innerHTML = "";
                       recommendationDiv.style.display = "none";
+                      updateProgressBar(selectedList);
+                      if (currentEpisode == 10 || currentEpisode == 20) {
+                        stocksDiv.style.display = 'none';
+                        stocksDiv.style.pointerEvents = "none";
+                        atnStocksDiv.style.display = 'flex';
+                        atnStocksDiv.style.pointerEvents = "auto";
+                        if (currentEpisode == 10){recommendationContent.innerHTML = "This is an attention check, please invest in DDG0.";}
+                        else {recommendationContent.innerHTML = "This is an attention check, please invest in the 5th option.";}
+                        recommendationDiv.style.display = "flex";
+                        recommendationDiv.style.marginLeft = "0%";
+                      } else {
+                        stocksDiv.style.pointerEvents = "auto";
+                      }
                     });
                     isAnimating = false; // Reset animation flag
                   }, 3000);
@@ -281,10 +360,9 @@ document.addEventListener("DOMContentLoaded", function () {
             },
           });          
           resetIntention();
-          recommendationShown = false;
-          updateProgressBar(selectedList);          
-        });   
-    stocksDiv.style.pointerEvents = "auto";      
+          recommendationShown = false;          
+        });         
+        
     }
     if (currentEpisode >= episodes) {
       investButton.style.display = "none";
@@ -306,7 +384,10 @@ document.addEventListener("DOMContentLoaded", function () {
         rewardDiv.appendChild(rtitle);
         rewardDiv.appendChild(totalRewardFrame);
         const completeDiv = document.getElementById("complete");
-        completeDiv.style.display = "block";        
+        agentsDiv.style.display = "none";
+        surveyDiv.style.display = "block";
+        completeDiv.style.display = "block";
+        completeButton.className = "inactive-button"; 
 
         return;
       }, 2000);      
