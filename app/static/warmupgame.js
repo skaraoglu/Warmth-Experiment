@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (o === opt){
         o.classList.add("intention");
         intendedOptionIndex = index;
-        console.log(intendedOptionIndex);
+        //(intendedOptionIndex);
       }})      
     }
   
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
               opt.classList.add("intention");
               
               intendedOptionIndex = index;
-              console.log("intention: " + intendedOptionIndex);
+              //console.log("intention: " + intendedOptionIndex);
   
               fetch(`/get_recommendation?intendedOption=${intendedOptionIndex}`)
                 .then(response => response.json())
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   //console.log("recommendation: " + agents)
                   ar.forEach((div, index) => {
                     stockOptions[index].style.backgroundColor = "#f0f0f0";
-                    console.log("agent: " + agents);
+                    //console.log("agent: " + agents);
                     if (index === agents - 1 && !recommendationShown) {
                       const image = document.createElement("img");
                       image.src = "../static/hand_50.png";

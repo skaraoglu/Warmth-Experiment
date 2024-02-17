@@ -32,25 +32,39 @@ class Bandit:
     
     def recommend_arm(self):
         self.r[self.t] = 0
-        # If arm pulled less than two times
-        # fit this to our structure
-        
-        if self.x[int(self.i[self.t])] < 2: # Why - 1?
+        # case 1:
+        if (self.x[int(self.i[self.t])] < 1 and np.count_nonzero(self.r[:self.t] == int(self.i[self.t])) == 0):
             self.r[self.t] = self.i[self.t]
             self.cases[self.t] = 1
-            return 
+            return
         
+        # case 2a:
         arms_to_recommend = []
         for i in range(self.num_arms):
-            # If arm pulled less than two times and recommended less than three times
-            if self.x[i] < 2 and np.count_nonzero(self.r == i) < 3:
+            # If arm is never pulled and recommended once or less 
+            if self.x[i] < 1 and np.count_nonzero(self.r[:self.t] == i) < 2:
                 arms_to_recommend.append(i)
 
         if arms_to_recommend:
             self.r[self.t] = random.choice(arms_to_recommend)
             self.cases[self.t] = 2
+            print("Case 2a")
+            return 
+        
+        # case 2b:
+        arms_to_recommend = []
+        for i in range(self.num_arms):
+            # If arm pulled less than two times and recommended less than three times
+            if self.x[i] < 2 and np.count_nonzero(self.r[:self.t] == i) < 3:
+                arms_to_recommend.append(i)
+
+        if arms_to_recommend:
+            self.r[self.t] = random.choice(arms_to_recommend)
+            self.cases[self.t] = 2
+            print("Case 2b")
             return 
 
+        # case 3: UCB
         min_weight = 0.5
         max_weight = 0.9
         weight = min_weight + self.t * (max_weight - min_weight) / self.num_episodes

@@ -345,6 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         stocksDiv.style.pointerEvents = "none";
                         atnStocksDiv.style.display = 'flex';
                         atnStocksDiv.style.pointerEvents = "auto";
+                        atnStockOptions.forEach(opt => opt.classList.remove("selected")); 
                         if (currentEpisode == 10){recommendationContent.innerHTML = "This is an attention check, please invest in DDG0.";}
                         else {recommendationContent.innerHTML = "This is an attention check, please invest in the 5th option.";}
                         recommendationDiv.style.display = "flex";
