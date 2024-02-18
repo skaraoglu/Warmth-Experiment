@@ -425,6 +425,13 @@ def attention_check():
 
     return jsonify({'success' : 1})
 
+@app.route('/get_strategy')
+def get_strategy():
+    q = request.args.get('q', 0)
+    a = request.args.get('a', 0)
+
+    return jsonify({'success' : 1})
+
 @app.route('/get_recommendation')
 def get_recommendation():
     # get user intention

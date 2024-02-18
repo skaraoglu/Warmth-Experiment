@@ -3,13 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const atnStocksDiv = document.getElementById("atnStocks");
   const stockOptions = stocksDiv.querySelectorAll(".stock-option");
   const atnStockOptions = atnStocksDiv.querySelectorAll(".stock-option");
+  const completeDiv = document.getElementById("complete");
   const surveyDiv = document.getElementById("survey");
   const investButton = document.getElementById("investButton");
+  const surveyButton = document.getElementById("surveyButton");
   const progressDiv = document.getElementById("progress");
   const agentsDiv = document.getElementById("agents");
   const ar = agentsDiv.querySelectorAll(".agents-rec");
   const recommendationDiv = document.getElementById("recommendation-text");
   const recommendationContent = document.getElementById("recommendation-content");
+  const rewardDiv = document.getElementById("reward");
+  const proceedDiv = document.getElementById("proceed");
   let intendedOptionIndex = null;
   let selectedOptionIndex = null;
   let isAnimating = false; // Flag for animation state
@@ -34,10 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
   surveyAnswer.addEventListener('input', function() {
     if (surveyAnswer.value.trim() !== '') {
         // If the textarea is not empty, enable the button
-        completeButton.className = "button";
+        surveyButton.className = "button";
     } else {
         // If the textarea is empty, disable the button
-        completeButton.className = "inactive-button";
+        surveyButton.className = "inactive-button";
     }
   });
 
@@ -244,6 +248,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const rollingNumber = document.querySelector(".rolling-number");
   rollingNumber.textContent = "";
+  
+  surveyButton.addEventListener("click", () => {
+    let q = 0;
+    if (currentEpisode == 10) {q=1;}
+    else {q = 2;}
+    fetch(`/get_strategy?q=${q}&a=${surveyAnswer.value}`)
+      .then(response => response.json())
+      .then(data => {let suc = data.success;});
+
+    surveyDiv.style.display = "none";
+    surveyButton.style.display = "none";
+    stocksDiv.style.display = 'flex';
+    stocksDiv.style.pointerEvents = "auto";
+    rewardDiv.style.display = "block";
+    proceedDiv.style.display = "block";
+    surveyAnswer.innerHTML = "";
+  });
 
   investButton.addEventListener("click", () => {
     if (isAnimating) return; // Prevent interaction during animation
@@ -254,10 +275,10 @@ document.addEventListener("DOMContentLoaded", function () {
       atnStocksDiv.style.pointerEvents = "none";
       recommendationContent.innerHTML = '';
       recommendationDiv.style.display = 'none';
-      if (atnSelectedOptionIndex == 2 && currentEpisode == 10) {
+      if (atnSelectedOptionIndex == 2 && currentEpisode == 7) {
         atnCheck = true;
       }
-      if (atnSelectedOptionIndex == 4 && currentEpisode == 20) {
+      if (atnSelectedOptionIndex == 4 && currentEpisode == 16) {
         atnCheck = true;
       }
       fetch(`/attention_check?atn=${atnCheck}`)
@@ -282,7 +303,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
           totalReward += data.reward;
-          const rewardDiv = document.getElementById("reward");
           const rewardText = `Reward received: ${data.reward}`;
           expPostSel = data.expPostSel;
           // Update times invested and average reward values using data attributes
@@ -343,10 +363,20 @@ document.addEventListener("DOMContentLoaded", function () {
                       if (currentEpisode == 10 || currentEpisode == 20) {
                         stocksDiv.style.display = 'none';
                         stocksDiv.style.pointerEvents = "none";
+                        surveyDiv.style.display = "block";
+                        surveyAnswer.innerText = "";
+                        surveyButton.style.display = "inline";
+                        surveyButton.className = "inactive-button";
+                        rewardDiv.style.display = "none";
+                        proceedDiv.style.display = "none";
+                      }
+                      if (currentEpisode == 7 || currentEpisode == 16) {
+                        stocksDiv.style.display = 'none';
+                        stocksDiv.style.pointerEvents = "none";
                         atnStocksDiv.style.display = 'flex';
                         atnStocksDiv.style.pointerEvents = "auto";
                         atnStockOptions.forEach(opt => opt.classList.remove("selected")); 
-                        if (currentEpisode == 10){recommendationContent.innerHTML = "This is an attention check, please invest in DDG0.";}
+                        if (currentEpisode == 7){recommendationContent.innerHTML = "This is an attention check, please invest in DDG0.";}
                         else {recommendationContent.innerHTML = "This is an attention check, please invest in the 5th option.";}
                         recommendationDiv.style.display = "flex";
                         recommendationDiv.style.marginLeft = "0%";
@@ -384,7 +414,7 @@ document.addEventListener("DOMContentLoaded", function () {
         rewardDiv.innerHTML = "";
         rewardDiv.appendChild(rtitle);
         rewardDiv.appendChild(totalRewardFrame);
-        const completeDiv = document.getElementById("complete");
+        
         agentsDiv.style.display = "none";
         surveyDiv.style.display = "block";
         completeDiv.style.display = "block";
