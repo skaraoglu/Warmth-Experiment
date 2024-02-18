@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const progressDiv = document.getElementById("warmupprogress");
     const agentsDiv = document.getElementById("warmupagents");
     const ar = agentsDiv.querySelectorAll(".warmupagents-rec");
-    const recommendationDiv = document.getElementById("recommendation-text");
-    const recommendationContent = document.getElementById("recommendation-content");
     let intendedOptionIndex = null;
     let selectedOptionIndex = null;
     let isAnimating = false; // Flag for animation state
@@ -129,16 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
                       div.innerHTML = "";
                       div.appendChild(image);            
                      
-                      recommendationContent.innerHTML = expForRec;
-                      recommendationDiv.style.display = "flex";
-                      if (index === 0) {recommendationDiv.style.marginLeft = "-30%";}
-                      else if (index === 1) {recommendationDiv.style.marginLeft = "-25%";}
-                      else if (index === 2) {recommendationDiv.style.marginLeft = "-8.45%";}
-                      else if (index === 3) {recommendationDiv.style.marginLeft = "8.45%";}
-                      else if (index === 4) {recommendationDiv.style.marginLeft = "25%";}
-                      else if (index === 5) {recommendationDiv.style.marginLeft = "30%";}
                       stockOptions[index].style.backgroundColor = "#e6f4e6";
-                      //recommendationDiv.style.marginLeft = 
                       // Set the recommendationShown flag to true
                       recommendationShown = true;
                     } else if (index === agents - 1) {
@@ -148,8 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
                       image.classList.add("still");
                       div.innerHTML = "";
                       div.appendChild(image);
-                      const recommendationDiv = document.getElementById("recommendation-text");
-                      recommendationDiv.style.display = "none";
                       stockOptions[index].style.backgroundColor = "#e6f4e6";
                     } else {
                       div.innerHTML = "";
@@ -249,8 +236,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }                        
             // Update the reward value for the rolling numbers
             const rewardContainer = document.querySelector(".reward-container");
-            recommendationContent.innerHTML = expPostSel;
-            recommendationDiv.style.margin = "";
             // Toggle the rolling class on the reward frame
             const rewardFrame = document.querySelector(".reward-frame");
             rewardFrame.classList.add("rolling");
@@ -282,8 +267,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         const stockTitle = opt.querySelector(".stock-title");
                         optionLabel.style.color = "#222";
                         stockTitle.style.color = "#222";
-                        recommendationContent.innerHTML = "";
-                        recommendationDiv.style.display = "none";
                       });
                       isAnimating = false; // Reset animation flag
                     }, 3000);
@@ -299,7 +282,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       if (currentEpisode >= episodes) {
         investButton.style.display = "none";
-        recommendationDiv.style.display = 'none';
         setTimeout(function(){
           // Hide stock options and invest button
           const rtitle = document.getElementById("rtitle");

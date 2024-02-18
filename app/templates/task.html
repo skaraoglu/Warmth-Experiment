@@ -140,9 +140,8 @@
       <div id="episode"></div>
   </div>
   <div id="complete" style="display: none; text-align: center;">
-    <form action="{{ url_for('gamecomplete') }}">
-        <input type="hidden" name="task_type" value="task">
-        <button class="button" type="submit">Game Completed</button>
+    <form method="POST" action="/task/submit/">
+      <button class="button" type="submit">Complete Game</button>
     </form>
   </div>
   <div id="footer" style="height: 1px; margin-top:20px; background-color: #efefef;"></div>

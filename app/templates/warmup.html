@@ -95,7 +95,9 @@
       <div id="episode"></div>
   </div>
   <div id="complete" style="display: none; text-align: center;">
-      <a href="{{ url_for('experiment') }}" class="button" style="width: 200px;">Complete Warm-Up Game</a>
+    <form method="POST" action="/warmup/submit/">
+      <button class="button" type="submit">Complete Warmup Game</button>
+    </form>
   </div>
   <div id="footer" style="height: 1px; margin-top:20px; background-color: #efefef;"></div>
 </div>
