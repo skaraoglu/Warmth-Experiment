@@ -120,3 +120,5 @@ class agent_feedback:
         key = "#" + str(self.condition) + "#" + str(self.good_reward) + "#" + str(self.agreement)
         recommendation = random.choice(self.map_recommendation[key])
         return recommendation
+    
+    
