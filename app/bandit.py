@@ -102,7 +102,8 @@ class Bandit:
         # self.y[self.t] is Reward for time t (Current)
 
         # QUESTION: self.l -> Likelihood ?? (line 97)
-        agent = agent_recommender(self.condition, self.i[self.t], self.r[self.t], self.l)
+        # parameter: (condition, curr_intent, curr_recommend, likelihood, case)
+        agent = agent_recommender(self.condition, self.i[self.t], self.r[self.t], self.l, self.cases[self.t])
         return agent.get_recommendation()
 
     def getExplanationPostSelection(self):
