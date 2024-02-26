@@ -18,6 +18,12 @@ num_episodes = 30
 bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=1)
 bandit.reset()
 
+class atnCheck:
+    def __init__(self):
+        self.failed_attention_checks = 0
+
+atnChecks = atnCheck()
+
 @app.before_request
 def create_tables():
     db.create_all()
@@ -149,11 +155,11 @@ def demographics_survey_submit():
         demographics['education'] = request.form.get('q4')
         demographics['attention-check'] = request.form.get('q5')
         
-        failed_attention_checks = 0
+        
         if demographics['attention-check'] != '4' or demographics['attention-check'] != '5':
-            failed_attention_checks += 1
-        session['failed_attention_checks'] = failed_attention_checks
-        print("Failed attention checks: " + str(failed_attention_checks))
+            atnChecks.failed_attention_checks += 1
+        session['failed_attention_checks'] = atnChecks.failed_attention_checks
+        print("Failed attention checks: " + str(atnChecks.failed_attention_checks))
         
         # Save survey to database
         survey = Survey(
@@ -208,11 +214,10 @@ def survey_submit():
         evaluation['attention-check'] = request.form.get('q14')
         
         
-        failed_attention_checks = 0
         if evaluation['attention-check'] != '4' or evaluation['attention-check'] != '5':
-            failed_attention_checks += 1
-        session['failed_attention_checks'] = failed_attention_checks
-        print("Failed attention checks: " + str(failed_attention_checks))
+            atnChecks.failed_attention_checks += 1
+        session['failed_attention_checks'] = atnChecks.failed_attention_checks
+        print("Failed attention checks: " + str(atnChecks.failed_attention_checks))
         
         # Save survey to database
         survey = Survey(
@@ -421,7 +426,7 @@ def gamecomplete():
 def attention_check():
     atnCheck = request.args.get('atn')
     attentionChecks.append(atnCheck)
-    if (atnCheck == 'false') : failed_attention_checks += 1
+    if (atnCheck == 'false') : atnChecks.failed_attention_checks += 1
 
     return jsonify({'success' : 1})
 
@@ -462,9 +467,6 @@ def get_reward():
 
     bandit.t += 1
     bandit.updateLikelihood()
-
-    if(np.sum(bandit.x)==bandit.num_episodes):
-        bandit.reset()
 
     return jsonify({'reward': reward, 'banditY': bandit.y[selected_option], 'banditX': bandit.x[selected_option], 'expPostSel': expPostSel})
 
