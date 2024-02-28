@@ -85,6 +85,10 @@ class Bandit:
         
     def pull_arm(self, arm_index):
         reward = np.random.exponential(self.beta_vals[arm_index])
+        # Upper bound for reward: 3 * beta_vals[arm_index]
+        if reward > 3 * self.beta_vals[arm_index]:
+            # Reward is capped at 3 * beta_vals[arm_index] and a random value between 0 and 0.2 is subtracted for noise
+            reward = 3 * self.beta_vals[arm_index] - np.random.uniform(0, 0.2)
         return reward
     
     def reset(self):
