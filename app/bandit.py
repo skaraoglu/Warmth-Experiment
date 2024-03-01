@@ -38,19 +38,17 @@ class Bandit:
             self.cases[self.t] = 1
             return
         
-        # case 2a:
         arms_to_recommend = []
         for i in range(self.num_arms):
-            # If arm is never pulled and recommended once or less 
             if self.x[i] < 1 and np.count_nonzero(self.r[:self.t] == i) < 2:
                 arms_to_recommend.append(i)
 
         if arms_to_recommend:
             self.r[self.t] = random.choice(arms_to_recommend)
             self.cases[self.t] = 2
-            print("Case 2a")
             return 
         
+        '''
         # case 2b:
         arms_to_recommend = []
         for i in range(self.num_arms):
@@ -63,6 +61,7 @@ class Bandit:
             self.cases[self.t] = 2
             print("Case 2b")
             return 
+        '''
 
         # case 3: UCB
         min_weight = 0.5
@@ -89,6 +88,10 @@ class Bandit:
         if reward > 3 * self.beta_vals[arm_index]:
             # Reward is capped at 3 * beta_vals[arm_index] and a random value between 0 and 0.2 is subtracted for noise
             reward = 3 * self.beta_vals[arm_index] - np.random.uniform(0, 0.2)
+        # Lower bound for reward: 0.01
+        if reward < 0.01:
+            # Reward is capped at 0.01 and a random value between 0 and 0.2 is added for noise
+            reward = 0.01
         return reward
     
     def reset(self):
@@ -132,4 +135,12 @@ class Bandit:
                 return i + 1
         ucb_values = self.S + np.sqrt(2 * np.log(np.sum(self.F)) / (self.F))
         action = np.argmax(ucb_values) + 1
-        return action            
+        return action
+    
+    def calculateMoney(self):        
+        if np.sum(self.y) < np.median(self.beta_vals)*self.num_episodes:
+            return 0
+        elif np.sum(self.y) < np.max(self.beta_vals)*self.num_episodes:
+            return (np.sum(self.y) - (np.median(self.beta_vals)*self.num_episodes)) * 200 / self.num_episodes
+        else:
+            return 200

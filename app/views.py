@@ -468,7 +468,7 @@ def get_reward():
     bandit.t += 1
     bandit.updateLikelihood()
 
-    return jsonify({'reward': reward, 'banditY': bandit.y[selected_option], 'banditX': bandit.x[selected_option], 'expPostSel': expPostSel})
+    return jsonify({'reward': reward, 'banditY': bandit.y[selected_option], 'banditX': bandit.x[selected_option], 'expPostSel': expPostSel, 'money': bandit.calculateMoney()})
 
 
 

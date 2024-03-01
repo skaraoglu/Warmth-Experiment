@@ -291,6 +291,10 @@ document.addEventListener("DOMContentLoaded", function () {
           totalReward += data.reward;
           const rewardText = `Reward received: ${data.reward}`;
           expPostSel = data.expPostSel;
+          if (currentEpisode >= episodes) {
+            const realMoney = data.money;
+            console.log(realMoney);
+          }
           // Update times invested and average reward values using data attributes
           const selectedOption = stockOptions[selectedOptionIndex];
           const timesInvestedElement = selectedOption.querySelector(".times-invested");
