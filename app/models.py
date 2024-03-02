@@ -27,22 +27,13 @@ class Survey(db.Model):
     type = db.Column(db.String(20))
     data = db.Column(JSON)
     timestamp = db.Column(db.DateTime)  # Record when the survey was completed
-    
-class Day(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    mturk_id = db.Column(db.String(20), db.ForeignKey('user.mturk_id'))
-    day_number = db.Column(db.Integer) # 1, 2, or 3
-    agent_present = db.Column(db.Boolean, default=False)
-    task_selections = db.relationship('Task', backref='day', lazy=True) # selected tasks for the day, should be 5
-    completed = db.Column(db.Boolean, default=False)  # Mark day as completed
-    timestamp = db.Column(db.DateTime)  # Record when the day was completed
 
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     mturk_id = db.Column(db.String(20), db.ForeignKey('user.mturk_id'))
     task_type = db.Column(db.String(50))
-    day_id = db.Column(db.Integer, db.ForeignKey('day.id'))
     task_instance = db.Column(db.Integer)
+    data = db.Column(JSON)
     score = db.Column(db.Integer)  # Or a more appropriate data type
     completed = db.Column(db.Boolean, default=False)  # Mark task as completed
     timestamp = db.Column(db.DateTime)  # Record when the task was completed

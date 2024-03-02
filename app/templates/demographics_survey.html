@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <title>Task Preference Survey</title>
+    <title>Demographics Survey</title>
     <script>
         // Dynamically adjust the width of the radio buttons
         function adjustWidth() {
@@ -222,26 +222,35 @@
             <!-- Question 5: Attention Check -->
             <div class="task-group" id="q5">
                 <div class="question">
-                    <label class="question-label" for="q5">This question checks your attention. Please select "agree".</label>
+                    <label class="question-label" for="q5">
+                        Commitment of study engagement 
+                    </label>
+                    <p>
+                        It is vital to our study that we only include responses from people that devoted their full attention to this study. Otherwise, years of effort (the researchers' and the time of other participants) could be wasted. We can only select participants who would pay quite a bit or a lot of attention. 
+
+Please tell us how much attention you committed to putting forth towards this study? 
+
+I commit to put forth _____ attention towards this study.
+                    </p>
                     <div class="question-options">
                         <div class="options">
-                            <label class="option-label">Strongly disagree:</label>
+                            <label class="option-label">Almost no:</label>
                             <input type="radio" name="q5" value="1">
                         </div>
                         <div class="options">
-                            <label class="option-label">Disagree:</label>
+                            <label class="option-label">Very little of my:</label>
                             <input type="radio" name="q5" value="2">
                         </div>
                         <div class="options">
-                            <label class="option-label">Neutral:</label>
+                            <label class="option-label">Some of my:</label>
                             <input type="radio" name="q5" value="3">
                         </div>
                         <div class="options">
-                            <label class="option-label">Agree:</label>
+                            <label class="option-label">Quite a bit:</label>
                             <input type="radio" name="q5" value="4">
                         </div>
                         <div class="options">
-                            <label class="option-label">Strongly Agree:</label>
+                            <label class="option-label">A lot of:</label>
                             <input type="radio" name="q5" value="5">
                         </div>
                     </div>

@@ -2,11 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const stocksDiv = document.getElementById("stocks");
     const stockOptions = stocksDiv.querySelectorAll(".stock-option");
     const investButton = document.getElementById("investButton");
+    const surveyDiv = document.getElementById("survey");
     const progressDiv = document.getElementById("warmupprogress");
     const agentsDiv = document.getElementById("warmupagents");
     const ar = agentsDiv.querySelectorAll(".warmupagents-rec");
-    const recommendationDiv = document.getElementById("recommendation-text");
-    const recommendationContent = document.getElementById("recommendation-content");
     let intendedOptionIndex = null;
     let selectedOptionIndex = null;
     let isAnimating = false; // Flag for animation state
@@ -20,7 +19,19 @@ document.addEventListener("DOMContentLoaded", function () {
     let intention = -1;
     let isIntention = false;
     let recommendationShown = false; // Track if recommendation is shown
+    const completeButton = document.querySelector('#complete .button');
+    const surveyAnswer = document.getElementById('strategy');
   
+    surveyAnswer.addEventListener('input', function() {
+      if (surveyAnswer.value.trim() !== '') {
+          // If the textarea is not empty, enable the button
+          completeButton.className = "button";
+      } else {
+          // If the textarea is empty, disable the button
+          completeButton.className = "inactive-button";
+      }
+    });
+
     function setIntention(opt, i){
       intention = opt;
       isIntention = true;
@@ -28,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (o === opt){
         o.classList.add("intention");
         intendedOptionIndex = index;
-        console.log(intendedOptionIndex);
+        //(intendedOptionIndex);
       }})      
     }
   
@@ -96,16 +107,18 @@ document.addEventListener("DOMContentLoaded", function () {
               opt.classList.add("intention");
               
               intendedOptionIndex = index;
-              console.log("intention: " + intendedOptionIndex);
+              //console.log("intention: " + intendedOptionIndex);
   
               fetch(`/get_recommendation?intendedOption=${intendedOptionIndex}`)
                 .then(response => response.json())
                 .then(data=>{
                   agents = data.agents
-                  console.log("recommendation: " + agents)
+                  curCase = data.cases;
+                  expForRec = data.expForRec;
+                  //console.log("recommendation: " + agents)
                   ar.forEach((div, index) => {
                     stockOptions[index].style.backgroundColor = "#f0f0f0";
-                    console.log("agent: " + agents);
+                    //console.log("agent: " + agents);
                     if (index === agents - 1 && !recommendationShown) {
                       const image = document.createElement("img");
                       image.src = "../static/hand_50.png";
@@ -114,16 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
                       div.innerHTML = "";
                       div.appendChild(image);            
                      
-                      recommendationContent.innerHTML = "This is recommended";
-                      recommendationDiv.style.display = "flex";
-                      if (index === 0) {recommendationDiv.style.marginLeft = "-30%";}
-                      else if (index === 1) {recommendationDiv.style.marginLeft = "-25%";}
-                      else if (index === 2) {recommendationDiv.style.marginLeft = "-8.45%";}
-                      else if (index === 3) {recommendationDiv.style.marginLeft = "8.45%";}
-                      else if (index === 4) {recommendationDiv.style.marginLeft = "25%";}
-                      else if (index === 5) {recommendationDiv.style.marginLeft = "30%";}
                       stockOptions[index].style.backgroundColor = "#e6f4e6";
-                      //recommendationDiv.style.marginLeft = 
                       // Set the recommendationShown flag to true
                       recommendationShown = true;
                     } else if (index === agents - 1) {
@@ -133,8 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
                       image.classList.add("still");
                       div.innerHTML = "";
                       div.appendChild(image);
-                      const recommendationDiv = document.getElementById("recommendation-text");
-                      recommendationDiv.style.display = "none";
                       stockOptions[index].style.backgroundColor = "#e6f4e6";
                     } else {
                       div.innerHTML = "";
@@ -217,9 +219,9 @@ document.addEventListener("DOMContentLoaded", function () {
             totalReward += data.reward;
             const rewardDiv = document.getElementById("reward");
             const rewardText = `Reward received: ${data.reward}`;
-            
+            expPostSel = data.expPostSel;
             // agents = data.agents;
-            console.log(selectedOptionIndex);
+            //console.log(selectedOptionIndex);
             // Update times invested and average reward values using data attributes
             const selectedOption = stockOptions[selectedOptionIndex];
             const timesInvestedElement = selectedOption.querySelector(".times-invested");
@@ -234,7 +236,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }                        
             // Update the reward value for the rolling numbers
             const rewardContainer = document.querySelector(".reward-container");
-  
             // Toggle the rolling class on the reward frame
             const rewardFrame = document.querySelector(".reward-frame");
             rewardFrame.classList.add("rolling");
@@ -299,7 +300,11 @@ document.addEventListener("DOMContentLoaded", function () {
           rewardDiv.appendChild(rtitle);
           rewardDiv.appendChild(totalRewardFrame);
           const completeDiv = document.getElementById("complete");
-          completeDiv.style.display = "block";        
+          agentsDiv.style.display = "none";
+          surveyDiv.style.display = "block";
+          completeDiv.style.display = "block";
+          completeButton.className = "inactive-button";
+
   
           return;
         }, 2000);      

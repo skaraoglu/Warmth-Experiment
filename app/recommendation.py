@@ -3,14 +3,22 @@ import random
 class agent_recommender:    
 
     # condition: warm or cold agent
+<<<<<<< HEAD
     def __init__(self, condition, curr_intent, curr_recommend, likelihood, case):
         # Determine if it is exploration or not. 0 --> Exploration and 1 --> UCB
         self.case = case
+=======
+    def __init__(self, condition, curr_intent, curr_recommend, likelihood):
+
+>>>>>>> 2e2b052d6192efb320da82de3811c5a772bf045b
         self.curr_intent = curr_intent
         self.curr_recommend = curr_recommend
         # Checks to see if intention = recommendation
         self.agreement = 0
+<<<<<<< HEAD
        
+=======
+>>>>>>> 2e2b052d6192efb320da82de3811c5a772bf045b
         # Conditions: 1 = warm, 0 = cold
         self.condition = condition
         
@@ -19,7 +27,10 @@ class agent_recommender:
         # If likelihood is greater than 0.5, the value will be 1, otherwise 0.
         self.likelihood_key = -1       
         
+<<<<<<< HEAD
         # EXPLORATION =========================================================================
+=======
+>>>>>>> 2e2b052d6192efb320da82de3811c5a772bf045b
         # Warm: encouragment when I = R
         self.warm_encourage_equal = ["We’re on the same page!", "Seems like we agree!", "Great minds think alike!", "Glad we think the same!"]
         # Warm: Compliment for when I = R
@@ -29,6 +40,7 @@ class agent_recommender:
         # Warm: Agreement when I = R (Low level of Adoption)
         self.warm_low_equal = ["Your choice looks promising.", "Go ahead with your selection.", "This selection looks good.", "That looks like a good decision."]    
         # Warm: Agreement when I ≠ R (Low Level of Adoption)
+<<<<<<< HEAD
         self.warm_low_unequal = ["Choosing this option may benefit you in the long run.", "You could consider this option instead as it could get you a higher reward.", "This choice may give us a better outcome, as it has been good before."]
         # Warm: Agreement when I ≠ R (High Level of Adoption)
         self.warm_high_unequal = ["How about this choice since it may be promising?", "How about choosing this selection since it could lead us to success?", "Would you like to consider this option instead as it could be better?"]
@@ -96,6 +108,36 @@ class agent_recommender:
         # Exploration has "#" at the beginning.
         # UCB has 0 or 1 at the beginning.
         self.map_recommendation = {"#1#0#1":(self.warm_encourage_equal, self.warm_low_equal), "1#0#1":(self.warm_encourage_equal_UCB, self.warm_low_equal_UCB), "#1#1#1":(self.warm_compliment_equal, self.warm_high_equal), "1#1#1":(self.warm_compliment_equal_UCB, self.warm_high_equal_UCB), "#1#0#0":(self.warm_encourage_unequal, self.warm_low_unequal), "1#0#0":(self.warm_encourage_unequal_UCB, self.warm_low_unequal_UCB), "#1#1#0":(self.warm_compliment_unequal, self.warm_high_unequal), "1#1#0":(self.warm_compliment_unequal_UCB, self.warm_high_unequal_UCB), "#0#0#1":(self.cold_encourage_equal, self.cold_low_equal), "0#0#1":(self.cold_encourage_equal_UCB, self.cold_low_equal_UCB), "#0#0#0":(self.cold_encourage_unequal, self.cold_low_unequal), "0#0#0":(self.cold_encourage_unequal_UCB, self.cold_low_unequal_UCB), "#0#1#1":(self.cold_compliment_equal, self.cold_high_equal), "0#1#1":(self.cold_compliment_equal_UCB, self.cold_high_equal_UCB), "#0#1#0":(self.cold_compliment_unequal, self.cold_high_unequal), "0#1#0":(self.cold_compliment_unequal_UCB, self.cold_high_unequal_UCB)}
+=======
+        self.warm_low_unequal = ["Choosing this option may benefit you in the long run."]
+        # Warm: Agreement when I ≠ R (High Level of Adoption)
+        self.warm_high_unequal = ["How about this choice since it may be promising?"]
+        # Warm: encouragement when I ≠ R
+        self.warm_encourage_unequal = ["We can do this together."]
+        # Warm: compliment when I ≠ R
+        self.warm_compliment_unequal = ["Love your efforts!"]
+        
+        # Cold: Agreement when I = R (High Level of Adoption)
+        self.cold_compliment_equal = ["A decent choice.", "Not bad."]
+        # Cold: Agreement when I = R (Low Level of Adoption)
+        self.cold_encourage_equal = ["Agreed."]
+        # Cold: Suggestion when I != R (High Level of Adoption)
+        self.cold_compliment_unequal = ["The progress so far is commendable.", "I am happy with the teamwork.", "I see good progress so far."]
+        # Cold: Suggestion when I != R (Low Level of Adoption)
+        self.cold_encourage_unequal = ["There may be a better choice.", "I believe cooperation is a better strategy.", "I recommend working with me on this."]
+        # Cold: 2nd Sentence Agreement when I = R (High Level of Adoption)
+        self.cold_high_equal = ["I concur."]
+        # Cold: 2nd Sentence Suggestion when I != R (High Level of Adoption)
+        self.cold_high_unequal = ["Having considered through the options, I suggest selecting this option."]
+        # Cold: 2nd Sentence Agreement when I = R (Low Level of Adoption)
+        self.cold_low_equal = ["I believe your choice for this instance is plausible."]
+        # Cold: 2nd Sentence Suggestion when I != R (Low Level of Adoption)
+        self.cold_low_unequal = ["If this option is not selected, it may obtain a suboptimal outcome."]
+
+        # Contains both warm and cold sentences
+        ## "#warm_or_cold#likelihood_key#agreement"
+        self.map_recommendation = {"#1#0#1":(self.warm_encourage_equal, self.warm_low_equal), "#1#1#1":(self.warm_compliment_equal, self.warm_high_equal), "#1#0#0":(self.warm_encourage_unequal, self.warm_low_unequal), "#1#1#0":(self.warm_compliment_unequal, self.warm_high_unequal), "#0#0#1":(self.cold_encourage_equal, self.cold_low_equal), "#0#0#0":(self.cold_encourage_unequal, self.cold_low_unequal), "#0#1#1":(self.cold_compliment_equal, self.cold_high_equal), "#0#1#0":(self.cold_compliment_unequal, self.cold_high_unequal)}
+>>>>>>> 2e2b052d6192efb320da82de3811c5a772bf045b
     # Choose randomly from the sentence to construct a sentence. 
     def form_recommendation(self, first_list:list, second_list:list):
         first_sent = random.choice(first_list)
@@ -104,7 +146,10 @@ class agent_recommender:
     
     # Set values for likelihood key and agreement
     def set_values(self):
+<<<<<<< HEAD
         
+=======
+>>>>>>> 2e2b052d6192efb320da82de3811c5a772bf045b
         if self.likelihood > 0.5:
             self.likelihood_key = 1
         else:
@@ -117,12 +162,17 @@ class agent_recommender:
     
     # Recommendation
     def get_recommendation(self):
+<<<<<<< HEAD
         self.set_values()
         if (self.case == 1):   
             key = "#" + str(self.condition) + "#" + str(self.likelihood_key) + "#" + str(self.agreement)
         else:
             key = str(self.condition) + "#" + str(self.likelihood_key) + "#" + str(self.agreement)
             
+=======
+        self.set_values()    
+        key = "#" + str(self.condition) + "#" + str(self.likelihood_key) + "#" + str(self.agreement)
+>>>>>>> 2e2b052d6192efb320da82de3811c5a772bf045b
         recommendation = self.form_recommendation(self.map_recommendation[key][0], self.map_recommendation[key][1])
         return recommendation
         
@@ -141,7 +191,11 @@ class agent_feedback:
         # Warm: Good reward, disagreement
         self.warm_good_disagree = ["Nice! Let's keep working together.", "Awesome! We should keep cooperating."]
         # Warm: Bad reward, agreement
+<<<<<<< HEAD
         self.warm_bad_agree = ["Bad luck happens. Let's continue!", "Oh, how unlucky! We can always learn.", "Mistakes happen. We can improve together."]
+=======
+        self.warm_bad_agree = ["Bad luck happens. Let's continue!", "Oh, how unlucky! We should keep going."]
+>>>>>>> 2e2b052d6192efb320da82de3811c5a772bf045b
         # Warm: Bad reward, disagreement
         self.warm_bad_disagree = ["That's unfortunate. We should work together!", "Oh no! Cooperation is the best way for us."]      
         # Cold: Good reward, agreement
@@ -164,8 +218,15 @@ class agent_feedback:
     # Post-Recommendation
     def get_feedback(self):
         self.set_values()
+<<<<<<< HEAD
         key = "#" + str(self.condition) + "#" + str(self.good_reward) + "#" + str(self.agreement)
         recommendation = random.choice(self.map_recommendation[key])
         return recommendation
     
     
+=======
+        # print(self.condition)
+        key = "#" + str(self.condition) + "#" + str(self.good_reward) + "#" + str(self.agreement)
+        recommendation = random.choice(self.map_recommendation[key])
+        return recommendation
+>>>>>>> 2e2b052d6192efb320da82de3811c5a772bf045b

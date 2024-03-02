@@ -177,6 +177,12 @@ form {
   align-items: center;
   padding: 10px 20px 20px 20px;
 }
+#atnStocks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 20px 20px;
+}
 .stock-option {
   width: calc(16.666%);
   background-color: #f0f0f0;

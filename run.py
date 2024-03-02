@@ -1,6 +1,6 @@
 import os
 from app import app, db
-from app.models import User, Survey, Day, Task
+from app.models import User, Survey, Task
 from datetime import datetime, timedelta
 import random
 

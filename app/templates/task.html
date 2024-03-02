@@ -2,6 +2,53 @@
 {% block title %}Investment Game{% endblock %}
 {% block content %}
 <script src="{{ url_for('static', filename='game.js') }}"></script>
+<style>
+  .question {
+      margin: 0; /* Increase margin to add more space between questions */
+      text-align: left; /* Align the question text to the left */
+  }
+
+  .question-label {
+      font-size: 15pt;
+      margin-top: 0px;
+      font-weight: bold; /* Make the question label bold */
+  }
+
+  .question-options {
+      display: flex;
+      align-items: center; /* Center align options horizontally */
+      margin: 10px;
+      text-align: center; /* Center-align options */
+  }
+  
+  .options {
+      display: flex;
+      flex-direction: column; /* Display label and input vertically */
+      margin-right: 20px; /* Add space between options */
+      width: 20%;
+      max-height: 75px;
+      justify-content: end;
+      
+  }
+  
+  .option-label {
+      text-align: center;
+      margin-bottom: 5px;
+  }
+
+  .text-box {
+      width: 100%; /* Make text boxes take full width */
+      padding: 5px;
+  }
+
+
+  .task-group {
+      border: 2px solid #aaf; /* Frame border */
+      border-radius: 10px;
+      padding: 10px; /* Add padding for spacing */
+      margin-bottom: 20px; /* Add margin to separate question groups */
+  }
+</style>
 <div id="container" style="width: 100%; align-self: center; padding: 0px;">
   <div id="header" style="width: 100%; padding: 10px;">
     <div id="gametitle" style="width: 98%; text-align: center;">
@@ -19,7 +66,7 @@
     <div id="agents">
       <div id="recommendation-text">
         <img src="../static/agent.png" class="agent-avatar" alt="Agent Avatar">
-        <div id="recommendation-content">
+        <div id="recommendation-content" style="margin-right: 10px;">
           <!-- Your recommendation text goes here -->
           This is the recommendation text.
         </div>
@@ -75,26 +122,85 @@
       <div class="info" id="stock-option-5-F">Times Invested: <span class="times-invested">0</span></div>
       <div class="info" id="stock-option-5-S">Average Reward: <span class="average-reward">0</span></div>
     </div>
-    </div>
-    <div id="reward" style="text-align: center; height: 160px;">
-      <span id="rtitle" style="height: 12px; color: #000; font-size: 16pt; font-weight: bold;">Episode Reward</span>
-      <div class="reward-frame">
-        <div class="reward-container">
-          <span class="rolling-number">0</span>
-        </div>
+  </div>
+
+  <div id="atnStocks" style="margin-top: 0px; display: none; text-align: center;">
+    <div class="task-group" id="q1">
+      <div class="question">
+          <label class="question-label" for="q1">Which of the following is related to the topic of this survey?</label>
+          <div class="question-options">
+              <div class="options">
+                  <label class="option-label">Archeology</label>
+                  <input type="radio" name="q1" value="Archeology">
+              </div>
+              <div class="options">
+                  <label class="option-label">Investment</label>
+                  <input type="radio" name="q1" value="Investment">
+              </div>
+              <div class="options">
+                  <label class="option-label">Politics</label>
+                  <input type="radio" name="q1" value="Politics">
+              </div>
+              <div class="options">
+                  <label class="option-label">History</label>
+                  <input type="radio" name="q1" value="History">
+              </div>
+          </div>
       </div>
     </div>
-    <div id="proceed" style="text-align: center;">
-        <button id="investButton" style="width: 160px;" class="button">Select Stock</button>
-        <div id="reward"></div>
-        <div id="episode"></div>
+    <div class="task-group" id="q2">
+      <div class="question">
+          <label class="question-label" for="q2">What is the current year?</label>
+          <div class="question-options">
+              <div class="options">
+                  <label class="option-label">2021</label>
+                  <input type="radio" name="q2" value="2021">
+              </div>
+              <div class="options">
+                  <label class="option-label">2022</label>
+                  <input type="radio" name="q2" value="2022">
+              </div>
+              <div class="options">
+                  <label class="option-label">2023</label>
+                  <input type="radio" name="q2" value="2023">
+              </div>
+              <div class="options">
+                  <label class="option-label">2024</label>
+                  <input type="radio" name="q2" value="2024">
+              </div>
+          </div>
+      </div>
     </div>
-    <div id="complete" style="display: none; text-align: center;">
-      <form action="{{ url_for('gamecomplete') }}">
-          <input type="hidden" name="task_type" value="task">
-          <button class="button" type="submit">Game Completed</button>
-      </form>
+    <br/>
+    <div id="atnButton" style="text-align: center; width: 100%;">
+      <button id="atnButton" style="width: 160px;" class="button">Submit Answer</button>
     </div>
-    <div id="footer" style="height: 1px; margin-top:20px; background-color: #efefef;"></div>
+  </div>
+  <div id="survey" style="margin-left:0%; align-content:center; text-align:center; display: none;">
+    <h2>Game strategy survey</h2><br>
+    <p>Can you explain your strategy briefly (with 2 or 3 sentences)?</p><br>
+    <textarea id="strategy" name="strategy" rows="4" cols="50"></textarea>
+    <br>
+    <button id="surveyButton" style="width: 160px; display: none;" class="button">Submit Answer</button>
+  </div>  
+  <div id="reward" style="text-align: center; height: 160px;">
+    <span id="rtitle" style="height: 12px; color: #000; font-size: 16pt; font-weight: bold;">Episode Reward</span>
+    <div class="reward-frame">
+      <div class="reward-container">
+        <span class="rolling-number">0</span>
+      </div>
+    </div>
+  </div>
+  <div id="proceed" style="text-align: center;">
+      <button id="investButton" style="width: 160px;" class="button">Select Stock</button>
+      <div id="reward"></div>
+      <div id="episode"></div>
+  </div>
+  <div id="complete" style="display: none; text-align: center;">
+    <form method="POST" action="/task/submit/">
+      <button class="button" type="submit">Complete Game</button>
+    </form>
+  </div>
+  <div id="footer" style="height: 1px; margin-top:20px; background-color: #efefef;"></div>
 </div>
 {% endblock %}

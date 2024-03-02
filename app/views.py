@@ -7,15 +7,26 @@ from flask import (
 from flask_login import login_user, logout_user, current_user, login_required
 from app import app, db, lm, bandit
 from app.forms import LoginForm
-from app.models import Survey, User, TaskCompletion
+from app.models import Survey, User, TaskCompletion, Task
 from datetime import datetime, timedelta
 import numpy as np
 
+attentionChecks = []
 _beta = [0.9, 0.85, 0.75, 0.8, 0.3, 0.2]
 num_arms = 6  # Number of stock options
 num_episodes = 30
-bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta)
+bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=1)
 bandit.reset()
+
+class atnCheck:
+    def __init__(self):
+        self.failed_attention_checks = 0
+
+atnChecks = atnCheck()
+
+@app.before_request
+def create_tables():
+    db.create_all()
 
 #Loads the user object from the database
 @lm.user_loader
@@ -126,13 +137,14 @@ def demographics_survey():
     
 @app.route('/demographics_survey/submit/', methods=['POST'])
 def demographics_survey_submit():
+    print("Demographics survey submit")
     if not current_user.is_authenticated or not session.get('consent'):
         return redirect(url_for('clear_session_and_logout'))
     
     # Check if the form was already submitted
     #if Survey.query.filter_by(mturk_id=session['mturk_id'], type='demographics').first():
         #return redirect(url_for('clear_session_and_logout'))
-    """
+    
     if request.method == 'POST':
         
         # Get data from the form as a dictionary
@@ -143,11 +155,11 @@ def demographics_survey_submit():
         demographics['education'] = request.form.get('q4')
         demographics['attention-check'] = request.form.get('q5')
         
-        failed_attention_checks = 0
-        if demographics['attention-check'] != '4':
-            failed_attention_checks += 1
-        session['failed_attention_checks'] = failed_attention_checks
-        print("Failed attention checks: " + str(failed_attention_checks))
+        
+        if demographics['attention-check'] != '4' or demographics['attention-check'] != '5':
+            atnChecks.failed_attention_checks += 1
+        session['failed_attention_checks'] = atnChecks.failed_attention_checks
+        print("Failed attention checks: " + str(atnChecks.failed_attention_checks))
         
         # Save survey to database
         survey = Survey(
@@ -156,13 +168,70 @@ def demographics_survey_submit():
             data = demographics,
             timestamp = datetime.now()
         )
+        
         db.session.add(survey)
         db.session.commit()
       
-        return redirect(url_for('experiment'))
-        """
     return redirect(url_for('experiment'))
 
+@app.route('/survey/', methods=['GET', 'POST'])
+def survey():
+    if not current_user.is_authenticated or not session.get('consent'):
+        return redirect(url_for('clear_session_and_logout'))
+    #elif Survey.query.filter_by(mturk_id=session['mturk_id'], type='demographics').first():
+        #return redirect(url_for('clear_session_and_logout'))
+    else:
+        session['survey_page_loaded'] = True
+        return render_template('survey.html')
+    
+@app.route('/survey/submit/', methods=['POST'])
+def survey_submit():
+    print("survey submit")
+    if not current_user.is_authenticated or not session.get('consent'):
+        return redirect(url_for('clear_session_and_logout'))
+    
+    # Check if the form was already submitted
+    #if Survey.query.filter_by(mturk_id=session['mturk_id'], type='demographics').first():
+        #return redirect(url_for('clear_session_and_logout'))
+    
+    if request.method == 'POST':
+        
+        # Get data from the form as a dictionary
+        evaluation = {}
+        evaluation['consistency_1'] = request.form.get('q1')
+        evaluation['perceived_usefulness_1'] = request.form.get('q2')
+        evaluation['perceived_usefulness_2'] = request.form.get('q3')
+        evaluation['perceived_usefulness_3'] = request.form.get('q4')
+        evaluation['satisfaction_1'] = request.form.get('q5')
+        evaluation['satisfaction_2'] = request.form.get('q6')
+        evaluation['satisfaction_3'] = request.form.get('q7')
+        evaluation['warmth_1'] = request.form.get('q8')
+        evaluation['warmth_2'] = request.form.get('q9')
+        evaluation['warmth_3'] = request.form.get('q10')
+        evaluation['warmth_4'] = request.form.get('q11')
+        evaluation['warmth_5'] = request.form.get('q12')
+        evaluation['consistency_2'] = request.form.get('q13')
+        evaluation['attention-check'] = request.form.get('q14')
+        
+        
+        if evaluation['attention-check'] != '4' or evaluation['attention-check'] != '5':
+            atnChecks.failed_attention_checks += 1
+        session['failed_attention_checks'] = atnChecks.failed_attention_checks
+        print("Failed attention checks: " + str(atnChecks.failed_attention_checks))
+        
+        # Save survey to database
+        survey = Survey(
+            mturk_id = session['mturk_id'],
+            type = 'evaluation',
+            data = evaluation,
+            timestamp = datetime.now()
+        )
+        
+        db.session.add(survey)
+        db.session.commit()
+      
+    return redirect(url_for('experiment'))
+    
 @app.route('/experiment/')
 @login_required
 def experiment():
@@ -237,13 +306,52 @@ def warmup():
 
     mturk_id = session.get('mturk_id')
 
-    warmup_completion = TaskCompletion.query.filter_by(user_id=current_user.mturk_id, task_type='warmup').first()
-    if not warmup_completion:
-        warmup_completion = TaskCompletion(user_id=mturk_id, task_type='warmup')
-        db.session.add(warmup_completion)
+    return render_template('warmup.html', mturk_id=mturk_id)
+
+@app.route('/warmup/submit/', methods=['POST'])
+@login_required
+def warmupcomplete():
+    print("warmup submit")
+    if not current_user.is_authenticated or not session.get('consent'):
+        return redirect(url_for('clear_session_and_logout'))
+    
+    # Check if the form was already submitted
+    #if Survey.query.filter_by(mturk_id=session['mturk_id'], type='demographics').first():
+        #return redirect(url_for('clear_session_and_logout'))
+    
+    if request.method == 'POST':
+    
+        bandit.reset()
+
+        mturk_id = session.get('mturk_id')
+
+        warmup_completion = TaskCompletion.query.filter_by(user_id=current_user.mturk_id, task_type='warmup').first()
+        if not warmup_completion:
+            warmup_completion = TaskCompletion(user_id=mturk_id, task_type='warmup')
+            db.session.add(warmup_completion)
+            db.session.commit()
+        
+        warmup_results = {}
+        warmup_results['intentions'] = bandit.i.tolist()
+        warmup_results['recommendations'] = bandit.r.tolist()
+        warmup_results['selections'] = bandit.s.tolist()
+        warmup_results['rewards'] = bandit.rewardPerRound.tolist()
+        warmup_results['strategy'] = request.form.get('strategy')
+
+        warmup = Task(
+            mturk_id = mturk_id,
+            task_type = 'warmup',
+            task_instance = 1,
+            data = warmup_results,
+            score = sum(bandit.rewardPerRound),
+            completed = True,
+            timestamp = datetime.now()        
+        )
+
+        db.session.add(warmup)
         db.session.commit()
 
-    return render_template('warmup.html', mturk_id=mturk_id)
+    return redirect(url_for('experiment'))
 
 @app.route('/task/')
 @login_required
@@ -263,11 +371,71 @@ def task():
     mturk_id = session.get('mturk_id')
     return render_template('task.html', mturk_id=mturk_id)
 
+@app.route('/task/submit/', methods=['POST'])
+@login_required
+def taskcomplete():
+    print("task submit")
+    if not current_user.is_authenticated or not session.get('consent'):
+        return redirect(url_for('clear_session_and_logout'))
+    
+    # Check if the form was already submitted
+    #if Survey.query.filter_by(mturk_id=session['mturk_id'], type='demographics').first():
+        #return redirect(url_for('clear_session_and_logout'))
+    
+    if request.method == 'POST':
+    
+        bandit.reset()
+
+        mturk_id = session.get('mturk_id')
+
+        task_completion = TaskCompletion.query.filter_by(user_id=current_user.mturk_id, task_type='task').first()
+        if not task_completion:
+            task_completion = TaskCompletion(user_id=mturk_id, task_type='task')
+            db.session.add(task_completion)
+            db.session.commit()
+        
+        task_results = {}
+        task_results['intentions'] = bandit.i.tolist()
+        task_results['recommendations'] = bandit.r.tolist()
+        task_results['selections'] = bandit.s.tolist()
+        task_results['rewards'] = bandit.rewardPerRound.tolist()
+        #task_results['strategy'] = request.form.get('strategy')
+
+        task = Task(
+            mturk_id = mturk_id,
+            task_type = 'task',
+            task_instance = 1,
+            data = task_results,
+            score = sum(bandit.rewardPerRound),
+            completed = True,
+            timestamp = datetime.now()        
+        )
+
+        db.session.add(task)
+        db.session.commit()
+
+    return redirect(url_for('survey'))
+
 @app.route('/gamecomplete/')
 @login_required
 def gamecomplete():
     mturk_id = session.get('mturk_id')
     return render_template('gamecomplete.html', mturk_id=mturk_id)
+
+@app.route('/attention_check')
+def attention_check():
+    atnCheck = request.args.get('atn')
+    attentionChecks.append(atnCheck)
+    if (atnCheck == 'false') : atnChecks.failed_attention_checks += 1
+
+    return jsonify({'success' : 1})
+
+@app.route('/get_strategy')
+def get_strategy():
+    q = request.args.get('q', 0)
+    a = request.args.get('a', 0)
+
+    return jsonify({'success' : 1})
 
 @app.route('/get_recommendation')
 def get_recommendation():
@@ -277,8 +445,10 @@ def get_recommendation():
     bandit.i[bandit.t] = int(user_curr_intention) 
     # get recommendation
     bandit.recommend_arm()
+    # get explanation for recommendation
+    expForRec = bandit.getExplanation4Recommendation()
     
-    return jsonify({'agents' : bandit.r[bandit.t] + 1, 'cases' : bandit.cases[bandit.t]});
+    return jsonify({'agents' : bandit.r[bandit.t] + 1, 'cases' : bandit.cases[bandit.t], 'expForRec': expForRec})
 
 @app.route('/get_reward')
 def get_reward():
@@ -288,16 +458,17 @@ def get_reward():
     reward = bandit.pull_arm(selected_option)
 
     # Update bandit
+    bandit.rewardPerRound[bandit.t] = reward;
     bandit.s[bandit.t] = selected_option 
     bandit.y[selected_option] += reward
     bandit.x[selected_option] += 1
+    
+    expPostSel = bandit.getExplanationPostSelection()
+
     bandit.t += 1
     bandit.updateLikelihood()
 
-    if(np.sum(bandit.x)==bandit.num_episodes):
-        bandit.reset()
-
-    return jsonify({'reward': reward, 'banditY': bandit.y[selected_option], 'banditX': bandit.x[selected_option]})
+    return jsonify({'reward': reward, 'banditY': bandit.y[selected_option], 'banditX': bandit.x[selected_option], 'expPostSel': expPostSel, 'money': bandit.calculateMoney()})
 
 
 
