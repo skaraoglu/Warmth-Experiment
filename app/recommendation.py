@@ -57,17 +57,17 @@ class agent_recommender:
         
         # EXPLORATION =====================================================================
         # Warm: encouragment when I = R
-        self.warm_encourage_equal = ["We’re on the same page!", "Seems like we agree!", "Great minds think alike!", "Glad we think the same!"]
+        self.warm_encourage_equal = ["We’re on the same page!", "Seems like we agree with exploring this one!", "Great minds think alike!", "Glad we think the same!"]
         # Warm: Compliment for when I = R
         self.warm_compliment_equal = ["Nice choice!", "Clever selection!", "Good decision!"]
         # Warm: Agreement when I = R (High Level of Adoption)
         self.warm_high_equal = ["Exploring this choice is promising.😊", " I completely agree.", "Exploring this choice should pay off."]
         # Warm: Agreement when I = R (Low level of Adoption)
-        self.warm_low_equal = ["Your choice looks promising.", "Go ahead with your selection.", "Exploring this selection is good.", "Exploring this choice is an ideal decision."]    
+        self.warm_low_equal = ["Checking out this choice looks promising.", "Go ahead with your selection.", "Exploring this selection is good.", "Exploring this choice is an ideal decision."]    
         # Warm: Agreement when I ≠ R (Low Level of Adoption)
         self.warm_low_unequal = ["Exploring this option may benefit you in the long run.", "You could consider exploring this option instead as it could get you a higher reward.",  "You could consider this option instead, as it could help you explore your options.", "This choice may give us a better outome, as it hasn't been explored yet."]
         # Warm: Agreement when I ≠ R (High Level of Adoption)
-        self.warm_high_unequal = ["How about this choice since it may be promising?", "How about choosing this selection since it could lead us to success?", "Would you like to consider this option instead as it could be better?"]
+        self.warm_high_unequal = ["How about exploring choice since it may be promising?", "How about checking out this selection since it could lead us to success?", "Would you like to explore this option instead as it could be better?"]
         # Warm: encouragement when I ≠ R
         self.warm_encourage_unequal = ["We can do this together.", "We are better together", "Let's do this together."]
         # Warm: compliment when I ≠ R
