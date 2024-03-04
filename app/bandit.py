@@ -144,10 +144,15 @@ class Bandit:
         action = np.argmax(ucb_values) + 1
         return action
     
-    def calculateMoney(self):        
-        if np.sum(self.y) < np.median(self.beta_vals)*self.num_episodes:
-            return 20
-        elif np.sum(self.y) < max(self.beta_vals)*self.num_episodes:
-            return np.round(np.sum(self.y) - (np.median(self.beta_vals)*self.num_episodes) * 200 / self.num_episodes, 2 )
+    def calculateMoney(self):       
+        upper = max(self.beta_vals)*self.num_episodes
+        lower = np.average(self.beta_vals)*self.num_episodes
+        score = np.sum(self.y)
+
+        print(((score - lower) / (upper - lower)) * 2)
+        if score < lower:
+            return 0
+        elif score < upper:
+            return ((score - lower) / (upper - lower)) * 2
         else:
-            return 200
+            return 2

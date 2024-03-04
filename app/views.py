@@ -464,10 +464,10 @@ def taskcomplete():
 @login_required
 def gamecomplete():
     mturk_id = session.get('mturk_id')
-    money = bandit.calculateMoney()/100
+    money = bandit.calculateMoney()
     log_experiment(f'{current_user.mturk_id} is on game complete page. Step: gamecomplete.')
     log_experiment('Money earned: ' + str(money))
-    bandit.reset()
+    #bandit.reset()
 
     return render_template('gamecomplete.html', mturk_id=mturk_id, money_earned=money)  
 
