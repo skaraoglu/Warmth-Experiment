@@ -146,8 +146,8 @@ class Bandit:
     
     def calculateMoney(self):        
         if np.sum(self.y) < np.median(self.beta_vals)*self.num_episodes:
-            return 0
-        elif np.sum(self.y) < np.max(self.beta_vals)*self.num_episodes:
-            return (np.sum(self.y) - (np.median(self.beta_vals)*self.num_episodes)) * 200 / self.num_episodes
+            return 20
+        elif np.sum(self.y) < max(self.beta_vals)*self.num_episodes:
+            return np.round(np.sum(self.y) - (np.median(self.beta_vals)*self.num_episodes) * 200 / self.num_episodes, 2 )
         else:
             return 200

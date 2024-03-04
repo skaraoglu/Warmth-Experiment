@@ -15,6 +15,7 @@ attentionChecks = []
 _beta = [0.9, 0.85, 0.75, 0.8, 0.3, 0.2]
 num_arms = 6  # Number of stock options
 num_episodes = 30
+money = 0
 bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=1)
 bandit.reset()
 
@@ -253,7 +254,7 @@ def survey_submit():
         log_experiment(f'{current_user.mturk_id} has submitted survey.')
         log_experiment('Evaluation: ' + str(evaluation))
       
-    return redirect(url_for('experiment'))
+    return redirect(url_for('gamecomplete'))
     
 @app.route('/experiment/')
 @login_required
@@ -426,6 +427,8 @@ def taskcomplete():
     if request.method == 'POST':
         mturk_id = session.get('mturk_id')
 
+        money = bandit.calculateMoney()
+
         task_completion = TaskCompletion.query.filter_by(user_id=current_user.mturk_id, task_type='task').first()
         if not task_completion:
             task_completion = TaskCompletion(user_id=mturk_id, task_type='task')
@@ -437,6 +440,7 @@ def taskcomplete():
         task_results['recommendations'] = bandit.r.tolist()
         task_results['selections'] = bandit.s.tolist()
         task_results['rewards'] = bandit.rewardPerRound.tolist()
+        task_results['money'] = money
         #task_results['strategy'] = request.form.get('strategy')
 
         task = Task(
@@ -454,16 +458,18 @@ def taskcomplete():
         log_experiment(f'{current_user.mturk_id} has submitted task. Step: taskcomplete.')
         log_experiment('Task: ' + str(task_results))
 
-        bandit.reset()
-
     return redirect(url_for('survey'))
 
 @app.route('/gamecomplete/')
 @login_required
 def gamecomplete():
     mturk_id = session.get('mturk_id')
-    log_experiment(f'{current_user.mturk_id} is on gamecomplete page. Step: gamecomplete.')
-    return render_template('gamecomplete.html', mturk_id=mturk_id)
+    money = bandit.calculateMoney()/100
+    log_experiment(f'{current_user.mturk_id} is on game complete page. Step: gamecomplete.')
+    log_experiment('Money earned: ' + str(money))
+    bandit.reset()
+
+    return render_template('gamecomplete.html', mturk_id=mturk_id, money_earned=money)  
 
 @app.route('/attention_check')
 def attention_check():
