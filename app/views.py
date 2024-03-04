@@ -22,6 +22,12 @@ class atnCheck:
     def __init__(self):
         self.failed_attention_checks = 0
 
+def log_experiment(message):
+    filename = f'experiment_{current_user.mturk_id}.txt'
+    timestamp = datetime.now().strftime('%m-%d %H:%M:%S')
+    with open(filename, 'a', encoding='utf-8') as f:
+        f.write(f'{message} - {timestamp}\n')
+
 atnChecks = atnCheck()
 
 @app.before_request
@@ -71,6 +77,7 @@ def index():
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
+        log_experiment(f'{current_user.mturk_id} is authenticated.')
         return redirect(url_for('experiment'))
 
     form = LoginForm()
@@ -85,7 +92,7 @@ def login():
 
             login_user(new_user)
             flash('Login successful! You are now registered in the system.')
-
+            log_experiment(f'{mturk_id} is registered in the system.')
             session['mturk_id'] = mturk_id
             session['login_completed'] = True
             session['login_time'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -94,8 +101,10 @@ def login():
             return redirect(url_for('consent'))
         else:
             if user.experiment_completed:
+                log_experiment(f'{mturk_id} has already completed the experiment.')
                 flash('Error! You have already completed the experiment.')
             else:
+                log_experiment(f'{mturk_id} is already registered in the system.')
                 flash('Error! MTurk ID already used. Contact the researchers if you believe this to be in error.')
             return redirect(url_for('login'))
 
@@ -104,6 +113,7 @@ def login():
 @app.route('/consent/', methods=['GET', 'POST'])
 def consent():
     if not current_user.is_authenticated or session.get('consent') == True:
+        log_experiment(f'{current_user.mturk_id} is not authenticated or consent already given. Step: consent.')
         clear_session_and_logout()
 
     return render_template('consent.html')
@@ -111,6 +121,7 @@ def consent():
 @app.route('/consent/submit/', methods=['POST'])
 def consent_submit():
     if not current_user.is_authenticated or session.get('consent') == True:
+        log_experiment(f'{current_user.mturk_id} is not authenticated or consent already given. Step: consent_submit.')
         print("Not authenticated or consent already given")
         return redirect(url_for('login'))
 
@@ -119,26 +130,31 @@ def consent_submit():
             current_user.consent = True
             session['consent'] = True
             db.session.commit()
+            log_experiment(f'{current_user.mturk_id} is given consent.')
                             
             return redirect(url_for('demographics_survey'))
         else:
             print("Consent not given")
+            log_experiment(f'{current_user.mturk_id} is not given consent.')
             return clear_session_and_logout()
         
 @app.route('/demographics_survey/', methods=['GET', 'POST'])
 def demographics_survey():
     if not current_user.is_authenticated or not session.get('consent'):
+        log_experiment(f'{current_user.mturk_id} is not authenticated or consent not given. Step: demographics_survey.')
         return redirect(url_for('clear_session_and_logout'))
     #elif Survey.query.filter_by(mturk_id=session['mturk_id'], type='demographics').first():
         #return redirect(url_for('clear_session_and_logout'))
     else:
         session['survey_page_loaded'] = True
+        log_experiment(f'{current_user.mturk_id} is on demographics survey page.')
         return render_template('demographics_survey.html')
     
 @app.route('/demographics_survey/submit/', methods=['POST'])
 def demographics_survey_submit():
     print("Demographics survey submit")
     if not current_user.is_authenticated or not session.get('consent'):
+        log_experiment(f'{current_user.mturk_id} is not authenticated or consent not given. Step: demographics_survey_submit.')
         return redirect(url_for('clear_session_and_logout'))
     
     # Check if the form was already submitted
@@ -171,23 +187,28 @@ def demographics_survey_submit():
         
         db.session.add(survey)
         db.session.commit()
+        log_experiment(f'{current_user.mturk_id} has submitted demographics survey.')
+        log_experiment('Demographics: ' + str(demographics))
       
     return redirect(url_for('experiment'))
 
 @app.route('/survey/', methods=['GET', 'POST'])
 def survey():
     if not current_user.is_authenticated or not session.get('consent'):
+        log_experiment(f'{current_user.mturk_id} is not authenticated or consent not given. Step: survey.')
         return redirect(url_for('clear_session_and_logout'))
     #elif Survey.query.filter_by(mturk_id=session['mturk_id'], type='demographics').first():
         #return redirect(url_for('clear_session_and_logout'))
     else:
         session['survey_page_loaded'] = True
+        log_experiment(f'{current_user.mturk_id} is on survey page.')
         return render_template('survey.html')
     
 @app.route('/survey/submit/', methods=['POST'])
 def survey_submit():
     print("survey submit")
     if not current_user.is_authenticated or not session.get('consent'):
+        log_experiment(f'{current_user.mturk_id} is not authenticated or consent not given. Step: survey_submit.')
         return redirect(url_for('clear_session_and_logout'))
     
     # Check if the form was already submitted
@@ -229,6 +250,8 @@ def survey_submit():
         
         db.session.add(survey)
         db.session.commit()
+        log_experiment(f'{current_user.mturk_id} has submitted survey.')
+        log_experiment('Evaluation: ' + str(evaluation))
       
     return redirect(url_for('experiment'))
     
@@ -237,10 +260,12 @@ def survey_submit():
 def experiment():
     if not current_user.is_authenticated:
         print("User not authenticated.")
+        log_experiment(f'{current_user.mturk_id} is not authenticated. Step: experiment.')
         return redirect(url_for('login'))
 
     if session.get('exp_page_loaded'):
         print("User is reloading experiment page.")
+        log_experiment(f'{current_user.mturk_id} is reloading experiment page.')
         return redirect(url_for('clear_session_and_logout'))
 
     session['task_started'] = False
@@ -250,6 +275,7 @@ def experiment():
     w_c = is_task_completed('warmup')
 
     mturk_id = session.get('mturk_id')
+    log_experiment(f'{current_user.mturk_id} is on experiment page. Tutorial completed: {t_c}, Warmup completed: {w_c}. Step: experiment.')
 
     return render_template('experiment.html', mturk_id=mturk_id, tutorial_completed=t_c, warmup_completed=w_c)
 
@@ -267,6 +293,7 @@ def tutorial():
 
     if not current_user.is_authenticated:
         print("User not authenticated.")
+        log_experiment(f'{current_user.mturk_id} is not authenticated. Step: tutorial.')
         return redirect(url_for('login'))
 
     mturk_id = session.get('mturk_id')
@@ -278,15 +305,16 @@ def tutorial():
         db.session.add(tutorial_completion)
         db.session.commit()
 
+    log_experiment(f'{current_user.mturk_id} is on tutorial page. Step: tutorial.')
+
     return render_template('tutorial.html', mturk_id=mturk_id)
 
 @app.route('/warmup/')
 @login_required
 def warmup():
-    session['exp_page_loaded'] = False
-
     if session.get('warmup_loaded'):
         print("User is reloading warmup page.")
+        log_experiment(f'{current_user.mturk_id} is reloading warmup page. Step: warmup.')
         return redirect(url_for('clear_session_and_logout'))
 
     #Get the warmup start time
@@ -294,6 +322,7 @@ def warmup():
 
     # Set experiment length
     bandit.num_episodes = 10
+    bandit.reset()
     if not current_user.is_authenticated:
         print("User not authenticated.")
         return redirect(url_for('login'))
@@ -302,9 +331,8 @@ def warmup():
     print("Setting experiment page loaded.")
     session['warmup_loaded'] = True
 
-    bandit.reset()
-
     mturk_id = session.get('mturk_id')
+    log_experiment(f'{current_user.mturk_id} is on warmup page. Step: warmup.')
 
     return render_template('warmup.html', mturk_id=mturk_id)
 
@@ -313,16 +341,15 @@ def warmup():
 def warmupcomplete():
     print("warmup submit")
     if not current_user.is_authenticated or not session.get('consent'):
+        log_experiment(f'{current_user.mturk_id} is not authenticated or consent not given. Step: warmupcomplete.')
         return redirect(url_for('clear_session_and_logout'))
     
     # Check if the form was already submitted
-    #if Survey.query.filter_by(mturk_id=session['mturk_id'], type='demographics').first():
-        #return redirect(url_for('clear_session_and_logout'))
+    if is_task_completed('warmup'):
+        log_experiment(f'{current_user.mturk_id} has already submitted warmup. Step: warmupcomplete.')
+        return redirect(url_for('clear_session_and_logout'))
     
     if request.method == 'POST':
-    
-        bandit.reset()
-
         mturk_id = session.get('mturk_id')
 
         warmup_completion = TaskCompletion.query.filter_by(user_id=current_user.mturk_id, task_type='warmup').first()
@@ -350,42 +377,53 @@ def warmupcomplete():
 
         db.session.add(warmup)
         db.session.commit()
+        log_experiment(f'{current_user.mturk_id} has submitted warmup. Step: warmupcomplete.')
+        log_experiment('Warmup: ' + str(warmup_results))
+
+        bandit.reset()
+
+    session['exp_page_loaded'] = False
 
     return redirect(url_for('experiment'))
 
 @app.route('/task/')
 @login_required
 def task():
-    # Set experiment length
+    # Set experiment length    
     bandit.num_episodes = 30
+    bandit.reset()
     if not current_user.is_authenticated:
         print("User not authenticated.")
+        log_experiment(f'{current_user.mturk_id} is not authenticated. Step: task.')
         return redirect(url_for('login'))
+    
+    if session.get('task_page_loaded'):
+        print("User is reloading experiment page.")
+        log_experiment(f'{current_user.mturk_id} is reloading experiment page. Step: task.')
+        return redirect(url_for('clear_session_and_logout'))
 
     session['task_started'] = True
     print("Setting experiment page loaded.")
     session['task_page_loaded'] = True
 
-    bandit.reset()
-
     mturk_id = session.get('mturk_id')
+    log_experiment(f'{current_user.mturk_id} is on task page. Step: task.')
+
     return render_template('task.html', mturk_id=mturk_id)
 
 @app.route('/task/submit/', methods=['POST'])
 @login_required
 def taskcomplete():
-    print("task submit")
     if not current_user.is_authenticated or not session.get('consent'):
+        log_experiment(f'{current_user.mturk_id} is not authenticated or consent not given. Step: taskcomplete.')
         return redirect(url_for('clear_session_and_logout'))
     
     # Check if the form was already submitted
-    #if Survey.query.filter_by(mturk_id=session['mturk_id'], type='demographics').first():
-        #return redirect(url_for('clear_session_and_logout'))
+    if is_task_completed('task'):
+        log_experiment(f'{current_user.mturk_id} has already submitted task. Step: taskcomplete.')
+        return redirect(url_for('clear_session_and_logout'))
     
     if request.method == 'POST':
-    
-        bandit.reset()
-
         mturk_id = session.get('mturk_id')
 
         task_completion = TaskCompletion.query.filter_by(user_id=current_user.mturk_id, task_type='task').first()
@@ -413,6 +451,10 @@ def taskcomplete():
 
         db.session.add(task)
         db.session.commit()
+        log_experiment(f'{current_user.mturk_id} has submitted task. Step: taskcomplete.')
+        log_experiment('Task: ' + str(task_results))
+
+        bandit.reset()
 
     return redirect(url_for('survey'))
 
@@ -420,6 +462,7 @@ def taskcomplete():
 @login_required
 def gamecomplete():
     mturk_id = session.get('mturk_id')
+    log_experiment(f'{current_user.mturk_id} is on gamecomplete page. Step: gamecomplete.')
     return render_template('gamecomplete.html', mturk_id=mturk_id)
 
 @app.route('/attention_check')
@@ -427,6 +470,7 @@ def attention_check():
     atnCheck = request.args.get('atn')
     attentionChecks.append(atnCheck)
     if (atnCheck == 'false') : atnChecks.failed_attention_checks += 1
+    log_experiment(f'Attention check: {atnCheck}')
 
     return jsonify({'success' : 1})
 
@@ -434,6 +478,7 @@ def attention_check():
 def get_strategy():
     q = request.args.get('q', 0)
     a = request.args.get('a', 0)
+    log_experiment(f'Strategy: {q} - {a}')
 
     return jsonify({'success' : 1})
 
@@ -447,6 +492,7 @@ def get_recommendation():
     bandit.recommend_arm()
     # get explanation for recommendation
     expForRec = bandit.getExplanation4Recommendation()
+    log_experiment(f'Step: {bandit.t}, Intention: {bandit.i[bandit.t]}, Recommendation: {bandit.r[bandit.t]}, Explanation for Recommendation: {expForRec}')
     
     return jsonify({'agents' : bandit.r[bandit.t] + 1, 'cases' : bandit.cases[bandit.t], 'expForRec': expForRec})
 
@@ -465,8 +511,9 @@ def get_reward():
     
     expPostSel = bandit.getExplanationPostSelection()
 
-    bandit.t += 1
     bandit.updateLikelihood()
+    log_experiment(f'Step: {bandit.t}, Selection: {bandit.s[bandit.t]}, Reward: {reward}, Likelihood: {bandit.l[bandit.t]}, Explanation Post Selection: {expPostSel}')
+    bandit.t += 1
 
     return jsonify({'reward': reward, 'banditY': bandit.y[selected_option], 'banditX': bandit.x[selected_option], 'expPostSel': expPostSel, 'money': bandit.calculateMoney()})
 

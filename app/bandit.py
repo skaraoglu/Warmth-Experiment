@@ -9,7 +9,7 @@ from app.recommendation import agent_recommender, agent_feedback
 class Bandit:
 
     def __init__(self, num_arms, num_episodes, condition, beta_vals=None):
-        np.random.seed(seed=62)
+        #np.random.seed(seed=62)
         self.num_arms = num_arms
         self.num_episodes = num_episodes
         if beta_vals is None:

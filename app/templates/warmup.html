@@ -79,7 +79,12 @@
   <div id="survey" style="margin-left:0%; align-content:center; text-align:center; display: none;">
     <h2>Warmup game strategy survey</h2><br>
     <p>Please explain your strategy briefly with 2 or 3 sentences.</p><br>
-    <textarea id="strategy" name="strategy" rows="4" cols="50"></textarea>
+    <form method="POST" action="/warmup/submit/">
+      <textarea id="strategy" name="strategy" rows="4" cols="50"></textarea>
+      <div id="complete" style="display: none; text-align: center;">
+         <button class="button" type="submit">Complete Warmup Game</button>
+      </div>
+    </form>
   </div>  
   <div id="reward" style="text-align: center; height: 160px;">
     <span id="rtitle" style="height: 12px; color: #000; font-size: 16pt; font-weight: bold;">Episode Reward</span>
@@ -94,11 +99,7 @@
       <div id="reward"></div>
       <div id="episode"></div>
   </div>
-  <div id="complete" style="display: none; text-align: center;">
-    <form method="POST" action="/warmup/submit/">
-      <button class="button" type="submit">Complete Warmup Game</button>
-    </form>
-  </div>
+  
   <div id="footer" style="height: 1px; margin-top:20px; background-color: #efefef;"></div>
 </div>
 {% endblock %}

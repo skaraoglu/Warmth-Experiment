@@ -131,7 +131,7 @@ form {
 #recommendation-text {
   position: absolute;
   width: 400px;
-  height: 120px;
+  height: 160px;
   background: radial-gradient(circle, #fff, #efe);
   text-align: left;
   display: none;
@@ -161,13 +161,13 @@ form {
   padding: 20px;
   text-align: center;
   vertical-align: bottom;
-  height: 100px;
+  height: 160px;
 }
 .agents-rec {
   width: calc(16.666%);
   background-color: transparent;
   height: 50px;
-  padding-top: 100px;
+  padding-top: 160px;
   position: relative; /* Position relative for absolute positioning */
   z-index: 2;
 }

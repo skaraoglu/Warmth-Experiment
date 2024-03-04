@@ -21,7 +21,7 @@ class agent_recommender:
         
         # UCB =========================================================================
         # Warm: encouragment when I = R
-        self.warm_encourage_equal_UCB = ["We’re on the same page!", "Seems like we agree!", "Great minds think alike!", "Glad we think the same!"]
+        self.warm_encourage_equal_UCB = ["We're on the same page!", "Seems like we agree!", "Great minds think alike!", "Glad we think the same!"]
         # Warm: Compliment for when I = R
         self.warm_compliment_equal_UCB = ["Nice choice!", "Clever selection!", "Good decision!"]
         # Warm: Agreement when I = R (High Level of Adoption)
@@ -57,7 +57,7 @@ class agent_recommender:
         
         # EXPLORATION =====================================================================
         # Warm: encouragment when I = R
-        self.warm_encourage_equal = ["We’re on the same page!", "Seems like we agree with exploring this one!", "Great minds think alike!", "Glad we think the same!"]
+        self.warm_encourage_equal = ["We're on the same page!", "Seems like we agree with exploring this one!", "Great minds think alike!", "Glad we think the same!"]
         # Warm: Compliment for when I = R
         self.warm_compliment_equal = ["Nice choice!", "Clever selection!", "Good decision!"]
         # Warm: Agreement when I = R (High Level of Adoption)
@@ -69,7 +69,7 @@ class agent_recommender:
         # Warm: Agreement when I ≠ R (High Level of Adoption)
         self.warm_high_unequal = ["How about exploring choice since it may be promising?", "How about checking out this selection since it could lead us to success?", "Would you like to explore this option instead as it could be better?"]
         # Warm: encouragement when I ≠ R
-        self.warm_encourage_unequal = ["We can do this together.", "We are better together", "Let's do this together."]
+        self.warm_encourage_unequal = ["We can do this together.", "We are better together.", "Let's do this together."]
         # Warm: compliment when I ≠ R
         self.warm_compliment_unequal = ["Love your efforts!", "Your efforts are commendable.", "Nice decision!"]
         
