@@ -153,6 +153,6 @@ class Bandit:
         if score < lower:
             return 0
         elif score < upper:
-            return ((score - lower) / (upper - lower)) * 2
+            return np.round(((score - lower) / (upper - lower)) * 2, 2)
         else:
             return 2
