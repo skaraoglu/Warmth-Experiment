@@ -1,9 +1,6 @@
 import numpy as np
 import random
 import math
-from scipy.optimize import fsolve
-from scipy.integrate import quad
-from scipy.stats import expon
 from app.recommendation import agent_recommender, agent_feedback
 
 class Bandit:
@@ -35,6 +32,21 @@ class Bandit:
     
     def recommend_arm(self):
         self.r[self.t] = 0
+        if (self.x[int(self.i[self.t])] < 1):
+            self.r[self.t] = self.i[self.t]
+            self.cases[self.t] = 1
+            return
+        
+        arms_to_recommend = []
+        for i in range(self.num_arms):
+            if self.x[i] < 1 and np.count_nonzero(self.r[:self.t] == i) < 2:
+                arms_to_recommend.append(i)
+
+        if arms_to_recommend:
+            self.r[self.t] = random.choice(arms_to_recommend)
+            self.cases[self.t] = 2
+            return 
+        '''
         # case 1:
         if (self.x[int(self.i[self.t])] < 1 and np.count_nonzero(self.r[:self.t] == int(self.i[self.t])) == 0):
             self.r[self.t] = self.i[self.t]
@@ -51,7 +63,7 @@ class Bandit:
             self.cases[self.t] = 2
             return 
         
-        '''
+        
         # case 2b:
         arms_to_recommend = []
         for i in range(self.num_arms):
@@ -65,7 +77,7 @@ class Bandit:
             print("Case 2b")
             return 
         '''
-
+        arms_to_recommend = []
         # case 3: UCB
         min_weight = 0.5
         max_weight = 0.9
@@ -73,17 +85,26 @@ class Bandit:
 
         max_value = 0.0
         max_arm = 0
+        ucb_values = np.zeros(self.num_arms)
         for i in range(self.num_arms):
             i_value = weight * (self.y[i] / (self.x[i] if self.x[i] != 0 else 0.1))
             i_value += (1 - weight) * math.sqrt(self.num_episodes / (self.x[i] if self.x[i] != 0 else 0.1))
 
+            ucb_values[i] = i_value
             if max_value < i_value:
                 max_value = i_value
                 max_arm = i
-            
-        self.cases[self.t] = 3
-        self.r[self.t] = max_arm
-        return
+        
+        arms_to_recommend = [i for i in range(self.num_arms) if ucb_values[i] == max_value]
+
+        if arms_to_recommend:
+            self.r[self.t] = random.choice(arms_to_recommend)
+            self.cases[self.t] = 3
+            return
+        else:
+            self.cases[self.t] = 3
+            self.r[self.t] = max_arm
+            return
         
     def pull_arm(self, arm_index):
         reward = np.random.exponential(self.beta_vals[arm_index])
@@ -149,10 +170,10 @@ class Bandit:
         lower = np.average(self.beta_vals)*self.num_episodes
         score = np.sum(self.y)
 
-        print(((score - lower) / (upper - lower)) * 2)
+        print(((score - lower) / (upper - lower)) )
         if score < lower:
             return 0
         elif score < upper:
-            return np.round(((score - lower) / (upper - lower)) * 2, 2)
+            return np.round(((score - lower) / (upper - lower)), 2)
         else:
-            return 2
+            return 1

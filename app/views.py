@@ -16,7 +16,10 @@ _beta = [0.9, 0.85, 0.75, 0.8, 0.3, 0.2]
 num_arms = 6  # Number of stock options
 num_episodes = 30
 money = 0
-bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=1)
+coldCondition = 0
+warmCondition = 1
+noExpCondition = 2
+bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=warmCondition)
 bandit.reset()
 
 class atnCheck:
@@ -323,6 +326,8 @@ def warmup():
 
     # Set experiment length
     bandit.num_episodes = 10
+    warmup_beta = [0.75, 0.8, 0.2, 0.85, 0.3, 0.9]
+    bandit.beta_vals = warmup_beta
     bandit.reset()
     if not current_user.is_authenticated:
         print("User not authenticated.")
@@ -392,6 +397,7 @@ def warmupcomplete():
 def task():
     # Set experiment length    
     bandit.num_episodes = 30
+    bandit.beta_vals = _beta
     bandit.reset()
     if not current_user.is_authenticated:
         print("User not authenticated.")
@@ -465,11 +471,42 @@ def taskcomplete():
 def gamecomplete():
     mturk_id = session.get('mturk_id')
     money = bandit.calculateMoney()
+    rewardC = rewardCode()
     log_experiment(f'{current_user.mturk_id} is on game complete page. Step: gamecomplete.')
+    log_experiment('Reward code: ' + str(rewardC))
     log_experiment('Money earned: ' + str(money))
     #bandit.reset()
 
-    return render_template('gamecomplete.html', mturk_id=mturk_id, money_earned=money)  
+    return render_template('gamecomplete.html', mturk_id=mturk_id, money_earned=money, rewardC=rewardC)
+
+@app.route('/gamecomplete/submit/', methods=['POST'])
+@login_required
+def expcomplete():
+    if not current_user.is_authenticated or not session.get('consent'):
+        log_experiment(f'{current_user.mturk_id} is not authenticated or consent not given. Step: taskcomplete.')
+        return redirect(url_for('clear_session_and_logout'))
+    
+    if request.method == 'POST':
+        
+        feedback = {}
+        feedback['feedback'] = request.form.get('feedback')        
+        # Save survey to database
+        survey = Survey(
+            mturk_id = session['mturk_id'],
+            type = 'feedback',
+            data = feedback,
+            timestamp = datetime.now()
+        )
+        
+        db.session.add(survey)
+        db.session.commit()
+        log_experiment(f'{current_user.mturk_id} has submitted feedback survey.')
+        log_experiment('Feedback: ' + str(feedback))
+     
+    return render_template('thankyou.html')
+
+def rewardCode():
+    return ''.join(random.choice('1234567890') for i in range(10))
 
 @app.route('/attention_check')
 def attention_check():

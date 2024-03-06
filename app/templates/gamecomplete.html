@@ -1,6 +1,41 @@
 {% extends 'base.html' %}
-{% block title %}First Game{% endblock %}
+{% block title %}Game Completed{% endblock %}
 {% block content %}
-Game Complete. Reward Code: #########
-<label for="rewardCode">Your extra earnings: {{ money_earned }}$</label>
+<script>
+    function copyToClipboard(elementId) {
+        var copyText = document.getElementById(elementId);
+        var textArea = document.createElement("textarea");
+        textArea.value = copyText.textContent;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("Copy");
+        textArea.remove();
+    }
+</script>
+<div style="text-align: center;">
+    <h2>Congratulations, you completed the experiment.</h2>
+</div>
+
+<div style="text-align: center; margin-top: 20px;">
+    <div style="display: inline-block; padding: 10px; border: 1px solid #000; border-radius: 15px; font-size: 20px;" onclick="copyToClipboard('rewardC')">
+        Reward Code: <span id="rewardC" style="font-weight: bold; font-size:26px; color:#44ff55">{{ rewardC }}</span>
+        <button style="border: none; background: none;" onclick="copyToClipboard('rewardC')">
+            <img src="../static/copy_icon.png" alt="Copy to clipboard" width="20" height="26">
+        </button>
+    </div>
+</div>
+
+<div style="text-align: center; margin-top: 20px;">
+    <label for="rewardCode">Your extra earnings: ${{ money_earned }}</label>
+</div>
+
+<div id="survey" style="margin-left:0%; align-content:center; text-align:center; display: block;">
+    <p>We value your feedback! If you'd like, please share your thoughts about the experiment.</p><br>
+    <form method="POST" action="/gamecomplete/submit/">
+        <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>
+        <div id="complete" style="display: block; text-align: center;">
+            <button class="button" type="submit">Submit Feedback</button>
+        </div>
+    </form>
+</div>
 {% endblock %}

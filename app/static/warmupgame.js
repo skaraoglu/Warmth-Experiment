@@ -95,9 +95,10 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isAnimating) return; // Prevent interaction during animation
       const clickedOption = event.target.closest(".stock-option");
       if (!clickedOption) return;
-      stocksDiv.style.pointerEvents = "none";
+      //stocksDiv.style.pointerEvents = "none";
       if (intention == -1){
         isAnimating = true;
+        stocksDiv.style.pointerEvents = "none";
         setIntention(clickedOption);        
         setTimeout(() => {        
           stockOptions.forEach((opt, index) => {
@@ -121,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     //console.log("agent: " + agents);
                     if (index === agents - 1 && !recommendationShown) {
                       const image = document.createElement("img");
-                      image.src = "../static/hand_50.png";
+                      image.src = "../static/hand_100.png";
                       image.classList.remove("still");
                       image.classList.add("slide-down");
                       div.innerHTML = "";
