@@ -141,9 +141,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isAnimating) return; // Prevent interaction during animation
     const clickedOption = event.target.closest(".stock-option");
     if (!clickedOption) return;
-    stocksDiv.style.pointerEvents = "none";
+    //stocksDiv.style.pointerEvents = "none";
     if (intention == -1){
       isAnimating = true;
+      stocksDiv.style.pointerEvents = "none";
       setIntention(clickedOption);        
       setTimeout(() => {        
         stockOptions.forEach((opt, index) => {

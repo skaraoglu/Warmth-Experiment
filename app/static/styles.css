@@ -90,7 +90,7 @@ form {
   border-radius: 4px;
   font-size: 20px;
   text-decoration: none;
-  color: #44ff55;
+  color: #f4f4ff;
   display: inline-block;
 }
 
@@ -124,7 +124,7 @@ form {
   width: calc(16.666%);
   background-color: transparent;
   height: 50px;
-  padding-top: 100px;
+  padding-top: 0px;
   position: relative; /* Position relative for absolute positioning */
   z-index: 2;
 }
