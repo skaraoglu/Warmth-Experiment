@@ -469,6 +469,13 @@ def taskcomplete():
 @app.route('/gamecomplete/')
 @login_required
 def gamecomplete():
+    session['endgame_loaded'] = True
+    if session.get('endgame_loaded'):
+        print("User is reloading endgame page.")
+        log_experiment(f'{current_user.mturk_id} is reloading endgame page.')
+        return redirect(url_for('clear_session_and_logout'))
+    
+    print(session.get('endgame_loaded'))
     mturk_id = session.get('mturk_id')
     money = bandit.calculateMoney()
     rewardC = rewardCode()
@@ -484,6 +491,11 @@ def gamecomplete():
 def expcomplete():
     if not current_user.is_authenticated or not session.get('consent'):
         log_experiment(f'{current_user.mturk_id} is not authenticated or consent not given. Step: taskcomplete.')
+        return redirect(url_for('clear_session_and_logout'))
+    
+    if session.get('endgame_loaded'):
+        print("User is reloading endgame page.")
+        log_experiment(f'{current_user.mturk_id} is reloading endgame page.')
         return redirect(url_for('clear_session_and_logout'))
     
     if request.method == 'POST':
