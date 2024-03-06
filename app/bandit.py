@@ -133,7 +133,7 @@ class Bandit:
         # self.y[self.t] is Reward for time t (Current)
 
         # (self, condition, curr_selection, curr_recommend, curr_reward, avg_reward)
-        agent = agent_feedback(self.condition, self.s[self.t], self.r[self.t], self.rewardPerRound[self.t], sum(self.y) / sum(self.x))
+        agent = agent_feedback(self.condition, self.s[self.t], self.r[self.t], self.rewardPerRound[self.t], sum(self.y) / sum(self.x), self.cases[self.t])
         return agent.get_feedback()  
 
     def UCB(self):
