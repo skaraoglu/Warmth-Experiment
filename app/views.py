@@ -135,7 +135,7 @@ def login():
 
 @app.route('/consent/', methods=['GET', 'POST'])
 def consent():
-    if not current_user.is_authenticated or session.get('consent') == True:
+    if not current_user.is_authenticated:
         log_experiment(f'{current_user.mturk_id} is not authenticated or consent already given. Step: consent.')
         clear_session_and_logout()
 
@@ -143,7 +143,7 @@ def consent():
 
 @app.route('/consent/submit/', methods=['POST'])
 def consent_submit():
-    if not current_user.is_authenticated or session.get('consent') == True:
+    if not current_user.is_authenticated:
         log_experiment(f'{current_user.mturk_id} is not authenticated or consent already given. Step: consent_submit.')
         print("Not authenticated or consent already given")
         return redirect(url_for('login'))
@@ -163,7 +163,7 @@ def consent_submit():
         
 @app.route('/demographics_survey/', methods=['GET', 'POST'])
 def demographics_survey():
-    if not current_user.is_authenticated or not session.get('consent'):
+    if not current_user.is_authenticated:
         log_experiment(f'{current_user.mturk_id} is not authenticated or consent not given. Step: demographics_survey.')
         return redirect(url_for('clear_session_and_logout'))
     #elif Survey.query.filter_by(mturk_id=session['mturk_id'], type='demographics').first():
@@ -176,7 +176,7 @@ def demographics_survey():
 @app.route('/demographics_survey/submit/', methods=['POST'])
 def demographics_survey_submit():
     print("Demographics survey submit")
-    if not current_user.is_authenticated or not session.get('consent'):
+    if not current_user.is_authenticated:
         log_experiment(f'{current_user.mturk_id} is not authenticated or consent not given. Step: demographics_survey_submit.')
         return redirect(url_for('clear_session_and_logout'))
     
@@ -217,7 +217,7 @@ def demographics_survey_submit():
 
 @app.route('/survey/', methods=['GET', 'POST'])
 def survey():
-    if not current_user.is_authenticated or not session.get('consent'):
+    if not current_user.is_authenticated:
         log_experiment(f'{current_user.mturk_id} is not authenticated or consent not given. Step: survey.')
         return redirect(url_for('clear_session_and_logout'))
     #elif Survey.query.filter_by(mturk_id=session['mturk_id'], type='demographics').first():
@@ -230,7 +230,7 @@ def survey():
 @app.route('/survey/submit/', methods=['POST'])
 def survey_submit():
     print("survey submit")
-    if not current_user.is_authenticated or not session.get('consent'):
+    if not current_user.is_authenticated:
         log_experiment(f'{current_user.mturk_id} is not authenticated or consent not given. Step: survey_submit.')
         return redirect(url_for('clear_session_and_logout'))
     
@@ -366,7 +366,7 @@ def warmup():
 @login_required
 def warmupcomplete():
     print("warmup submit")
-    if not current_user.is_authenticated or not session.get('consent'):
+    if not current_user.is_authenticated:
         log_experiment(f'{current_user.mturk_id} is not authenticated or consent not given. Step: warmupcomplete.')
         return redirect(url_for('clear_session_and_logout'))
     
@@ -441,7 +441,7 @@ def task():
 @app.route('/task/submit/', methods=['POST'])
 @login_required
 def taskcomplete():
-    if not current_user.is_authenticated or not session.get('consent'):
+    if not current_user.is_authenticated:
         log_experiment(f'{current_user.mturk_id} is not authenticated or consent not given. Step: taskcomplete.')
         return redirect(url_for('clear_session_and_logout'))
     
@@ -489,11 +489,7 @@ def taskcomplete():
 @app.route('/gamecomplete/')
 @login_required
 def gamecomplete():
-    session['endgame_loaded'] = True
-    if session.get('endgame_loaded'):
-        print("User is reloading endgame page.")
-        log_experiment(f'{current_user.mturk_id} is reloading endgame page.')
-        return redirect(url_for('clear_session_and_logout'))
+    
     
     print(session.get('endgame_loaded'))
     mturk_id = session.get('mturk_id')
@@ -509,13 +505,8 @@ def gamecomplete():
 @app.route('/gamecomplete/submit/', methods=['POST'])
 @login_required
 def expcomplete():
-    if not current_user.is_authenticated or not session.get('consent'):
+    if not current_user.is_authenticated:
         log_experiment(f'{current_user.mturk_id} is not authenticated or consent not given. Step: taskcomplete.')
-        return redirect(url_for('clear_session_and_logout'))
-    
-    if session.get('endgame_loaded'):
-        print("User is reloading endgame page.")
-        log_experiment(f'{current_user.mturk_id} is reloading endgame page.')
         return redirect(url_for('clear_session_and_logout'))
     
     if request.method == 'POST':
