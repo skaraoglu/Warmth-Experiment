@@ -11,6 +11,25 @@ from app.models import Survey, User, TaskCompletion, Task
 from datetime import datetime, timedelta
 import numpy as np
 
+'''SELECT INTERVENTION CONDITION'''
+'''NONE = 0, LOW = 1, HIGH = 2
+users0 = User.query.filter_by(intervention_condition=0, experiment_completed=True).filter(User.mturk_id.like('A%')).all()
+users1 = User.query.filter_by(intervention_condition=1, experiment_completed=True).filter(User.mturk_id.like('A%')).all()
+users2 = User.query.filter_by(intervention_condition=2, experiment_completed=True).filter(User.mturk_id.like('A%')).all()
+# Select the intervention condition with the fewest users
+min_users = min(len(users0), len(users1), len(users2))
+if len(users0) == min_users:
+    session['intervention_condition'] = 0
+elif len(users1) == min_users:
+    session['intervention_condition'] = 1
+elif len(users2) == min_users:
+    session['intervention_condition'] = 2
+    
+# Add to user model
+user = User.query.filter_by(mturk_id=session['mturk_id']).first()
+user.intervention_condition = session['intervention_condition']
+db.session.commit()
+'''
 attentionChecks = []
 _beta = [0.9, 0.85, 0.75, 0.8, 0.3, 0.2]
 num_arms = 6  # Number of stock options
@@ -273,6 +292,7 @@ def experiment():
         return redirect(url_for('clear_session_and_logout'))
 
     session['task_started'] = False
+    session['endgame_loaded'] = False
     print("Setting experiment page loaded.")
     session['exp_page_loaded'] = True
     t_c = is_task_completed('tutorial')
