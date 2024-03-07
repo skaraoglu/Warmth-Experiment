@@ -170,7 +170,7 @@ class Bandit:
         lower = np.average(self.beta_vals)*self.num_episodes
         score = np.sum(self.y)
 
-        print(((score - lower) / (upper - lower)) )
+        #print(((score - lower) / (upper - lower)) )
         if score < lower:
             return 0
         elif score < upper:

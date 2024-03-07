@@ -161,25 +161,43 @@ document.addEventListener("DOMContentLoaded", function () {
                 agents = data.agents;
                 curCase = data.cases;
                 expForRec = data.expForRec;
+                condition = data.condition;
                 ar.forEach((div, index) => {
                   stockOptions[index].style.backgroundColor = "#f0f0f0";
                   if (index === agents - 1 && !recommendationShown) {
                     const image = document.createElement("img");
-                    image.src = "../static/hand_50.png";
-                    image.classList.remove("still");
-                    image.classList.add("slide-down");
-                    div.innerHTML = "";
-                    div.appendChild(image);            
-                   
-                    recommendationContent.innerHTML = expForRec;
-                    recommendationDiv.style.width = "";
-                    recommendationDiv.style.display = "flex";
-                    if (index === 0) {recommendationDiv.style.marginLeft = "-30%";}
-                    else if (index === 1) {recommendationDiv.style.marginLeft = "-25%";}
-                    else if (index === 2) {recommendationDiv.style.marginLeft = "-8.45%";}
-                    else if (index === 3) {recommendationDiv.style.marginLeft = "8.45%";}
-                    else if (index === 4) {recommendationDiv.style.marginLeft = "25%";}
-                    else if (index === 5) {recommendationDiv.style.marginLeft = "30%";}
+                    if (condition == 2){
+                      div.classList.remove(div.classList.item(0));
+                      div.classList.add("warmupagent-rec");
+                      const image = document.createElement("img");
+                      image.src = "../static/hand_100.png";
+                      image.classList.remove("still");
+                      image.classList.add("slide-down");
+                      div.innerHTML = "";
+                      div.appendChild(image);
+                      
+                      console.log(div.classList);
+                      stockOptions[index].style.backgroundColor = "#e6f4e6";
+                      // Set the recommendationShown flag to true
+                      recommendationShown = true;
+                    }
+                    else{
+                      image.src = "../static/hand_50.png";
+                      image.classList.remove("still");
+                      image.classList.add("slide-down");
+                      div.innerHTML = "";
+                      div.appendChild(image);            
+                    
+                      recommendationContent.innerHTML = expForRec;
+                      recommendationDiv.style.width = "";
+                      recommendationDiv.style.display = "flex";
+                      if (index === 0) {recommendationDiv.style.marginLeft = "-30%";}
+                      else if (index === 1) {recommendationDiv.style.marginLeft = "-25%";}
+                      else if (index === 2) {recommendationDiv.style.marginLeft = "-8.45%";}
+                      else if (index === 3) {recommendationDiv.style.marginLeft = "8.45%";}
+                      else if (index === 4) {recommendationDiv.style.marginLeft = "25%";}
+                      else if (index === 5) {recommendationDiv.style.marginLeft = "30%";}
+                    }
                     stockOptions[index].style.backgroundColor = "#e6f4e6";
                     //recommendationDiv.style.marginLeft = 
                     // Set the recommendationShown flag to true
@@ -310,8 +328,11 @@ document.addEventListener("DOMContentLoaded", function () {
           }          
           // Update the reward value for the rolling numbers
           const rewardContainer = document.querySelector(".reward-container");
-          recommendationContent.innerHTML = expPostSel;
-          recommendationDiv.style.margin = "";
+          if(condition != 2){
+            recommendationContent.innerHTML = expPostSel;
+            recommendationDiv.style.margin = "";
+          }
+          
           // Toggle the rolling class on the reward frame
           const rewardFrame = document.querySelector(".reward-frame");
           rewardFrame.classList.add("rolling");

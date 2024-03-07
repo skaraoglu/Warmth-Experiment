@@ -38,7 +38,7 @@ money = 0
 coldCondition = 0
 warmCondition = 1
 noExpCondition = 2
-bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=warmCondition)
+bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=coldCondition)
 bandit.reset()
 
 class atnCheck:
@@ -557,10 +557,13 @@ def get_recommendation():
     # get recommendation
     bandit.recommend_arm()
     # get explanation for recommendation
-    expForRec = bandit.getExplanation4Recommendation()
-    log_experiment(f'Step: {bandit.t}, Intention: {bandit.i[bandit.t]}, Recommendation: {bandit.r[bandit.t]}, Explanation for Recommendation: {expForRec}')
+    if(bandit.condition == noExpCondition):
+        expForRec = "No explanation"
+    else:
+        expForRec = bandit.getExplanation4Recommendation()
+    log_experiment(f'Step: {bandit.t}, Intention: {bandit.i[bandit.t]}, Recommendation: {bandit.r[bandit.t]}, Explanation for Recommendation: {expForRec}, Condition: {bandit.condition}')
     
-    return jsonify({'agents' : bandit.r[bandit.t] + 1, 'cases' : bandit.cases[bandit.t], 'expForRec': expForRec})
+    return jsonify({'agents' : bandit.r[bandit.t] + 1, 'cases' : bandit.cases[bandit.t], 'expForRec': expForRec, 'condition': bandit.condition})
 
 @app.route('/get_reward')
 def get_reward():
@@ -575,7 +578,10 @@ def get_reward():
     bandit.y[selected_option] += reward
     bandit.x[selected_option] += 1
     
-    expPostSel = bandit.getExplanationPostSelection()
+    if(bandit.condition == noExpCondition):
+        expPostSel = "No explanation"
+    else:
+        expPostSel = bandit.getExplanationPostSelection()
 
     bandit.updateLikelihood()
     log_experiment(f'Step: {bandit.t}, Selection: {bandit.s[bandit.t]}, Reward: {reward}, Likelihood: {bandit.l[bandit.t]}, Explanation Post Selection: {expPostSel}')

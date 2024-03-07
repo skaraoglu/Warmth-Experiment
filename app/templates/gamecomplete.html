@@ -10,6 +10,14 @@
         textArea.select();
         document.execCommand("Copy");
         textArea.remove();
+
+        // Change the image source to the green tick
+        document.getElementById('copyIcon').src = "../static/copied.png";
+
+        // Show a small text above the button
+        var feedback = document.getElementById('copyFeedback');
+        feedback.style.display = 'block';
+        feedback.innerHTML = "Copied!";
     }
 </script>
 <div style="text-align: center;">
@@ -20,8 +28,9 @@
     <div style="display: inline-block; padding: 10px; border: 1px solid #000; border-radius: 15px; font-size: 20px;" onclick="copyToClipboard('rewardC')">
         Reward Code: <span id="rewardC" style="font-weight: bold; font-size:26px; color:#44ff55">{{ rewardC }}</span>
         <button style="border: none; background: none;" onclick="copyToClipboard('rewardC')">
-            <img src="../static/copy_icon.png" alt="Copy to clipboard" width="20" height="26">
+            <img id="copyIcon" src="../static/copy_icon.png" alt="Copy to clipboard" width="20" height="26">
         </button>
+        <div id="copyFeedback" style="display: none; text-align: center;"></div>
     </div>
 </div>
 
@@ -39,3 +48,4 @@
     </form>
 </div>
 {% endblock %}
+

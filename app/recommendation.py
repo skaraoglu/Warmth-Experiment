@@ -145,7 +145,7 @@ class agent_feedback:
         # Warm: Good reward, disagreement
         self.warm_good_disagree_UCB = ["Nice! Let's try to work together.", "Awesome! We should try to cooperate.", "Neat! Let's make decisions together.😊", "Exceptional! Let's try our best to work together. 😊"]
         # Warm: Bad reward, agreement
-        self.warm_bad_agree_UCB = ["Bad luck happens.🥲 Let's continue to work together!", "Oh, how unlucky! We can always learn.", "Mistakes happen. We can improve together.", "Oh no!😅 We shall learn from our mistakes."]
+        self.warm_bad_agree_UCB = ["Bad luck happens.🙁 Let's continue to work together!", "Oh, how unlucky! We can always learn.", "Mistakes happen. We can improve together.", "Oh no!😅 We shall learn from our mistakes."]
         # Warm: Bad reward, disagreement
         self.warm_bad_disagree_UCB = ["That's unfortunate.🙁 We should work together!", "Oh no! Cooperation is the best way for us to succeed.", "Undesirable outcomes happen. We can always work together!😊"]      
         # Cold: Good reward, agreement
