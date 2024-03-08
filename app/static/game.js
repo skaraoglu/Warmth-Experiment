@@ -66,18 +66,23 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(`/attention_check?atn=${atnCheck}`)
       .then(response => response.json())
       .then(data => {
-        let suc = data.success;
-        if (suc == 1) {
-          atnStocksDiv.style.display = 'none';
-          atnStocksDiv.style.pointerEvents = "none";
-          stocksDiv.style.display = 'flex';
-          stocksDiv.style.pointerEvents = "auto";
-          recommendationContent.innerHTML = '';
-          recommendationDiv.style.display = 'none';
-          atnCheck = false;
+        if (data.redirect) {
+            // If the server responded with a redirect, navigate to that page
+            window.location.href = data.redirect;
+        } else {
+            let suc = data.success;
+            if (suc == 1) {
+              atnStocksDiv.style.display = 'none';
+              atnStocksDiv.style.pointerEvents = "none";
+              stocksDiv.style.display = 'flex';
+              stocksDiv.style.pointerEvents = "auto";
+              recommendationContent.innerHTML = '';
+              recommendationDiv.style.display = 'none';
+              atnCheck = false;
+            }
         }
       });
-  });
+    });
 
   function setIntention(opt, i){
     intention = opt;
@@ -398,7 +403,7 @@ document.addEventListener("DOMContentLoaded", function () {
                       }
                     });
                     isAnimating = false; // Reset animation flag
-                  }, 3000);
+                  }, 300);
                 },
               });
             },

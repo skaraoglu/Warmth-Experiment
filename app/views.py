@@ -80,17 +80,18 @@ def assign_condition():
 bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=-1)
 bandit.reset()
 
-class atnCheck:
-    def __init__(self):
-        self.failed_attention_checks = 0
-
 def log_experiment(message):
     filename = f'experiment_{current_user.mturk_id}.txt'
     timestamp = datetime.now().strftime('%m-%d %H:%M:%S')
     with open(filename, 'a', encoding='utf-8') as f:
         f.write(f'{message} - {timestamp}\n')
 
-atnChecks = atnCheck()
+def attention_check_fail():
+    fails = session.get('failed_attention_checks')
+    if fails > 1:
+        clear_session_and_logout()
+    else:
+        return
 
 #Utility function to clear session data and logout
 @app.route('/clear_session_and_logout/')
@@ -145,6 +146,7 @@ def login():
             session['login_completed'] = True
             session['login_time'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             session['expiry_time'] = (datetime.now() + timedelta(minutes=45)).strftime('%Y-%m-%d %H:%M:%S')
+            session['failed_attention_checks'] = 0
 
             return redirect(url_for('consent'))
         else:
@@ -219,11 +221,10 @@ def demographics_survey_submit():
         demographics['education'] = request.form.get('q4')
         demographics['attention-check'] = request.form.get('q5')
         
-        print("Failed attention checks: " + str(atnChecks.failed_attention_checks))
-        if demographics['attention-check'] != '4' or demographics['attention-check'] != '5':
-            atnChecks.failed_attention_checks += 1
-        session['failed_attention_checks'] = atnChecks.failed_attention_checks
-        
+        if demographics['attention-check'] == '1' or demographics['attention-check'] == '2' or demographics['attention-check'] == '3':
+            fails = session.get('failed_attention_checks') + 1
+            session['failed_attention_checks'] = fails
+            print("Failed attention checks: " + str(session.get('failed_attention_checks')))     
         
         # Save survey to database
         survey = Survey(
@@ -283,10 +284,10 @@ def survey_submit():
         evaluation['attention-check'] = request.form.get('q14')
         
         
-        if evaluation['attention-check'] != '4' or evaluation['attention-check'] != '5':
-            atnChecks.failed_attention_checks += 1
-        session['failed_attention_checks'] = atnChecks.failed_attention_checks
-        print("Failed attention checks: " + str(atnChecks.failed_attention_checks))
+        if evaluation['attention-check'] == '1' or evaluation['attention-check'] == '2' or evaluation['attention-check'] == '3':
+            fails = session.get('failed_attention_checks') + 1
+            session['failed_attention_checks'] = fails
+            print("Failed attention checks: " + str(session.get('failed_attention_checks')))
         
         # Save survey to database
         survey = Survey(
@@ -561,8 +562,13 @@ def rewardCode():
 @app.route('/attention_check')
 def attention_check():
     atnCheck = request.args.get('atn')
-    attentionChecks.append(atnCheck)
-    if (atnCheck == 'false') : atnChecks.failed_attention_checks += 1
+    if (atnCheck == 'false') : 
+        fails = session.get('failed_attention_checks') + 1
+        session['failed_attention_checks'] = fails
+        print("Failed attention checks: " + str(session.get('failed_attention_checks')))
+        if fails > 1:
+            return jsonify({'redirect': url_for('clear_session_and_logout')})
+
     log_experiment(f'Attention check: {atnCheck}')
 
     return jsonify({'success' : 1})
