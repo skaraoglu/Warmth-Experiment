@@ -102,6 +102,13 @@ def clear_session_and_logout():
     flash('You have either run out of time or have violated the terms of the experiment.')
     return redirect(url_for('login'))
 
+@app.route('/attention_failed/')
+def attention_failed():
+    logout_user()
+    session.clear()
+    flash('You have failed 2 attention checks.')
+    return redirect(url_for('login'))
+
 def is_session_expired():
     expiry_time = session.get('expiry_time')
     if expiry_time:
@@ -569,7 +576,7 @@ def attention_check():
         print("Failed attention checks: " + str(session.get('failed_attention_checks')))
         if fails > 1:
             log_experiment(f'{current_user.mturk_id} has failed attention checks {fails} times. Logging out user.')
-            return jsonify({'redirect': url_for('clear_session_and_logout')})
+            return jsonify({'redirect': url_for('attention_failed')})
 
     log_experiment(f'Attention check: {atnCheck}')
 
