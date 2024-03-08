@@ -11,11 +11,25 @@ from app.models import Survey, User, TaskCompletion, Task
 from datetime import datetime, timedelta
 import numpy as np
 
+@app.before_request
+def create_tables():
+    db.create_all()
+
+#Loads the user object from the database
+@lm.user_loader
+def load_user(mturk_id):
+    return User.query.get(mturk_id)
+
+#404 error page
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
+
 '''SELECT INTERVENTION CONDITION'''
 '''NONE = 0, LOW = 1, HIGH = 2
-users0 = User.query.filter_by(intervention_condition=0, experiment_completed=True).filter(User.mturk_id.like('A%')).all()
-users1 = User.query.filter_by(intervention_condition=1, experiment_completed=True).filter(User.mturk_id.like('A%')).all()
-users2 = User.query.filter_by(intervention_condition=2, experiment_completed=True).filter(User.mturk_id.like('A%')).all()
+users0 = User.query.filter_by(intervention_condition=0).filter(User.mturk_id.like('A%')).all()
+users1 = User.query.filter_by(intervention_condition=1).filter(User.mturk_id.like('A%')).all()
+users2 = User.query.filter_by(intervention_condition=2).filter(User.mturk_id.like('A%')).all()
 # Select the intervention condition with the fewest users
 min_users = min(len(users0), len(users1), len(users2))
 if len(users0) == min_users:
@@ -38,7 +52,8 @@ money = 0
 coldCondition = 0
 warmCondition = 1
 noExpCondition = 2
-bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=coldCondition)
+cond = np.random.choice([coldCondition, warmCondition, noExpCondition], p=[0.33, 0.33, 0.34])
+bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=int(cond))
 bandit.reset()
 
 class atnCheck:
@@ -52,20 +67,6 @@ def log_experiment(message):
         f.write(f'{message} - {timestamp}\n')
 
 atnChecks = atnCheck()
-
-@app.before_request
-def create_tables():
-    db.create_all()
-
-#Loads the user object from the database
-@lm.user_loader
-def load_user(mturk_id):
-    return User.query.get(mturk_id)
-
-#404 error page
-@app.errorhandler(404)
-def not_found_error(error):
-    return render_template('404.html'), 404
 
 #Utility function to clear session data and logout
 @app.route('/clear_session_and_logout/')

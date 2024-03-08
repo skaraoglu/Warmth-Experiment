@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   agents = data.agents
                   curCase = data.cases;
                   expForRec = data.expForRec;
+                  condition = data.condition;
                   //console.log("recommendation: " + agents)
                   ar.forEach((div, index) => {
                     stockOptions[index].style.backgroundColor = "#f0f0f0";

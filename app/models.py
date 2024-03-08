@@ -4,6 +4,7 @@ from sqlalchemy import JSON
 class User(db.Model):
     mturk_id = db.Column(db.String(20), primary_key = True, unique=True)
     experiment_completed = db.Column(db.Boolean, default=False)
+    intervention_condition = db.Column(db.Integer)
     #consent = db.Column(db.Boolean, default=False)
     
     def is_authenticated(self):

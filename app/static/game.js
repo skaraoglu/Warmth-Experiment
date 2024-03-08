@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const image = document.createElement("img");
                     if (condition == 2){
                       div.classList.remove(div.classList.item(0));
-                      div.classList.add("warmupagent-rec");
+                      div.classList.add("warmupagents-rec");
                       const image = document.createElement("img");
                       image.src = "../static/hand_100.png";
                       image.classList.remove("still");
@@ -176,7 +176,6 @@ document.addEventListener("DOMContentLoaded", function () {
                       div.innerHTML = "";
                       div.appendChild(image);
                       
-                      console.log(div.classList);
                       stockOptions[index].style.backgroundColor = "#e6f4e6";
                       // Set the recommendationShown flag to true
                       recommendationShown = true;
@@ -209,8 +208,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     image.classList.add("still");
                     div.innerHTML = "";
                     div.appendChild(image);
-                    const recommendationDiv = document.getElementById("recommendation-text");
-                    recommendationDiv.style.display = "none";
+                    if (condition != 2){
+                      const recommendationDiv = document.getElementById("recommendation-text");
+                      recommendationDiv.style.display = "none";
+                    }
+                    
                     stockOptions[index].style.backgroundColor = "#e6f4e6";
                   } else {
                     div.innerHTML = "";
