@@ -568,6 +568,7 @@ def attention_check():
         session['failed_attention_checks'] = fails
         print("Failed attention checks: " + str(session.get('failed_attention_checks')))
         if fails > 1:
+            log_experiment(f'{current_user.mturk_id} has failed attention checks {fails} times. Logging out user.')
             return jsonify({'redirect': url_for('clear_session_and_logout')})
 
     log_experiment(f'Attention check: {atnCheck}')
