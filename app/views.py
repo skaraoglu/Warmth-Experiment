@@ -81,7 +81,7 @@ bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=-1)
 bandit.reset()
 
 def log_experiment(message):
-    filename = f'experiment_{current_user.mturk_id}.txt'
+    filename = f'../logs/experiment_{current_user.mturk_id}.txt'
     timestamp = datetime.now().strftime('%m-%d %H:%M:%S')
     with open(filename, 'a', encoding='utf-8') as f:
         f.write(f'{message} - {timestamp}\n')
@@ -89,6 +89,7 @@ def log_experiment(message):
 def attention_check_fail():
     fails = session.get('failed_attention_checks')
     if fails > 1:
+        log_experiment(f'{current_user.mturk_id} has failed attention checks {fails} times. Logging out user.')
         clear_session_and_logout()
     else:
         return
