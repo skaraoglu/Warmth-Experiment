@@ -52,8 +52,32 @@ money = 0
 coldCondition = 0
 warmCondition = 1
 noExpCondition = 2
-cond = np.random.choice([coldCondition, warmCondition, noExpCondition], p=[0.33, 0.33, 0.34])
-bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=int(cond))
+
+def assign_condition():
+    # Read the condition counts from the file
+    try:
+        with open('cond_counts.txt', 'r') as f:
+            condition_counts = list(map(int, f.read().split()))
+            if not condition_counts:
+                condition_counts = [0, 0, 0]
+    except FileNotFoundError:
+        # If the file doesn't exist, initialize the condition counts
+        condition_counts = [0, 0, 0]
+
+    # Find the condition with the minimum count
+    condition = condition_counts.index(min(condition_counts))
+
+    # Increment the count for the assigned condition
+    condition_counts[condition] += 1
+    print(condition_counts)
+    # Write the updated condition counts back to the file
+    with open('cond_counts.txt', 'w') as f:
+        f.write(' '.join(map(str, condition_counts)))
+
+    return condition
+
+#cond = assign_condition()
+bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=-1)
 bandit.reset()
 
 class atnCheck:
@@ -195,11 +219,11 @@ def demographics_survey_submit():
         demographics['education'] = request.form.get('q4')
         demographics['attention-check'] = request.form.get('q5')
         
-        
+        print("Failed attention checks: " + str(atnChecks.failed_attention_checks))
         if demographics['attention-check'] != '4' or demographics['attention-check'] != '5':
             atnChecks.failed_attention_checks += 1
         session['failed_attention_checks'] = atnChecks.failed_attention_checks
-        print("Failed attention checks: " + str(atnChecks.failed_attention_checks))
+        
         
         # Save survey to database
         survey = Survey(
@@ -346,6 +370,8 @@ def warmup():
     session['warmup_start_time'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     # Set experiment length
+    cond = assign_condition()
+    bandit.condition = cond
     bandit.num_episodes = 10
     warmup_beta = [0.75, 0.8, 0.2, 0.85, 0.3, 0.9]
     bandit.beta_vals = warmup_beta
