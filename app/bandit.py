@@ -167,7 +167,7 @@ class Bandit:
     
     def calculateMoney(self):       
         upper = max(self.beta_vals)*self.num_episodes
-        lower = np.average(self.beta_vals)*self.num_episodes
+        lower = 15 #np.average(self.beta_vals)*self.num_episodes
         score = np.sum(self.y)
 
         #print(((score - lower) / (upper - lower)) )

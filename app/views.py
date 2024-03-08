@@ -297,15 +297,7 @@ def survey_submit():
             data = evaluation,
             timestamp = datetime.now()
         )
-        
-        User.query.filter_by(mturk_id=session['mturk_id']).first().attention_checks_failed = atnChecks.failed_attention_checks
-        db.session.commit()
-        
-        if (atnChecks.failed_attention_checks > 1):
-            log_experiment(f'Attention check: {atnCheck} - Failed, {atnChecks.failed_attention_checks} times, logging out user')
-            # Logout user
-            clear_session_and_logout()
-        
+                
         db.session.add(survey)
         db.session.commit()
         log_experiment(f'{current_user.mturk_id} has submitted survey.')
