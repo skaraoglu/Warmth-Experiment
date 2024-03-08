@@ -1,0 +1,39 @@
+condtest1 is registered in the system. - 03-08 00:24:42
+condtest1 is given consent. - 03-08 00:24:43
+condtest1 is on demographics survey page. - 03-08 00:24:43
+condtest1 has submitted demographics survey. - 03-08 00:24:50
+Demographics: {'age': '45-54', 'gender': 'Other', 'ethnicity': 'Asian or Pacific Islander', 'education': 'PhD or similar', 'attention-check': '5'} - 03-08 00:24:50
+condtest1 is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 00:24:50
+condtest1 is on tutorial page. Step: tutorial. - 03-08 00:24:51
+condtest1 is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 00:24:53
+condtest1 is on warmup page. Step: warmup. - 03-08 00:24:54
+Step: 0, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:25:11
+Step: 0, Selection: 4.0, Reward: 0.021548540616960047, Likelihood: 0.25, Explanation Post Selection: No explanation - 03-08 00:25:13
+Step: 1, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:25:17
+Step: 1, Selection: 5.0, Reward: 1.051291283993977, Likelihood: 0.4375, Explanation Post Selection: No explanation - 03-08 00:25:18
+Step: 2, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:25:21
+Step: 2, Selection: 3.0, Reward: 1.5758178402424958, Likelihood: 0.578125, Explanation Post Selection: No explanation - 03-08 00:25:22
+Step: 3, Intention: 3.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:25:26
+Step: 3, Selection: 3.0, Reward: 0.1389428553169796, Likelihood: 0.68359375, Explanation Post Selection: No explanation - 03-08 00:25:27
+Step: 4, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:25:31
+Step: 4, Selection: 2.0, Reward: 0.17920507467189928, Likelihood: 0.7626953125, Explanation Post Selection: No explanation - 03-08 00:25:32
+Step: 5, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:25:40
+Step: 5, Selection: 1.0, Reward: 0.21266795382415782, Likelihood: 0.822021484375, Explanation Post Selection: No explanation - 03-08 00:25:41
+Step: 6, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:25:46
+Step: 6, Selection: 0.0, Reward: 0.0941447240634576, Likelihood: 0.86651611328125, Explanation Post Selection: No explanation - 03-08 00:25:47
+Step: 7, Intention: 3.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:25:53
+Step: 7, Selection: 3.0, Reward: 0.6619559317337315, Likelihood: 0.8998870849609375, Explanation Post Selection: No explanation - 03-08 00:25:54
+Step: 8, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:25:59
+Step: 8, Selection: 5.0, Reward: 0.8124500486659103, Likelihood: 0.9249153137207031, Explanation Post Selection: No explanation - 03-08 00:26:02
+Step: 9, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:26:08
+Step: 9, Selection: 5.0, Reward: 0.5315255378007127, Likelihood: 0.9436864852905273, Explanation Post Selection: No explanation - 03-08 00:26:09
+condtest1 has submitted warmup. Step: warmupcomplete. - 03-08 00:26:13
+Warmup: {'intentions': [4.0, 5.0, 3.0, 3.0, 2.0, 1.0, 0.0, 3.0, 5.0, 5.0], 'recommendations': [4.0, 5.0, 3.0, 2.0, 2.0, 1.0, 0.0, 5.0, 5.0, 5.0], 'selections': [4.0, 5.0, 3.0, 3.0, 2.0, 1.0, 0.0, 3.0, 5.0, 5.0], 'rewards': [0.021548540616960047, 1.051291283993977, 1.5758178402424958, 0.1389428553169796, 0.17920507467189928, 0.21266795382415782, 0.0941447240634576, 0.6619559317337315, 0.8124500486659103, 0.5315255378007127, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'strategy': 'f'} - 03-08 00:26:13
+condtest1 is on experiment page. Tutorial completed: True, Warmup completed: True. Step: experiment. - 03-08 00:26:13
+condtest1 is on task page. Step: task. - 03-08 00:26:14
+Step: 0, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:26:16
+Step: 0, Selection: 2.0, Reward: 0.4596171639673915, Likelihood: 0.25, Explanation Post Selection: No explanation - 03-08 00:26:18
+Step: 1, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:26:23
+Step: 1, Selection: 3.0, Reward: 0.9351604786625244, Likelihood: 0.4375, Explanation Post Selection: No explanation - 03-08 00:26:24
+Step: 2, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:26:28
+Step: 2, Selection: 4.0, Reward: 0.6758003217522563, Likelihood: 0.578125, Explanation Post Selection: No explanation - 03-08 00:26:30

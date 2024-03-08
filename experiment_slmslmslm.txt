@@ -1,0 +1,22 @@
+slmslmslm is registered in the system. - 03-06 23:00:25
+slmslmslm is given consent. - 03-06 23:00:27
+slmslmslm is on demographics survey page. - 03-06 23:00:27
+slmslmslm has submitted demographics survey. - 03-06 23:00:38
+Demographics: {'age': '55-64', 'gender': 'Other', 'ethnicity': 'Asian or Pacific Islander', 'education': "Master's/Graduate Degree", 'attention-check': '5'} - 03-06 23:00:38
+slmslmslm is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-06 23:00:38
+slmslmslm is on tutorial page. Step: tutorial. - 03-06 23:00:40
+slmslmslm is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-06 23:00:58
+slmslmslm is on warmup page. Step: warmup. - 03-06 23:00:59
+Step: 0, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: Clever selection!  I completely agree. - 03-06 23:01:01
+Step: 0, Selection: 2.0, Reward: 0.017085186264809787, Likelihood: 0.25, Explanation Post Selection: Yay, we should continue! - 03-06 23:01:02
+Step: 1, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: We're on the same page! Exploring this choice is an ideal decision. - 03-06 23:01:07
+Step: 1, Selection: 5.0, Reward: 0.057916261425744464, Likelihood: 0.4375, Explanation Post Selection: Awesome, let's keep going! - 03-06 23:01:08
+Step: 2, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: Great minds think alike! Exploring this choice is an ideal decision. - 03-06 23:01:12
+Step: 2, Selection: 4.0, Reward: 0.11552938491296966, Likelihood: 0.328125, Explanation Post Selection: Awesome, let's keep going! - 03-06 23:01:13
+Step: 4, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Glad we think the same! Go ahead with your selection. - 03-06 23:01:19
+Step: 4, Selection: 3.0, Reward: 0.01606439816472331, Likelihood: 0.4345703125, Explanation Post Selection: Mistakes happen. We can improve together. - 03-06 23:01:20
+Step: 6, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Seems like we agree with exploring this one! Exploring this selection is good. - 03-06 23:01:25
+Step: 6, Selection: 1.0, Reward: 0.6663976990120623, Likelihood: 0.49444580078125, Explanation Post Selection: Awesome, let's keep going! - 03-06 23:01:26
+Step: 4, Intention: 0.0, Recommendation: 3.0, Explanation for Recommendation: Let's do this together. Choosing this option may benefit you in the long run. - 03-06 23:02:44
+Step: 5, Selection: 0.0, Reward: 0.7922725067677973, Likelihood: 0.25, Explanation Post Selection: Awesome, let's keep going! - 03-06 23:02:46
+slmslmslm is reloading warmup page. Step: warmup. - 03-06 23:04:31

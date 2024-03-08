@@ -1,0 +1,24 @@
+AA8COEFRRUNQ0 is registered in the system. - 03-08 00:41:48
+AA8COEFRRUNQ0 is given consent. - 03-08 00:42:04
+AA8COEFRRUNQ0 is on demographics survey page. - 03-08 00:42:04
+AA8COEFRRUNQ0 has submitted demographics survey. - 03-08 00:43:05
+Demographics: {'age': '25-34', 'gender': 'Female', 'ethnicity': 'White', 'education': "Bachelor's degree", 'attention-check': '5'} - 03-08 00:43:05
+AA8COEFRRUNQ0 is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 00:43:05
+AA8COEFRRUNQ0 is on tutorial page. Step: tutorial. - 03-08 00:43:11
+AA8COEFRRUNQ0 is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 00:45:10
+AA8COEFRRUNQ0 is on warmup page. Step: warmup. - 03-08 00:45:13
+Step: 1, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:45:18
+Step: 1, Selection: 2.0, Reward: 0.5374864702571054, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 00:45:23
+Step: 3, Intention: 3.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:45:30
+Step: 4, Selection: 4.0, Reward: 0.05831702430744412, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 00:45:34
+Step: 5, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:45:39
+Step: 5, Selection: 0.0, Reward: 1.2431735298531188, Likelihood: 0.25, Explanation Post Selection: No explanation - 03-08 00:45:42
+Step: 0, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:45:50
+Step: 0, Selection: 5.0, Reward: 0.012579116708384776, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 00:45:55
+Step: 1, Intention: 1.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:46:02
+Step: 2, Selection: 4.0, Reward: 0.2197401903548035, Likelihood: 0.1875, Explanation Post Selection: No explanation - 03-08 00:46:05
+Step: 4, Intention: 1.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:46:09
+Step: 5, Selection: 3.0, Reward: 0.9252638757386613, Likelihood: 0.6572265625, Explanation Post Selection: No explanation - 03-08 00:46:13
+Step: 7, Intention: 1.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:46:17
+Step: 8, Selection: 0.0, Reward: 0.5738202584738875, Likelihood: 0.2772674560546875, Explanation Post Selection: No explanation - 03-08 00:46:20
+AA8COEFRRUNQ0 is reloading warmup page. Step: warmup. - 03-08 00:53:26

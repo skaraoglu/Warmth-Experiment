@@ -1,0 +1,7 @@
+deouhalibqjedke is registered in the system. - 03-06 23:05:13
+deouhalibqjedke is given consent. - 03-06 23:05:15
+deouhalibqjedke is on demographics survey page. - 03-06 23:05:15
+deouhalibqjedke has submitted demographics survey. - 03-06 23:05:24
+Demographics: {'age': '18-24', 'gender': 'Male', 'ethnicity': 'White', 'education': 'Less than high school', 'attention-check': '5'} - 03-06 23:05:24
+deouhalibqjedke is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-06 23:05:24
+deouhalibqjedke is on tutorial page. Step: tutorial. - 03-06 23:05:25

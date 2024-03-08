@@ -1,0 +1,15 @@
+A3KLBK6128F8HC is registered in the system. - 03-08 00:48:39
+A3KLBK6128F8HC is given consent. - 03-08 00:48:46
+A3KLBK6128F8HC is on demographics survey page. - 03-08 00:48:46
+A3KLBK6128F8HC has submitted demographics survey. - 03-08 00:49:11
+Demographics: {'age': '25-34', 'gender': 'Male', 'ethnicity': 'Black or African American', 'education': "Bachelor's degree", 'attention-check': '5'} - 03-08 00:49:11
+A3KLBK6128F8HC is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 00:49:12
+A3KLBK6128F8HC is on tutorial page. Step: tutorial. - 03-08 00:49:17
+A3KLBK6128F8HC is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 00:49:41
+A3KLBK6128F8HC is on warmup page. Step: warmup. - 03-08 00:49:43
+Step: 2, Intention: 0.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:49:50
+Step: 3, Selection: 3.0, Reward: 0.46729103826865404, Likelihood: 0.390625, Explanation Post Selection: No explanation - 03-08 00:49:55
+Step: 5, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:50:00
+Step: 6, Selection: 4.0, Reward: 0.5200420266068546, Likelihood: 0.164794921875, Explanation Post Selection: No explanation - 03-08 00:50:04
+Step: 8, Intention: 2.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:50:10
+A3KLBK6128F8HC is reloading warmup page. Step: warmup. - 03-08 01:00:53

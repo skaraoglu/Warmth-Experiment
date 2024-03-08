@@ -1,0 +1,20 @@
+A35QRLWL9QH5MU is registered in the system. - 03-08 00:43:15
+A35QRLWL9QH5MU is given consent. - 03-08 00:43:37
+A35QRLWL9QH5MU is on demographics survey page. - 03-08 00:43:37
+A35QRLWL9QH5MU has submitted demographics survey. - 03-08 00:47:52
+Demographics: {'age': '35-44', 'gender': 'Male', 'ethnicity': 'White', 'education': "Bachelor's degree", 'attention-check': '5'} - 03-08 00:47:52
+A35QRLWL9QH5MU is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 00:47:52
+A35QRLWL9QH5MU is on tutorial page. Step: tutorial. - 03-08 00:47:56
+A35QRLWL9QH5MU is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 00:49:13
+A35QRLWL9QH5MU is on warmup page. Step: warmup. - 03-08 00:49:16
+Step: 1, Intention: 1.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:49:24
+Step: 2, Selection: 2.0, Reward: 0.26088592919152087, Likelihood: 0.328125, Explanation Post Selection: No explanation - 03-08 00:49:32
+Step: 3, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:49:37
+Step: 0, Selection: 1.0, Reward: 1.1204921794124147, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 00:49:45
+Step: 2, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:49:49
+Step: 2, Selection: 3.0, Reward: 0.20627529835588113, Likelihood: 0.1875, Explanation Post Selection: No explanation - 03-08 00:49:52
+Step: 4, Intention: 0.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:49:56
+Step: 5, Selection: 2.0, Reward: 0.5752945189567875, Likelihood: 0.2197265625, Explanation Post Selection: No explanation - 03-08 00:50:01
+Step: 8, Intention: 1.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:50:08
+Step: 8, Selection: 0.0, Reward: 0.3649283661186482, Likelihood: 0.0926971435546875, Explanation Post Selection: No explanation - 03-08 00:50:11
+A35QRLWL9QH5MU is reloading warmup page. Step: warmup. - 03-08 00:51:01

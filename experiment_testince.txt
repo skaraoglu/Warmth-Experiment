@@ -1,0 +1,11 @@
+testince is registered in the system. - 03-06 23:14:05
+testince is given consent. - 03-06 23:14:06
+testince is on demographics survey page. - 03-06 23:14:06
+testince has submitted demographics survey. - 03-06 23:14:13
+Demographics: {'age': '45-54', 'gender': 'Other', 'ethnicity': 'Native or American Indian', 'education': "Master's/Graduate Degree", 'attention-check': '5'} - 03-06 23:14:13
+testince is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-06 23:14:13
+testince is on tutorial page. Step: tutorial. - 03-06 23:14:15
+testince is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-06 23:14:25
+testince is on warmup page. Step: warmup. - 03-06 23:14:27
+Step: 0, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Clever selection! Exploring this choice is promising.😊 - 03-06 23:14:29
+Step: 0, Selection: 1.0, Reward: 0.8816412169253228, Likelihood: 0.25, Explanation Post Selection: Awesome, let's keep going! - 03-06 23:14:30

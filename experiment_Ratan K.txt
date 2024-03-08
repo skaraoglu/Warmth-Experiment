@@ -1,0 +1,24 @@
+Ratan K is registered in the system. - 03-06 23:02:06
+Ratan K is given consent. - 03-06 23:02:07
+Ratan K is on demographics survey page. - 03-06 23:02:07
+Ratan K has submitted demographics survey. - 03-06 23:02:16
+Demographics: {'age': '25-34', 'gender': 'Male', 'ethnicity': 'Asian or Pacific Islander', 'education': "Master's/Graduate Degree", 'attention-check': '4'} - 03-06 23:02:16
+Ratan K is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-06 23:02:16
+Ratan K is on tutorial page. Step: tutorial. - 03-06 23:02:21
+Ratan K is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-06 23:02:25
+Ratan K is on warmup page. Step: warmup. - 03-06 23:02:30
+Step: 0, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: Clever selection!  I completely agree. - 03-06 23:02:32
+Step: 1, Selection: 2.0, Reward: 0.021652409542976772, Likelihood: 0.0, Explanation Post Selection: That's unfortunate. We should work together! - 03-06 23:02:33
+Step: 2, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: Great minds think alike! Checking out this choice looks promising. - 03-06 23:02:37
+Step: 2, Selection: 4.0, Reward: 0.34441669388152385, Likelihood: 0.0, Explanation Post Selection: Nice! Let's keep working together. - 03-06 23:02:39
+Step: 4, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Great minds think alike! Go ahead with your selection. - 03-06 23:02:43
+Step: 4, Selection: 1.0, Reward: 0.31328694337303453, Likelihood: 0.0, Explanation Post Selection: Nice! Let's keep working together. - 03-06 23:02:45
+Step: 6, Intention: 2.0, Recommendation: 3.0, Explanation for Recommendation: We can do this together. You could consider this option instead as it could get you a higher reward. - 03-06 23:02:49
+Step: 6, Selection: 2.0, Reward: 0.44791733637160513, Likelihood: 0.4375, Explanation Post Selection: Nice! Let's keep working together. - 03-06 23:02:51
+Step: 7, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Glad we think the same! Go ahead with your selection. - 03-06 23:02:55
+Step: 7, Selection: 3.0, Reward: 0.15648469652874783, Likelihood: 0.578125, Explanation Post Selection: Mistakes happen. We can improve together. - 03-06 23:02:57
+Step: 8, Intention: 5.0, Recommendation: 0.0, Explanation for Recommendation: Let's do this together. Choosing this option may benefit you in the long run. - 03-06 23:03:00
+Step: 8, Selection: 4.0, Reward: 0.17482368188103675, Likelihood: 0.43359375, Explanation Post Selection: That's unfortunate. We should work together! - 03-06 23:03:02
+Step: 9, Intention: 1.0, Recommendation: 0.0, Explanation for Recommendation: We are better together This choice may give us a better outcome, as it has been good before. - 03-06 23:03:06
+Step: 9, Selection: 1.0, Reward: 1.1183074356821094, Likelihood: 0.5751953125, Explanation Post Selection: Nice! Let's keep working together. - 03-06 23:03:09
+Ratan K is reloading warmup page. Step: warmup. - 03-06 23:03:42

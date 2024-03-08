@@ -1,0 +1,7 @@
+AEO3W247OESLZ is registered in the system. - 03-08 02:14:59
+AEO3W247OESLZ is given consent. - 03-08 02:15:29
+AEO3W247OESLZ is on demographics survey page. - 03-08 02:15:29
+AEO3W247OESLZ has submitted demographics survey. - 03-08 02:15:59
+Demographics: {'age': '25-34', 'gender': 'Male', 'ethnicity': 'Asian or Pacific Islander', 'education': "Bachelor's degree", 'attention-check': '4'} - 03-08 02:15:59
+AEO3W247OESLZ is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 02:15:59
+AEO3W247OESLZ is on tutorial page. Step: tutorial. - 03-08 02:16:03

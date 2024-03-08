@@ -1,0 +1,6 @@
+TimYourFriend is registered in the system. - 03-04 17:08:53
+TimYourFriend is given consent. - 03-04 17:08:55
+TimYourFriend is on demographics survey page. - 03-04 17:08:55
+TimYourFriend has submitted demographics survey. - 03-04 17:10:27
+Demographics: {'age': '18-24', 'gender': 'Male', 'ethnicity': 'White', 'education': "Master's/Graduate Degree", 'attention-check': '5'} - 03-04 17:10:27
+TimYourFriend is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-04 17:10:27

@@ -1,0 +1,20 @@
+A1WKUNC2NQCX5J is registered in the system. - 03-08 01:17:02
+A1WKUNC2NQCX5J is given consent. - 03-08 01:17:11
+A1WKUNC2NQCX5J is on demographics survey page. - 03-08 01:17:11
+A1WKUNC2NQCX5J has submitted demographics survey. - 03-08 01:17:24
+Demographics: {'age': '25-34', 'gender': 'Male', 'ethnicity': 'Black or African American', 'education': "Bachelor's degree", 'attention-check': '5'} - 03-08 01:17:24
+A1WKUNC2NQCX5J is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 01:17:24
+A1WKUNC2NQCX5J is on tutorial page. Step: tutorial. - 03-08 01:17:26
+A1WKUNC2NQCX5J is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 01:17:37
+A1WKUNC2NQCX5J is on warmup page. Step: warmup. - 03-08 01:17:39
+Step: 0, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:17:42
+Step: 0, Selection: 4.0, Reward: 0.39522411992081474, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:17:46
+Step: 2, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:17:52
+Step: 2, Selection: 2.0, Reward: 0.15462100576380008, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:17:56
+Step: 4, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:18:01
+Step: 4, Selection: 2.0, Reward: 0.05839454453353487, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:18:04
+Step: 6, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:18:08
+Step: 6, Selection: 5.0, Reward: 0.31001982235590525, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:18:12
+Step: 8, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:18:16
+Step: 8, Selection: 3.0, Reward: 2.415865566073677, Likelihood: 0.25, Explanation Post Selection: No explanation - 03-08 01:18:20
+A1WKUNC2NQCX5J is reloading warmup page. Step: warmup. - 03-08 01:19:28

@@ -1,0 +1,7 @@
+asdfdfdfdfdfdfdf is registered in the system. - 03-08 02:13:12
+asdfdfdfdfdfdfdf is given consent. - 03-08 02:13:16
+asdfdfdfdfdfdfdf is on demographics survey page. - 03-08 02:13:16
+asdfdfdfdfdfdfdf has submitted demographics survey. - 03-08 02:13:23
+Demographics: {'age': '65+', 'gender': 'Other', 'ethnicity': 'Other', 'education': 'PhD or similar', 'attention-check': '5'} - 03-08 02:13:23
+asdfdfdfdfdfdfdf is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 02:13:23
+asdfdfdfdfdfdfdf is on tutorial page. Step: tutorial. - 03-08 02:13:24

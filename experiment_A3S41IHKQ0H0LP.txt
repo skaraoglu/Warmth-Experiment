@@ -1,0 +1,23 @@
+A3S41IHKQ0H0LP is registered in the system. - 03-08 01:25:10
+A3S41IHKQ0H0LP is given consent. - 03-08 01:26:53
+A3S41IHKQ0H0LP is on demographics survey page. - 03-08 01:26:53
+A3S41IHKQ0H0LP has submitted demographics survey. - 03-08 01:27:41
+Demographics: {'age': '25-34', 'gender': 'Female', 'ethnicity': 'White', 'education': "Master's/Graduate Degree", 'attention-check': '5'} - 03-08 01:27:41
+A3S41IHKQ0H0LP is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 01:27:41
+A3S41IHKQ0H0LP is on tutorial page. Step: tutorial. - 03-08 01:27:56
+A3S41IHKQ0H0LP is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 01:31:16
+A3S41IHKQ0H0LP is on warmup page. Step: warmup. - 03-08 01:31:19
+Step: 0, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:31:24
+Step: 2, Selection: 1.0, Reward: 0.5179635499591381, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:31:46
+Step: 3, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:31:51
+Step: 3, Selection: 2.0, Reward: 0.48984706651782056, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:31:55
+Step: 5, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:32:00
+Step: 5, Selection: 4.0, Reward: 0.022818614339166148, Likelihood: 0.1875, Explanation Post Selection: No explanation - 03-08 01:32:03
+Step: 6, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:32:12
+Step: 6, Selection: 4.0, Reward: 0.8743337770143644, Likelihood: 0.140625, Explanation Post Selection: No explanation - 03-08 01:32:15
+Step: 7, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:32:20
+Step: 7, Selection: 2.0, Reward: 0.09106294031720723, Likelihood: 0.10546875, Explanation Post Selection: No explanation - 03-08 01:32:23
+Step: 8, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:32:27
+Step: 8, Selection: 2.0, Reward: 0.02195319860873391, Likelihood: 0.0791015625, Explanation Post Selection: No explanation - 03-08 01:32:30
+Step: 9, Intention: 4.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:32:35
+A3S41IHKQ0H0LP is reloading experiment page. - 03-08 01:38:55

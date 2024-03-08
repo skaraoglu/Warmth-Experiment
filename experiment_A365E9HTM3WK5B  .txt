@@ -1,0 +1,13 @@
+A365E9HTM3WK5B   is registered in the system. - 03-08 01:13:28
+A365E9HTM3WK5B   is given consent. - 03-08 01:13:31
+A365E9HTM3WK5B   is on demographics survey page. - 03-08 01:13:31
+A365E9HTM3WK5B   has submitted demographics survey. - 03-08 01:13:39
+Demographics: {'age': '25-34', 'gender': 'Female', 'ethnicity': 'Black or African American', 'education': "Bachelor's degree", 'attention-check': '5'} - 03-08 01:13:39
+A365E9HTM3WK5B   is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 01:13:39
+A365E9HTM3WK5B   is on tutorial page. Step: tutorial. - 03-08 01:13:41
+A365E9HTM3WK5B   is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 01:13:47
+A365E9HTM3WK5B   is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 01:13:48
+A365E9HTM3WK5B   is reloading experiment page. - 03-08 01:13:48
+A365E9HTM3WK5B   is reloading experiment page. - 03-08 01:13:48
+A365E9HTM3WK5B   is reloading experiment page. - 03-08 01:13:48
+A365E9HTM3WK5B   is reloading experiment page. - 03-08 01:13:48

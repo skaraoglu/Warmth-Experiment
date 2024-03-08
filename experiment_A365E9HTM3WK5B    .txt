@@ -1,0 +1,65 @@
+A365E9HTM3WK5B     is registered in the system. - 03-08 01:13:58
+A365E9HTM3WK5B     is given consent. - 03-08 01:14:00
+A365E9HTM3WK5B     is on demographics survey page. - 03-08 01:14:01
+A365E9HTM3WK5B     has submitted demographics survey. - 03-08 01:14:11
+Demographics: {'age': '25-34', 'gender': 'Female', 'ethnicity': 'Black or African American', 'education': "Bachelor's degree", 'attention-check': '5'} - 03-08 01:14:11
+A365E9HTM3WK5B     is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 01:14:11
+A365E9HTM3WK5B     is on tutorial page. Step: tutorial. - 03-08 01:14:12
+A365E9HTM3WK5B     is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 01:14:19
+A365E9HTM3WK5B     is on warmup page. Step: warmup. - 03-08 01:14:21
+Step: 0, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:14:23
+Step: 0, Selection: 3.0, Reward: 1.4983592327744766, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:14:29
+Step: 1, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:14:33
+Step: 1, Selection: 2.0, Reward: 0.0425027207840249, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:14:37
+Step: 2, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:14:43
+Step: 2, Selection: 0.0, Reward: 0.17223932174886256, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:14:45
+Step: 3, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:14:50
+Step: 3, Selection: 1.0, Reward: 0.6170439517295726, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:14:52
+Step: 4, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:14:55
+Step: 4, Selection: 4.0, Reward: 0.5133175390687574, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:14:57
+Step: 5, Intention: 2.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:15:01
+Step: 5, Selection: 1.0, Reward: 0.2136333314469892, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:15:04
+Step: 6, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:15:08
+Step: 6, Selection: 2.0, Reward: 0.2403536310712321, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:15:11
+Step: 7, Intention: 4.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:15:27
+Step: 7, Selection: 3.0, Reward: 0.09361021464470325, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:15:29
+Step: 8, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:15:37
+Step: 8, Selection: 2.0, Reward: 0.31888843243697695, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:15:39
+Step: 9, Intention: 4.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:15:49
+Step: 9, Selection: 2.0, Reward: 0.07411702768384269, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:15:53
+A365E9HTM3WK5B     has submitted warmup. Step: warmupcomplete. - 03-08 01:16:14
+Warmup: {'intentions': [4.0, 1.0, 5.0, 4.0, 5.0, 2.0, 5.0, 4.0, 5.0, 4.0], 'recommendations': [4.0, 1.0, 5.0, 4.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0], 'selections': [3.0, 2.0, 0.0, 1.0, 4.0, 1.0, 2.0, 3.0, 2.0, 2.0], 'rewards': [1.4983592327744766, 0.0425027207840249, 0.17223932174886256, 0.6170439517295726, 0.5133175390687574, 0.2136333314469892, 0.2403536310712321, 0.09361021464470325, 0.31888843243697695, 0.07411702768384269, 0.5289467147883471, 2.6571579154131473, 0.07326507023928892, 0.01, 2.205515443813748, 0.9981037368567427, 0.17472705631387206, 0.19365279897693938, 0.4663329210218552, 0.2363398900487685, 0.965990865597016, 0.4178785398308791, 0.09412180602227438, 0.3152229479907089, 0.2219377521767791, 0.35611322325408357, 0.10091717232876067, 1.1107974549784387, 0.4590197483393977, 0.7511919855606538], 'strategy': 'by accurately watch the investment ratio. By avoiding error'} - 03-08 01:16:14
+A365E9HTM3WK5B     is on experiment page. Tutorial completed: True, Warmup completed: True. Step: experiment. - 03-08 01:16:14
+A365E9HTM3WK5B     is on task page. Step: task. - 03-08 01:16:16
+Step: 0, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:16:20
+Step: 0, Selection: 2.0, Reward: 0.32848512196652946, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:16:22
+Step: 1, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:16:26
+Step: 1, Selection: 0.0, Reward: 0.02531437143027418, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:16:29
+Step: 2, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:16:34
+Step: 2, Selection: 1.0, Reward: 0.4546500787587777, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:16:36
+Step: 3, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:16:40
+Step: 3, Selection: 5.0, Reward: 0.2215152910718659, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:16:43
+Step: 4, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:16:47
+Step: 4, Selection: 3.0, Reward: 0.8344380916821322, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:16:50
+Step: 5, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:16:54
+Step: 5, Selection: 5.0, Reward: 0.517621392282989, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:16:57
+Step: 6, Intention: 1.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:17:01
+Step: 6, Selection: 3.0, Reward: 2.2272546710364223, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:17:03
+Attention check: true - 03-08 01:17:10
+Step: 7, Intention: 2.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:17:11
+Step: 7, Selection: 3.0, Reward: 0.4275747107677823, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:17:14
+Step: 8, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:17:18
+Step: 8, Selection: 2.0, Reward: 2.1796775910172794, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:17:20
+Step: 9, Intention: 2.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:17:26
+Step: 9, Selection: 3.0, Reward: 0.09087387710524913, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:17:29
+Strategy: 1 - by following the instruction carefully by avoiding loss. - 03-08 01:17:46
+Step: 1, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:17:47
+Step: 1, Selection: 2.0, Reward: 0.11140300810748267, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:17:50
+Step: 2, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:17:54
+Step: 3, Selection: 4.0, Reward: 0.030805886055487793, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:17:56
+Step: 4, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:18:02
+Step: 5, Selection: 2.0, Reward: 0.10082137702811965, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:18:05
+Step: 6, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:18:10
+Step: 7, Selection: 4.0, Reward: 0.7568333986624732, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 01:18:13
+Step: 8, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:18:18
+Step: 9, Selection: 1.0, Reward: 0.6249462521640281, Likelihood: 0.1875, Explanation Post Selection: No explanation - 03-08 01:18:20

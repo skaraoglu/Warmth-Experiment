@@ -1,0 +1,25 @@
+svualsiwuqo2h is registered in the system. - 03-06 23:00:13
+svualsiwuqo2h is given consent. - 03-06 23:00:15
+svualsiwuqo2h is on demographics survey page. - 03-06 23:00:15
+svualsiwuqo2h has submitted demographics survey. - 03-06 23:00:23
+Demographics: {'age': '18-24', 'gender': 'Male', 'ethnicity': 'White', 'education': 'Less than high school', 'attention-check': '5'} - 03-06 23:00:23
+svualsiwuqo2h is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-06 23:00:23
+svualsiwuqo2h is on tutorial page. Step: tutorial. - 03-06 23:00:26
+svualsiwuqo2h is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-06 23:00:42
+svualsiwuqo2h is on warmup page. Step: warmup. - 03-06 23:00:43
+Step: 0, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: Good decision! Exploring this choice should pay off. - 03-06 23:00:44
+Step: 0, Selection: 1.0, Reward: 0.2706231978437178, Likelihood: 0.0, Explanation Post Selection: Awesome! We should keep cooperating. - 03-06 23:00:48
+Step: 2, Intention: 2.0, Recommendation: 4.0, Explanation for Recommendation: Let's do this together. You could consider this option instead as it could get you a higher reward. - 03-06 23:01:13
+Step: 3, Selection: 4.0, Reward: 0.2699153899113977, Likelihood: 0.24609375, Explanation Post Selection: Nice! Let's keep working together. - 03-06 23:01:15
+Step: 4, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Seems like we agree with exploring this one! Go ahead with your selection. - 03-06 23:01:20
+Step: 5, Selection: 3.0, Reward: 1.967712640719745, Likelihood: 0.325927734375, Explanation Post Selection: Nice! Let's keep working together. - 03-06 23:01:22
+Step: 7, Intention: 4.0, Recommendation: 0.0, Explanation for Recommendation: We can do this together. This choice may give us a better outcome, as it has been good before. - 03-06 23:01:47
+Step: 7, Selection: 0.0, Reward: 2.3716238764779294, Likelihood: 0.3708343505859375, Explanation Post Selection: Yay, we should continue! - 03-06 23:01:51
+Step: 8, Intention: 2.0, Recommendation: 0.0, Explanation for Recommendation: Let's do this together. Choosing this option may benefit you in the long run. - 03-06 23:01:55
+Step: 8, Selection: 0.0, Reward: 0.226526741264365, Likelihood: 0.2781257629394531, Explanation Post Selection: Oh, how unlucky! We can always learn. - 03-06 23:01:58
+Step: 9, Intention: 5.0, Recommendation: 0.0, Explanation for Recommendation: We can do this together. This choice may give us a better outcome, as it has been good before. - 03-06 23:02:02
+Step: 9, Selection: 0.0, Reward: 1.4254056700728883, Likelihood: 0.20859432220458984, Explanation Post Selection: Awesome, let's keep going! - 03-06 23:02:05
+Step: 0, Selection: 5.0, Reward: 0.22648093296594732, Likelihood: 0.0, Explanation Post Selection: Nice! Let's keep working together. - 03-06 23:02:32
+Step: 2, Intention: 2.0, Recommendation: 0.0, Explanation for Recommendation: We are better together You could consider this option instead as it could get you a higher reward. - 03-06 23:02:38
+Step: 3, Selection: 2.0, Reward: 0.041923900817928704, Likelihood: 0.0, Explanation Post Selection: That's unfortunate. We should work together! - 03-06 23:02:41
+svualsiwuqo2h is reloading warmup page. Step: warmup. - 03-06 23:05:02

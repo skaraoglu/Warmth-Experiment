@@ -1,0 +1,16 @@
+A365E9HTM3WK5B is registered in the system. - 03-08 00:44:17
+A365E9HTM3WK5B is given consent. - 03-08 00:44:24
+A365E9HTM3WK5B is on demographics survey page. - 03-08 00:44:24
+A365E9HTM3WK5B has submitted demographics survey. - 03-08 00:44:36
+Demographics: {'age': '25-34', 'gender': 'Female', 'ethnicity': 'Black or African American', 'education': "Bachelor's degree", 'attention-check': '5'} - 03-08 00:44:36
+A365E9HTM3WK5B is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 00:44:37
+A365E9HTM3WK5B is on tutorial page. Step: tutorial. - 03-08 00:44:39
+A365E9HTM3WK5B is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 00:45:53
+A365E9HTM3WK5B is on warmup page. Step: warmup. - 03-08 00:45:55
+Step: 1, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:45:57
+Step: 3, Selection: 0.0, Reward: 0.5739507719180654, Likelihood: 0.390625, Explanation Post Selection: No explanation - 03-08 00:46:08
+Step: 5, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:46:12
+Step: 6, Selection: 3.0, Reward: 0.6214583275484223, Likelihood: 0.492919921875, Explanation Post Selection: No explanation - 03-08 00:46:16
+Step: 8, Intention: 2.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 00:46:20
+Step: 9, Selection: 3.0, Reward: 2.4423068034259146, Likelihood: 0.20795059204101562, Explanation Post Selection: No explanation - 03-08 00:46:22
+A365E9HTM3WK5B is reloading warmup page. Step: warmup. - 03-08 00:58:56

@@ -1,0 +1,13 @@
+A2NY36EXI40OJV is registered in the system. - 03-08 01:22:42
+A2NY36EXI40OJV is given consent. - 03-08 01:23:09
+A2NY36EXI40OJV is on demographics survey page. - 03-08 01:23:09
+A2NY36EXI40OJV has submitted demographics survey. - 03-08 01:23:42
+Demographics: {'age': '35-44', 'gender': 'Female', 'ethnicity': 'White', 'education': "Master's/Graduate Degree", 'attention-check': '5'} - 03-08 01:23:42
+A2NY36EXI40OJV is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 01:23:42
+A2NY36EXI40OJV is on tutorial page. Step: tutorial. - 03-08 01:23:47
+A2NY36EXI40OJV is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 01:26:03
+A2NY36EXI40OJV is on warmup page. Step: warmup. - 03-08 01:26:10
+Step: 0, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:26:18
+Step: 5, Selection: 3.0, Reward: 2.547592405865738, Likelihood: 0.328125, Explanation Post Selection: No explanation - 03-08 01:26:44
+Step: 7, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 01:26:49
+A2NY36EXI40OJV is reloading warmup page. Step: warmup. - 03-08 01:28:32

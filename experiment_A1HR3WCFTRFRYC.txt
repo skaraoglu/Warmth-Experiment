@@ -1,0 +1,6 @@
+A1HR3WCFTRFRYC is registered in the system. - 03-08 01:24:42
+A1HR3WCFTRFRYC is given consent. - 03-08 01:24:45
+A1HR3WCFTRFRYC is on demographics survey page. - 03-08 01:24:45
+A1HR3WCFTRFRYC has submitted demographics survey. - 03-08 01:24:54
+Demographics: {'age': '25-34', 'gender': 'Female', 'ethnicity': 'Asian or Pacific Islander', 'education': "Bachelor's degree", 'attention-check': '5'} - 03-08 01:24:54
+A1HR3WCFTRFRYC is reloading experiment page. - 03-08 01:24:54

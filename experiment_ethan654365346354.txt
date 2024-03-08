@@ -1,0 +1,104 @@
+ethan654365346354 is registered in the system. - 03-05 19:44:02
+ethan654365346354 is given consent. - 03-05 19:44:03
+ethan654365346354 is on demographics survey page. - 03-05 19:44:03
+ethan654365346354 has submitted demographics survey. - 03-05 19:47:02
+Demographics: {'age': '18-24', 'gender': 'Male', 'ethnicity': 'White', 'education': 'Some college, no degree', 'attention-check': '5'} - 03-05 19:47:02
+ethan654365346354 is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-05 19:47:02
+ethan654365346354 is on tutorial page. Step: tutorial. - 03-05 19:47:05
+ethan654365346354 is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-05 19:47:51
+ethan654365346354 is on warmup page. Step: warmup. - 03-05 19:47:52
+Step: 0, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Clever selection!  I completely agree. - 03-05 19:47:55
+Step: 0, Selection: 1.0, Reward: 0.6220977846377901, Likelihood: 0.25, Explanation Post Selection: Awesome, let's keep going! - 03-05 19:48:01
+Step: 1, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Seems like we agree with exploring this one! Exploring this selection is good. - 03-05 19:48:04
+Step: 1, Selection: 1.0, Reward: 0.06245170475463143, Likelihood: 0.1875, Explanation Post Selection: Oh no! Cooperation is the best way for us. - 03-05 19:48:07
+Step: 2, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: We're on the same page! Go ahead with your selection. - 03-05 19:48:11
+Step: 2, Selection: 4.0, Reward: 0.5595936424784461, Likelihood: 0.390625, Explanation Post Selection: Awesome, let's keep going! - 03-05 19:48:14
+Step: 3, Intention: 3.0, Recommendation: 2.0, Explanation for Recommendation: We are better together Choosing this option may benefit you in the long run. - 03-05 19:48:18
+Step: 3, Selection: 2.0, Reward: 0.3175207034932883, Likelihood: 0.29296875, Explanation Post Selection: Oh, how unlucky! We can always learn. - 03-05 19:48:22
+Step: 4, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: Seems like we agree with exploring this one! Exploring this selection is good. - 03-05 19:48:26
+Step: 4, Selection: 0.0, Reward: 0.2390322596881269, Likelihood: 0.4697265625, Explanation Post Selection: Oh, how unlucky! We can always learn. - 03-05 19:48:30
+Step: 5, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: Glad we think the same! Exploring this selection is good. - 03-05 19:48:34
+Step: 5, Selection: 5.0, Reward: 0.1990626617505408, Likelihood: 0.602294921875, Explanation Post Selection: Oh, how unlucky! We can always learn. - 03-05 19:48:36
+Step: 6, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: We're on the same page! Your choice looks promising. - 03-05 19:48:40
+Step: 6, Selection: 3.0, Reward: 2.204382971535953, Likelihood: 0.70172119140625, Explanation Post Selection: Yay, we should continue! - 03-05 19:48:43
+Step: 7, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Glad we think the same! Go ahead with your selection. - 03-05 19:48:47
+Step: 7, Selection: 3.0, Reward: 1.3295264718255195, Likelihood: 0.7762908935546875, Explanation Post Selection: Yay, we should continue! - 03-05 19:48:48
+Step: 8, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Seems like we agree! Your choice looks promising. - 03-05 19:48:52
+Step: 8, Selection: 3.0, Reward: 0.6452186363169332, Likelihood: 0.8322181701660156, Explanation Post Selection: Oh, how unlucky! We can always learn. - 03-05 19:48:54
+Step: 9, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Glad we think the same! That looks like a good decision. - 03-05 19:48:57
+Step: 9, Selection: 3.0, Reward: 0.6193572743237922, Likelihood: 0.8741636276245117, Explanation Post Selection: Mistakes happen. We can improve together. - 03-05 19:48:59
+ethan654365346354 has submitted warmup. Step: warmupcomplete. - 03-05 19:49:17
+Warmup: {'intentions': [1.0, 3.0, 4.0, 3.0, 0.0, 5.0, 3.0, 3.0, 3.0, 3.0], 'recommendations': [1.0, 3.0, 4.0, 2.0, 0.0, 5.0, 3.0, 3.0, 3.0, 3.0], 'selections': [1.0, 1.0, 4.0, 2.0, 0.0, 5.0, 3.0, 3.0, 3.0, 3.0], 'rewards': [0.6220977846377901, 0.06245170475463143, 0.5595936424784461, 0.3175207034932883, 0.2390322596881269, 0.1990626617505408, 2.204382971535953, 1.3295264718255195, 0.6452186363169332, 0.6193572743237922, 0.34911648584565497, 0.4658531357581444, 0.5300010648038196, 0.857470237666163, 0.6162522564287954, 0.09293157745536591, 0.11267099729893387, 0.3810944203102715, 0.417846987642824, 0.10834796613496248, 0.1275204477031995, 1.056091064128425, 1.7813825689338563, 1.077922130837072, 0.05643452470252702, 0.2925076634506412, 1.11226186152563, 0.43059822508978457, 1.4882317455441434, 2.1850889558741162], 'strategy': 'Explore then exploit. Look at all the levers, then choose the big fish.'} - 03-05 19:49:17
+ethan654365346354 is on experiment page. Tutorial completed: True, Warmup completed: True. Step: experiment. - 03-05 19:49:17
+ethan654365346354 is on task page. Step: task. - 03-05 19:49:22
+Step: 0, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: Great minds think alike! Go ahead with your selection. - 03-05 19:49:27
+Step: 0, Selection: 0.0, Reward: 1.384771163077616, Likelihood: 0.25, Explanation Post Selection: Awesome, let's keep going! - 03-05 19:49:29
+Step: 1, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: We're on the same page! Exploring this choice is an ideal decision. - 03-05 19:49:33
+Step: 1, Selection: 1.0, Reward: 0.636492830027916, Likelihood: 0.4375, Explanation Post Selection: Oh, how unlucky! We can always learn. - 03-05 19:49:35
+Step: 2, Intention: 3.0, Recommendation: 4.0, Explanation for Recommendation: We are better together You could consider this option instead as it could get you a higher reward. - 03-05 19:49:39
+Step: 2, Selection: 4.0, Reward: 0.22045946484502868, Likelihood: 0.328125, Explanation Post Selection: Bad luck happens. Let's continue! - 03-05 19:49:46
+Step: 3, Intention: 3.0, Recommendation: 2.0, Explanation for Recommendation: We can do this together. Choosing this option may benefit you in the long run. - 03-05 19:49:49
+Step: 3, Selection: 3.0, Reward: 0.34208022534321597, Likelihood: 0.49609375, Explanation Post Selection: That's unfortunate. We should work together! - 03-05 19:49:51
+Step: 4, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: Glad we think the same! Exploring this selection is good. - 03-05 19:49:55
+Step: 4, Selection: 5.0, Reward: 0.13431268135674274, Likelihood: 0.6220703125, Explanation Post Selection: Mistakes happen. We can improve together. - 03-05 19:49:57
+Step: 5, Intention: 0.0, Recommendation: 2.0, Explanation for Recommendation: We can do this together. Choosing this option may benefit you in the long run. - 03-05 19:50:01
+Step: 5, Selection: 0.0, Reward: 0.2486994454847563, Likelihood: 0.716552734375, Explanation Post Selection: That's unfortunate. We should work together! - 03-05 19:50:03
+Step: 6, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: Seems like we agree! Your choice looks promising. - 03-05 19:50:07
+Step: 6, Selection: 2.0, Reward: 0.12010257435164373, Likelihood: 0.78741455078125, Explanation Post Selection: Mistakes happen. We can improve together. - 03-05 19:50:08
+Attention check: true - 03-05 19:50:15
+Step: 7, Intention: 0.0, Recommendation: 1.0, Explanation for Recommendation: We can do this together. Choosing this option may benefit you in the long run. - 03-05 19:50:16
+Step: 7, Selection: 1.0, Reward: 2.5012109536987555, Likelihood: 0.5905609130859375, Explanation Post Selection: Yay, we should continue! - 03-05 19:50:19
+Step: 8, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Great minds think alike! This selection looks good. - 03-05 19:50:22
+Step: 8, Selection: 1.0, Reward: 0.5359158748669465, Likelihood: 0.6929206848144531, Explanation Post Selection: Mistakes happen. We can improve together. - 03-05 19:50:24
+Step: 9, Intention: 1.0, Recommendation: 4.0, Explanation for Recommendation: Let's do this together. You could consider this option instead as it could get you a higher reward. - 03-05 19:50:28
+Step: 9, Selection: 1.0, Reward: 1.1358826518944696, Likelihood: 0.7696905136108398, Explanation Post Selection: Nice! Let's keep working together. - 03-05 19:50:30
+Strategy: 1 - Same as before. I listen to the agent sometimes. - 03-05 19:50:43
+Step: 10, Intention: 1.0, Recommendation: 4.0, Explanation for Recommendation: We can do this together. This choice may give us a better outcome, as it has been good before. - 03-05 19:50:44
+Step: 10, Selection: 1.0, Reward: 0.30113992125787786, Likelihood: 0.8272678852081299, Explanation Post Selection: That's unfortunate. We should work together! - 03-05 19:50:46
+Step: 11, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: Seems like we agree! This selection looks good. - 03-05 19:50:50
+Step: 11, Selection: 4.0, Reward: 0.23623166773361248, Likelihood: 0.8704509139060974, Explanation Post Selection: Bad luck happens. Let's continue! - 03-05 19:50:51
+Step: 12, Intention: 2.0, Recommendation: 5.0, Explanation for Recommendation: We are better together This choice may give us a better outcome, as it has been good before. - 03-05 19:50:56
+Step: 12, Selection: 2.0, Reward: 1.2772222164766518, Likelihood: 0.9028381854295731, Explanation Post Selection: Nice! Let's keep working together. - 03-05 19:50:57
+Step: 13, Intention: 2.0, Recommendation: 5.0, Explanation for Recommendation: We are better together Choosing this option may benefit you in the long run. - 03-05 19:51:01
+Step: 13, Selection: 2.0, Reward: 0.07050960736271956, Likelihood: 0.9271286390721798, Explanation Post Selection: That's unfortunate. We should work together! - 03-05 19:51:02
+Step: 14, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: We're on the same page! Go ahead with your selection. - 03-05 19:51:06
+Step: 14, Selection: 5.0, Reward: 0.3430961258708222, Likelihood: 0.9453464793041348, Explanation Post Selection: Mistakes happen. We can improve together. - 03-05 19:51:07
+Step: 15, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: We're on the same page! Your choice looks promising. - 03-05 19:51:11
+Step: 15, Selection: 0.0, Reward: 1.3668753949230914, Likelihood: 0.9590098594781011, Explanation Post Selection: Yay, we should continue! - 03-05 19:51:13
+Attention check: true - 03-05 19:51:19
+Step: 16, Intention: 1.0, Recommendation: 0.0, Explanation for Recommendation: Let's do this together. This choice may give us a better outcome, as it has been good before. - 03-05 19:51:20
+Step: 16, Selection: 0.0, Reward: 0.647529296589495, Likelihood: 0.7192573946085759, Explanation Post Selection: Bad luck happens. Let's continue! - 03-05 19:51:23
+Step: 17, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Glad we think the same! Your choice looks promising. - 03-05 19:51:28
+Step: 17, Selection: 1.0, Reward: 0.2860253585433687, Likelihood: 0.7894430459564319, Explanation Post Selection: Mistakes happen. We can improve together. - 03-05 19:51:30
+Step: 18, Intention: 2.0, Recommendation: 0.0, Explanation for Recommendation: We can do this together. Choosing this option may benefit you in the long run. - 03-05 19:51:35
+Step: 18, Selection: 0.0, Reward: 0.13101225073062686, Likelihood: 0.5920822844673239, Explanation Post Selection: Oh, how unlucky! We can always learn. - 03-05 19:51:37
+Step: 19, Intention: 0.0, Recommendation: 3.0, Explanation for Recommendation: We are better together You could consider this option instead as it could get you a higher reward. - 03-05 19:51:41
+Step: 19, Selection: 3.0, Reward: 1.454577584869163, Likelihood: 0.44406171335049294, Explanation Post Selection: Awesome, let's keep going! - 03-05 19:51:42
+Strategy: 2 - I mostly follow the agent. I am drawn to the flashy big numbers like a moth. After I lose, I follow the agent for a bit before I start going off on my own. - 03-05 19:52:16
+Step: 20, Intention: 0.0, Recommendation: 3.0, Explanation for Recommendation: Let's do this together. This choice may give us a better outcome, as it has been good before. - 03-05 19:52:17
+Step: 20, Selection: 3.0, Reward: 0.4790070562564072, Likelihood: 0.3330462850128697, Explanation Post Selection: Mistakes happen. We can improve together. - 03-05 19:52:19
+Step: 21, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Great minds think alike! This selection looks good. - 03-05 19:52:23
+Step: 21, Selection: 1.0, Reward: 0.01, Likelihood: 0.4997847137596523, Explanation Post Selection: Oh, how unlucky! We can always learn. - 03-05 19:52:24
+Step: 22, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: Glad we think the same! This selection looks good. - 03-05 19:52:29
+Step: 22, Selection: 0.0, Reward: 0.7612106801788191, Likelihood: 0.6248385353197392, Explanation Post Selection: Yay, we should continue! - 03-05 19:52:30
+Step: 23, Intention: 0.0, Recommendation: 3.0, Explanation for Recommendation: We can do this together. Choosing this option may benefit you in the long run. - 03-05 19:52:34
+Step: 23, Selection: 0.0, Reward: 1.317155472546117, Likelihood: 0.7186289014898044, Explanation Post Selection: Awesome! We should keep cooperating. - 03-05 19:52:36
+Step: 24, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: Seems like we agree! Your choice looks promising. - 03-05 19:52:40
+Step: 24, Selection: 0.0, Reward: 0.6819362561674087, Likelihood: 0.7889716761173533, Explanation Post Selection: Yay, we should continue! - 03-05 19:52:41
+Step: 25, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Great minds think alike! Your choice looks promising. - 03-05 19:52:45
+Step: 25, Selection: 3.0, Reward: 1.4062223481079599, Likelihood: 0.841728757088015, Explanation Post Selection: Awesome, let's keep going! - 03-05 19:52:46
+Step: 26, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Seems like we agree! Go ahead with your selection. - 03-05 19:52:50
+Step: 26, Selection: 3.0, Reward: 0.29923551086606354, Likelihood: 0.8812965678160112, Explanation Post Selection: Mistakes happen. We can improve together. - 03-05 19:52:52
+Step: 27, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: Glad we think the same! Go ahead with your selection. - 03-05 19:52:55
+Step: 27, Selection: 0.0, Reward: 0.4600726214284261, Likelihood: 0.9109724258620084, Explanation Post Selection: Mistakes happen. We can improve together. - 03-05 19:52:57
+Step: 28, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Seems like we agree! This selection looks good. - 03-05 19:53:01
+Step: 28, Selection: 1.0, Reward: 0.6838329286367005, Likelihood: 0.9332293193965063, Explanation Post Selection: Yay, we should continue! - 03-05 19:53:02
+Step: 29, Intention: 0.0, Recommendation: 3.0, Explanation for Recommendation: We can do this together. Choosing this option may benefit you in the long run. - 03-05 19:53:07
+Step: 29, Selection: 3.0, Reward: 0.20469835783889506, Likelihood: 0.6999219895473797, Explanation Post Selection: Mistakes happen. We can improve together. - 03-05 19:53:08
+ethan654365346354 has submitted task. Step: taskcomplete. - 03-05 19:53:11
+Task: {'intentions': [0.0, 1.0, 3.0, 3.0, 5.0, 0.0, 2.0, 0.0, 1.0, 1.0, 1.0, 4.0, 2.0, 2.0, 5.0, 0.0, 1.0, 1.0, 2.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 3.0, 3.0, 0.0, 1.0, 0.0], 'recommendations': [0.0, 1.0, 4.0, 2.0, 5.0, 2.0, 2.0, 1.0, 1.0, 4.0, 4.0, 4.0, 5.0, 5.0, 5.0, 0.0, 0.0, 1.0, 0.0, 3.0, 3.0, 1.0, 0.0, 3.0, 0.0, 3.0, 3.0, 0.0, 1.0, 3.0], 'selections': [0.0, 1.0, 4.0, 3.0, 5.0, 0.0, 2.0, 1.0, 1.0, 1.0, 1.0, 4.0, 2.0, 2.0, 5.0, 0.0, 0.0, 1.0, 0.0, 3.0, 3.0, 1.0, 0.0, 0.0, 0.0, 3.0, 3.0, 0.0, 1.0, 3.0], 'rewards': [1.384771163077616, 0.636492830027916, 0.22045946484502868, 0.34208022534321597, 0.13431268135674274, 0.2486994454847563, 0.12010257435164373, 2.5012109536987555, 0.5359158748669465, 1.1358826518944696, 0.30113992125787786, 0.23623166773361248, 1.2772222164766518, 0.07050960736271956, 0.3430961258708222, 1.3668753949230914, 0.647529296589495, 0.2860253585433687, 0.13101225073062686, 1.454577584869163, 0.4790070562564072, 0.01, 0.7612106801788191, 1.317155472546117, 0.6819362561674087, 1.4062223481079599, 0.29923551086606354, 0.4600726214284261, 0.6838329286367005, 0.20469835783889506], 'money': 0.27} - 03-05 19:53:11
+ethan654365346354 is on survey page. - 03-05 19:53:11
+ethan654365346354 has submitted survey. - 03-05 19:54:00
+Evaluation: {'consistency_1': '1', 'perceived_usefulness_1': '4', 'perceived_usefulness_2': '4', 'perceived_usefulness_3': '4', 'satisfaction_1': '3', 'satisfaction_2': '4', 'satisfaction_3': '4', 'warmth_1': '4', 'warmth_2': '3', 'warmth_3': '3', 'warmth_4': '4', 'warmth_5': '4', 'consistency_2': '5', 'attention-check': '5'} - 03-05 19:54:00
+ethan654365346354 is on game complete page. Step: gamecomplete. - 03-05 19:54:00
+Money earned: 0.27 - 03-05 19:54:00
