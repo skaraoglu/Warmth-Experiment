@@ -271,7 +271,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         stockTitle.style.color = "#222";
                       });
                       isAnimating = false; // Reset animation flag
-                    }, 300);
+                    }, 3000);
                   },
                 });
               },

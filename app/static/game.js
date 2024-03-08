@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", function () {
                       }
                     });
                     isAnimating = false; // Reset animation flag
-                  }, 300);
+                  }, 3000);
                 },
               });
             },
