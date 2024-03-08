@@ -6,7 +6,7 @@ class User(db.Model):
     experiment_completed = db.Column(db.Boolean, default=False)
     intervention_condition = db.Column(db.Integer)
     #consent = db.Column(db.Boolean, default=False)
-    
+    attention_checks_failed = db.Column(db.Integer, default=0)
     def is_authenticated(self):
         return True
 

@@ -218,12 +218,20 @@ def demographics_survey_submit():
         demographics['ethnicity'] = request.form.get('q3')
         demographics['education'] = request.form.get('q4')
         demographics['attention-check'] = request.form.get('q5')
-        
-        print("Failed attention checks: " + str(atnChecks.failed_attention_checks))
-        if demographics['attention-check'] != '4' or demographics['attention-check'] != '5':
+
+        if demographics['attention-check'] == '1' or demographics['attention-check'] == '2' or demographics['attention-check'] == '3':
+            print("Failed attention check", demographics['attention-check'])
             atnChecks.failed_attention_checks += 1
         session['failed_attention_checks'] = atnChecks.failed_attention_checks
+        print("Failed attention checks: " + str(atnChecks.failed_attention_checks))
         
+        User.query.filter_by(mturk_id=session['mturk_id']).first().attention_checks_failed = atnChecks.failed_attention_checks
+        db.session.commit()
+        
+        if (atnChecks.failed_attention_checks > 1):
+            log_experiment(f'Attention check: {atnCheck} - Failed, {atnChecks.failed_attention_checks} times, logging out user')
+            # Logout user
+            clear_session_and_logout()
         
         # Save survey to database
         survey = Survey(
@@ -283,7 +291,8 @@ def survey_submit():
         evaluation['attention-check'] = request.form.get('q14')
         
         
-        if evaluation['attention-check'] != '4' or evaluation['attention-check'] != '5':
+        if evaluation['attention-check'] == '1' or evaluation['attention-check'] == '2' or evaluation['attention-check'] == '3':
+            print("Failed attention check", evaluation['attention-check'])
             atnChecks.failed_attention_checks += 1
         session['failed_attention_checks'] = atnChecks.failed_attention_checks
         print("Failed attention checks: " + str(atnChecks.failed_attention_checks))
@@ -295,6 +304,14 @@ def survey_submit():
             data = evaluation,
             timestamp = datetime.now()
         )
+        
+        User.query.filter_by(mturk_id=session['mturk_id']).first().attention_checks_failed = atnChecks.failed_attention_checks
+        db.session.commit()
+        
+        if (atnChecks.failed_attention_checks > 1):
+            log_experiment(f'Attention check: {atnCheck} - Failed, {atnChecks.failed_attention_checks} times, logging out user')
+            # Logout user
+            clear_session_and_logout()
         
         db.session.add(survey)
         db.session.commit()
@@ -563,6 +580,14 @@ def attention_check():
     atnCheck = request.args.get('atn')
     attentionChecks.append(atnCheck)
     if (atnCheck == 'false') : atnChecks.failed_attention_checks += 1
+    
+    User.query.filter_by(mturk_id=session['mturk_id']).first().attention_checks_failed = atnChecks.failed_attention_checks
+    db.session.commit()
+    if (atnChecks.failed_attention_checks > 1):
+        log_experiment(f'Attention check: {atnCheck} - Failed, {atnChecks.failed_attention_checks} times, logging out user')
+        # Logout user
+        clear_session_and_logout()
+        
     log_experiment(f'Attention check: {atnCheck}')
 
     return jsonify({'success' : 1})
