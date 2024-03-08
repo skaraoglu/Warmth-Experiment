@@ -586,6 +586,19 @@ def attention_check():
 def get_strategy():
     q = request.args.get('q', 0)
     a = request.args.get('a', 0)
+    strategy = {}
+    strategy['question'] = q
+    strategy['strategy'] = a    
+    # Save survey to database
+    survey = Survey(
+        mturk_id = session['mturk_id'],
+        type = 'strategy',
+        data = strategy,
+        timestamp = datetime.now()
+    )
+    
+    db.session.add(survey)
+    db.session.commit()
     log_experiment(f'Strategy: {q} - {a}')
 
     return jsonify({'success' : 1})
