@@ -81,9 +81,10 @@ bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=-1)
 bandit.reset()
 
 def log_experiment(message):
+    path = 'logs/'
     filename = f'experiment_{current_user.mturk_id}.txt'
     timestamp = datetime.now().strftime('%m-%d %H:%M:%S')
-    with open(filename, 'a', encoding='utf-8') as f:
+    with open(path + filename, 'a', encoding='utf-8') as f:
         f.write(f'{message} - {timestamp}\n')
 
 def attention_check_fail():
