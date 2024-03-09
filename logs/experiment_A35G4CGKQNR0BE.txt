@@ -1,0 +1,21 @@
+A35G4CGKQNR0BE is registered in the system. - 03-08 13:56:36
+A35G4CGKQNR0BE is given consent. - 03-08 13:56:44
+A35G4CGKQNR0BE is on demographics survey page. - 03-08 13:56:45
+A35G4CGKQNR0BE has submitted demographics survey. - 03-08 13:57:07
+Demographics: {'age': '25-34', 'gender': 'Female', 'ethnicity': 'White', 'education': "Bachelor's degree", 'attention-check': '4'} - 03-08 13:57:07
+A35G4CGKQNR0BE is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 13:57:07
+A35G4CGKQNR0BE is on tutorial page. Step: tutorial. - 03-08 13:57:10
+A35G4CGKQNR0BE is on tutorial page. Step: tutorial. - 03-08 13:57:29
+A35G4CGKQNR0BE is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 13:58:16
+A35G4CGKQNR0BE is on warmup page. Step: warmup. - 03-08 13:58:19
+Step: 0, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Well-made decision. I agree., Condition: 0 - 03-08 13:58:35
+Step: 0, Selection: 1.0, Reward: 0.2116443071778755, Likelihood: 0.0, Explanation Post Selection: Nice! Let's try to explore together. 😊 - 03-08 13:58:40
+Step: 2, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: Seems like we agree! Your choice will help us learn., Condition: 1 - 03-08 13:58:46
+Step: 4, Selection: 2.0, Reward: 0.31354149232394735, Likelihood: 0.10546875, Explanation Post Selection: Impressive! Let's always remember that we can work as a team.😊 - 03-08 13:59:03
+Step: 5, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: Seems like we agree! Go ahead with this selection., Condition: 1 - 03-08 13:59:07
+Step: 5, Selection: 5.0, Reward: 0.2930219304221704, Likelihood: 0.3291015625, Explanation Post Selection: Yay, let's keep exploring!🙂 - 03-08 13:59:08
+Step: 7, Intention: 2.0, Recommendation: 0.0, Explanation for Recommendation: Let's do this together. Exploring this option may benefit you in the long run.😊, Condition: 1 - 03-08 13:59:12
+Step: 7, Selection: 2.0, Reward: 0.12916842645567503, Likelihood: 0.43511962890625, Explanation Post Selection: Unfavorable outcomes happen. Let's not forget to explore together! - 03-08 13:59:14
+Step: 9, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: Good to see we agree! Exploring this choice is a great decision.🙂, Condition: 1 - 03-08 13:59:18
+Step: 9, Selection: 0.0, Reward: 0.45851472840397256, Likelihood: 0.4947547912597656, Explanation Post Selection: Fantastic! Exploring options has its benefits. - 03-08 13:59:22
+A35G4CGKQNR0BE is reloading warmup page. Step: warmup. - 03-08 14:01:41

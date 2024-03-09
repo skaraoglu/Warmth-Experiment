@@ -1,0 +1,20 @@
+976896879687 is registered in the system. - 03-08 23:21:17
+976896879687 is given consent. - 03-08 23:21:19
+976896879687 is on demographics survey page. - 03-08 23:21:19
+976896879687 has submitted demographics survey. - 03-08 23:21:30
+Demographics: {'age': '35-44', 'gender': 'Female', 'ethnicity': 'Hispanic/Latino', 'education': 'High school', 'attention-check': '4'} - 03-08 23:21:30
+976896879687 is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 23:21:30
+976896879687 is on tutorial page. Step: tutorial. - 03-08 23:22:31
+976896879687 is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 23:22:33
+976896879687 is on warmup page. Step: warmup. - 03-08 23:22:34
+Step: 1, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: Logical decision. I support exploring this option., Condition: 0 - 03-08 23:22:35
+Step: 2, Selection: 4.0, Reward: 0.062049597595017006, Likelihood: 0.1875, Explanation Post Selection: Don't forget. I am here to assist you in exploring. - 03-08 23:22:43
+Step: 7, Intention: 3.0, Recommendation: 0.0, Explanation for Recommendation: I recommend this instead. If this option is selected, there may be a less desirable outcome., Condition: 0 - 03-08 23:23:42
+Step: 7, Selection: 3.0, Reward: 1.0073038487933876, Likelihood: 0.86651611328125, Explanation Post Selection: Quite fortunate result. I would like to see more cooperations in the next rounds. - 03-08 23:23:42
+Step: 8, Intention: 2.0, Recommendation: 0.0, Explanation for Recommendation: I have a different suggestion. If this option is not selected, it may obtain a suboptimal outcome., Condition: 0 - 03-08 23:23:46
+Step: 8, Selection: 0.0, Reward: 1.143855961379709, Likelihood: 0.6498870849609375, Explanation Post Selection: I am quite pleased with the outcome. - 03-08 23:23:48
+Step: 9, Intention: 1.0, Recommendation: 0.0, Explanation for Recommendation: I recommend this instead. If this option is ignored, the optimal outcome may not be attained., Condition: 0 - 03-08 23:23:52
+Step: 9, Selection: 1.0, Reward: 0.5341896739677129, Likelihood: 0.7374153137207031, Explanation Post Selection: I recommend collaborating to maximize reward. - 03-08 23:23:53
+Step: 11, Intention: 5.0, Recommendation: 0.0, Explanation for Recommendation: I have a different suggestion. If this option is not selected, it may obtain a suboptimal outcome., Condition: 0 - 03-08 23:24:03
+Step: 11, Selection: 5.0, Reward: 0.1972235174260986, Likelihood: 0.8522961139678955, Explanation Post Selection: I recommend collaborating to maximize reward. - 03-08 23:24:04
+976896879687 is reloading warmup page. Step: warmup. - 03-08 23:31:14

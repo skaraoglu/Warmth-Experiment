@@ -1,0 +1,73 @@
+A1PLBQ3LANDLOE is registered in the system. - 03-08 13:11:55
+A1PLBQ3LANDLOE is given consent. - 03-08 13:12:11
+A1PLBQ3LANDLOE is on demographics survey page. - 03-08 13:12:11
+A1PLBQ3LANDLOE has submitted demographics survey. - 03-08 13:12:56
+Demographics: {'age': '45-54', 'gender': 'Female', 'ethnicity': 'White', 'education': "Bachelor's degree", 'attention-check': '4'} - 03-08 13:12:56
+A1PLBQ3LANDLOE is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 13:12:57
+A1PLBQ3LANDLOE is on tutorial page. Step: tutorial. - 03-08 13:13:00
+A1PLBQ3LANDLOE is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 13:14:14
+A1PLBQ3LANDLOE is on warmup page. Step: warmup. - 03-08 13:14:17
+Step: 0, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:14:25
+Step: 0, Selection: 0.0, Reward: 1.9991935493108466, Likelihood: 0.25, Explanation Post Selection: No explanation - 03-08 13:14:36
+Step: 0, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:14:47
+Step: 0, Selection: 1.0, Reward: 0.9393461812684268, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:14:49
+Step: 2, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:14:55
+Step: 2, Selection: 3.0, Reward: 0.5795537244805959, Likelihood: 0.1875, Explanation Post Selection: No explanation - 03-08 13:14:57
+Step: 4, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:15:02
+Step: 5, Selection: 5.0, Reward: 0.04072043494655661, Likelihood: 0.2666015625, Explanation Post Selection: No explanation - 03-08 13:15:07
+Step: 6, Intention: 2.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:15:12
+Step: 7, Selection: 2.0, Reward: 0.32942148884132466, Likelihood: 0.14996337890625, Explanation Post Selection: No explanation - 03-08 13:15:15
+Step: 8, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:15:20
+Step: 9, Selection: 4.0, Reward: 0.2174367201553251, Likelihood: 0.08435440063476562, Explanation Post Selection: No explanation - 03-08 13:15:22
+Step: 12, Intention: 0.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:15:47
+Step: 13, Selection: 5.0, Reward: 0.09977995923761519, Likelihood: 0.2727840095758438, Explanation Post Selection: No explanation - 03-08 13:15:52
+Step: 15, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:15:57
+Step: 15, Selection: 0.0, Reward: 0.6023234124204663, Likelihood: 0.5909410053864121, Explanation Post Selection: No explanation - 03-08 13:16:01
+Step: 17, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:16:16
+Step: 17, Selection: 3.0, Reward: 0.7161941740676198, Likelihood: 0.5824043155298568, Explanation Post Selection: No explanation - 03-08 13:16:16
+Step: 18, Intention: 4.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:16:22
+Step: 18, Selection: 4.0, Reward: 0.06804623949258853, Likelihood: 0.6868032366473926, Explanation Post Selection: No explanation - 03-08 13:16:24
+A1PLBQ3LANDLOE has submitted warmup. Step: warmupcomplete. - 03-08 13:17:27
+Warmup: {'intentions': [0.0, 0.0, 1.0, 0.0, 2.0, 0.0, 2.0, 0.0, 4.0, 0.0, 4.0, 3.0, 0.0, 0.0, 3.0, 0.0, 2.0, 3.0, 4.0, 4.0, 2.0, 3.0, 2.0, 3.0, 3.0, 3.0, 3.0, 0.0, 0.0, 0.0], 'recommendations': [0.0, 0.0, 3.0, 0.0, 2.0, 0.0, 4.0, 0.0, 4.0, 0.0, 4.0, 5.0, 5.0, 0.0, 0.0, 0.0, 1.0, 3.0, 1.0, 1.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 0.0, 0.0, 0.0], 'selections': [1.0, 0.0, 3.0, 1.0, 2.0, 5.0, 3.0, 2.0, 3.0, 4.0, 4.0, 3.0, 2.0, 5.0, 3.0, 0.0, 1.0, 3.0, 4.0, 1.0, 2.0, 3.0, 2.0, 3.0, 3.0, 3.0, 0.0, 0.0, 0.0, 0.0], 'rewards': [0.9393461812684268, 0.01, 0.5795537244805959, 0.01909560603153139, 0.45148134529836004, 0.04072043494655661, 0.48447799946678893, 0.32942148884132466, 1.3085601166870822, 0.2174367201553251, 0.010865897557213053, 2.0743959327322434, 0.5460008777671749, 0.09977995923761519, 0.1974431580802791, 0.6023234124204663, 0.8864649944987611, 0.7161941740676198, 0.06804623949258853, 0.09887399928518803, 0.07721408324527837, 0.9250308647818474, 0.2938861410421777, 0.05495350368731074, 0.3121513851704425, 0.6951564256259131, 0.0, 0.0, 0.0, 0.0], 'strategy': 'good game'} - 03-08 13:17:27
+A1PLBQ3LANDLOE is on experiment page. Tutorial completed: True, Warmup completed: True. Step: experiment. - 03-08 13:17:28
+A1PLBQ3LANDLOE is on task page. Step: task. - 03-08 13:17:31
+Step: 1, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:17:36
+Step: 2, Selection: 1.0, Reward: 1.1191175109397358, Likelihood: 0.328125, Explanation Post Selection: No explanation - 03-08 13:17:42
+Step: 3, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:17:47
+Step: 3, Selection: 5.0, Reward: 0.0853759539951644, Likelihood: 0.49609375, Explanation Post Selection: No explanation - 03-08 13:17:49
+Step: 4, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:17:54
+Step: 4, Selection: 0.0, Reward: 0.6751777193800638, Likelihood: 0.6220703125, Explanation Post Selection: No explanation - 03-08 13:17:56
+Step: 5, Intention: 3.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:18:00
+Step: 5, Selection: 3.0, Reward: 0.6154144900374682, Likelihood: 0.716552734375, Explanation Post Selection: No explanation - 03-08 13:18:02
+Step: 6, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:18:07
+Step: 6, Selection: 4.0, Reward: 0.059721194881338924, Likelihood: 0.78741455078125, Explanation Post Selection: No explanation - 03-08 13:18:08
+Step: 8, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:18:14
+Step: 9, Selection: 2.0, Reward: 0.4402257135008757, Likelihood: 0.7696905136108398, Explanation Post Selection: No explanation - 03-08 13:18:25
+Step: 11, Intention: 0.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:18:31
+Step: 12, Selection: 1.0, Reward: 0.8922332143154345, Likelihood: 0.32471318542957306, Explanation Post Selection: No explanation - 03-08 13:18:35
+Attention check: true - 03-08 13:18:51
+Step: 15, Intention: 3.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:18:53
+Step: 16, Selection: 0.0, Reward: 0.11036469793393827, Likelihood: 0.5988350313273259, Explanation Post Selection: No explanation - 03-08 13:18:57
+Step: 18, Intention: 3.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:19:03
+Step: 19, Selection: 5.0, Reward: 0.01, Likelihood: 0.5807585288412156, Explanation Post Selection: No explanation - 03-08 13:19:09
+Step: 21, Intention: 2.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:19:16
+Step: 21, Selection: 2.0, Reward: 0.31555330686216215, Likelihood: 0.7641766724731838, Explanation Post Selection: No explanation - 03-08 13:19:20
+Strategy: 1 - investment interest - 03-08 13:19:55
+Step: 22, Intention: 3.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:19:55
+Step: 22, Selection: 3.0, Reward: 0.01, Likelihood: 0.8231325043548878, Explanation Post Selection: No explanation - 03-08 13:19:56
+Step: 23, Intention: 0.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:20:01
+Step: 23, Selection: 0.0, Reward: 0.7615557817275052, Likelihood: 0.8673493782661659, Explanation Post Selection: No explanation - 03-08 13:20:02
+Step: 24, Intention: 5.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:20:07
+Step: 24, Selection: 5.0, Reward: 0.410320735636835, Likelihood: 0.9005120336996244, Explanation Post Selection: No explanation - 03-08 13:20:09
+Step: 25, Intention: 3.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:20:13
+Step: 25, Selection: 3.0, Reward: 0.3727047023017576, Likelihood: 0.9253840252747183, Explanation Post Selection: No explanation - 03-08 13:20:15
+Step: 26, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:20:20
+Step: 26, Selection: 4.0, Reward: 0.22592263544617952, Likelihood: 0.6940380189560387, Explanation Post Selection: No explanation - 03-08 13:20:23
+Step: 27, Intention: 5.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:20:27
+Step: 27, Selection: 5.0, Reward: 0.02473471998888061, Likelihood: 0.7705285142170291, Explanation Post Selection: No explanation - 03-08 13:20:28
+Attention check: true - 03-08 13:20:37
+Step: 28, Intention: 2.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:20:40
+Step: 28, Selection: 2.0, Reward: 0.3022270872618883, Likelihood: 0.8278963856627718, Explanation Post Selection: No explanation - 03-08 13:20:43
+Step: 29, Intention: 4.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:20:47
+Step: 29, Selection: 4.0, Reward: 0.20447579828605705, Likelihood: 0.8709222892470788, Explanation Post Selection: No explanation - 03-08 13:20:49
+A1PLBQ3LANDLOE is reloading experiment page. - 03-08 13:28:15

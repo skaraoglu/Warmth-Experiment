@@ -1,0 +1,26 @@
+A2ZEA7TJ7SBSTP is registered in the system. - 03-08 14:13:09
+A2ZEA7TJ7SBSTP is given consent. - 03-08 14:13:13
+A2ZEA7TJ7SBSTP is on demographics survey page. - 03-08 14:13:13
+A2ZEA7TJ7SBSTP has submitted demographics survey. - 03-08 14:13:26
+Demographics: {'age': '25-34', 'gender': 'Female', 'ethnicity': 'White', 'education': "Master's/Graduate Degree", 'attention-check': '4'} - 03-08 14:13:26
+A2ZEA7TJ7SBSTP is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 14:13:26
+A2ZEA7TJ7SBSTP is on tutorial page. Step: tutorial. - 03-08 14:13:28
+A2ZEA7TJ7SBSTP is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 14:13:36
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:37
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:37
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:37
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:37
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:37
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:37
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:38
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:38
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:38
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:38
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:38
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:38
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:39
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:39
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:39
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:39
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:39
+A2ZEA7TJ7SBSTP is reloading experiment page. - 03-08 14:13:40

@@ -1,0 +1,19 @@
+5645436543546 is registered in the system. - 03-08 23:31:16
+5645436543546 is given consent. - 03-08 23:31:17
+5645436543546 is on demographics survey page. - 03-08 23:31:17
+5645436543546 has submitted demographics survey. - 03-08 23:31:22
+Demographics: {'age': '25-34', 'gender': 'Male', 'ethnicity': 'White', 'education': 'High school', 'attention-check': '4'} - 03-08 23:31:22
+5645436543546 is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 23:31:22
+5645436543546 is on tutorial page. Step: tutorial. - 03-08 23:31:23
+5645436543546 is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 23:31:25
+5645436543546 is on warmup page. Step: warmup. - 03-08 23:31:31
+Step: 0, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Good decision! We completely agree, we should explore this., Condition: 1 - 03-08 23:31:32
+Step: 0, Selection: 1.0, Reward: 0.6631631440950763, Likelihood: 0.25, Explanation Post Selection: Fantastic! Exploring options has its benefits. - 03-08 23:31:35
+Step: 1, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: Seems like we agree! Exploring this choice is a great decision.🙂, Condition: 1 - 03-08 23:32:46
+Step: 1, Selection: 2.0, Reward: 0.18615597001280765, Likelihood: 0.4375, Explanation Post Selection: Oh, how unlucky! We are learning by trial. - 03-08 23:32:48
+Step: 2, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: We're on the same page! Exploring this choice is a great decision.🙂, Condition: 1 - 03-08 23:32:52
+Step: 2, Selection: 3.0, Reward: 1.0046869339609419, Likelihood: 0.578125, Explanation Post Selection: Wow, we should keep learning! - 03-08 23:32:53
+Step: 3, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: We're on the same page! Exploring this choice is a great decision.🙂, Condition: 1 - 03-08 23:32:57
+Step: 3, Selection: 4.0, Reward: 0.03678476927202759, Likelihood: 0.68359375, Explanation Post Selection: Bad luck happens while exploring. We can improve together. - 03-08 23:33:04
+Step: 4, Intention: 1.0, Recommendation: 0.0, Explanation for Recommendation: Let's do this together. You could try this one instead, as it has not been explored much., Condition: 1 - 03-08 23:33:08
+Step: 4, Selection: 0.0, Reward: 0.016696714312440433, Likelihood: 0.5126953125, Explanation Post Selection: Our exploration was unlucky. 😔 Let's keep going. - 03-08 23:33:10

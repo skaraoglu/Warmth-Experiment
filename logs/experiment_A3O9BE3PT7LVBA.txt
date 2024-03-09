@@ -1,0 +1,78 @@
+A3O9BE3PT7LVBA is registered in the system. - 03-08 14:02:52
+A3O9BE3PT7LVBA is given consent. - 03-08 14:02:59
+A3O9BE3PT7LVBA is on demographics survey page. - 03-08 14:02:59
+A3O9BE3PT7LVBA has submitted demographics survey. - 03-08 14:03:11
+Demographics: {'age': '25-34', 'gender': 'Female', 'ethnicity': 'White', 'education': "Bachelor's degree", 'attention-check': '4'} - 03-08 14:03:11
+A3O9BE3PT7LVBA is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 14:03:11
+A3O9BE3PT7LVBA is on tutorial page. Step: tutorial. - 03-08 14:03:13
+A3O9BE3PT7LVBA is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 14:03:30
+A3O9BE3PT7LVBA is on warmup page. Step: warmup. - 03-08 14:03:32
+Step: 0, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: Good thinking! Exploring this choice sounds good. 😄, Condition: 1 - 03-08 14:03:36
+Step: 0, Selection: 0.0, Reward: 0.07274369681138977, Likelihood: 0.25, Explanation Post Selection: Yay, let's keep exploring!🙂 - 03-08 14:03:42
+Step: 1, Intention: 0.0, Recommendation: 3.0, Explanation for Recommendation: We are better together. You could consider this option instead, as it could help you explore your options.🙂, Condition: 1 - 03-08 14:03:46
+Step: 1, Selection: 3.0, Reward: 1.356003778269068, Likelihood: 0.1875, Explanation Post Selection: Fantastic! Exploring options has its benefits. - 03-08 14:03:53
+Step: 2, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: Glad we think the same! Exploring this choice is a great decision.🙂, Condition: 1 - 03-08 14:04:04
+Step: 2, Selection: 4.0, Reward: 0.1417397752090877, Likelihood: 0.390625, Explanation Post Selection: Bad luck happens while exploring. We can improve together. - 03-08 14:04:07
+Step: 3, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Good to see we agree! Go ahead with this selection., Condition: 1 - 03-08 14:04:12
+Step: 3, Selection: 1.0, Reward: 0.21544050458247718, Likelihood: 0.54296875, Explanation Post Selection: Our exploration was unlucky. 😔 Let's keep going. - 03-08 14:04:14
+Step: 4, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: Good to see we agree! Your choice will help us learn., Condition: 1 - 03-08 14:04:18
+Step: 4, Selection: 2.0, Reward: 0.44381695999870063, Likelihood: 0.6572265625, Explanation Post Selection: Oh, how unlucky! We are learning by trial. - 03-08 14:04:20
+Step: 5, Intention: 1.0, Recommendation: 5.0, Explanation for Recommendation: Let's keep going together. Exploring this option may benefit you in the long run.😊, Condition: 1 - 03-08 14:04:25
+Step: 5, Selection: 5.0, Reward: 2.487661537014266, Likelihood: 0.492919921875, Explanation Post Selection: Wow, we should keep learning! - 03-08 14:04:30
+Step: 6, Intention: 0.0, Recommendation: 5.0, Explanation for Recommendation: Let's do this together. This choice may give us a better outcome, as it has been good before., Condition: 1 - 03-08 14:04:36
+Step: 6, Selection: 5.0, Reward: 0.14253350833682024, Likelihood: 0.36968994140625, Explanation Post Selection: Oh no!😅 We shall learn from our mistakes. - 03-08 14:04:41
+Step: 7, Intention: 0.0, Recommendation: 3.0, Explanation for Recommendation: Let's do this together. Choosing this option may benefit you in the long run., Condition: 1 - 03-08 14:04:47
+Step: 7, Selection: 3.0, Reward: 1.2011316121926818, Likelihood: 0.2772674560546875, Explanation Post Selection: Amazing, let's keep it up! 😎 - 03-08 14:04:53
+Step: 8, Intention: 2.0, Recommendation: 5.0, Explanation for Recommendation: Let's do this together. This option may be the better choice for you to pick, as it could give a higher reward., Condition: 1 - 03-08 14:04:58
+Step: 8, Selection: 5.0, Reward: 0.5765196418540407, Likelihood: 0.20795059204101562, Explanation Post Selection: Mistakes happen. We can improve together. - 03-08 14:05:02
+Step: 9, Intention: 1.0, Recommendation: 3.0, Explanation for Recommendation: We are better together This choice may give us a better outcome, as it has been good before., Condition: 1 - 03-08 14:05:07
+Step: 9, Selection: 3.0, Reward: 0.26354445793541015, Likelihood: 0.15596294403076172, Explanation Post Selection: Oh, how unlucky! We can always learn. - 03-08 14:05:11
+A3O9BE3PT7LVBA has submitted warmup. Step: warmupcomplete. - 03-08 14:06:02
+Warmup: {'intentions': [0.0, 0.0, 4.0, 1.0, 2.0, 1.0, 0.0, 0.0, 2.0, 1.0], 'recommendations': [0.0, 3.0, 4.0, 1.0, 2.0, 5.0, 5.0, 3.0, 5.0, 3.0], 'selections': [0.0, 3.0, 4.0, 1.0, 2.0, 5.0, 5.0, 3.0, 5.0, 3.0], 'rewards': [0.07274369681138977, 1.356003778269068, 0.1417397752090877, 0.21544050458247718, 0.44381695999870063, 2.487661537014266, 0.14253350833682024, 1.2011316121926818, 0.5765196418540407, 0.26354445793541015, 1.4996141309937219, 0.5363577738942483, 0.8922332143154345, 0.621561264456185, 0.8941065893127111, 1.3143583660819167, 0.11036469793393827, 0.10288749580103292, 0.07210963232765563, 0.01, 0.09476181490550012, 0.31555330686216215, 0.01, 0.7615557817275052, 0.410320735636835, 0.3727047023017576, 0.22592263544617952, 0.02473471998888061, 0.3022270872618883, 0.20447579828605705], 'strategy': 'nice survey'} - 03-08 14:06:02
+A3O9BE3PT7LVBA is on experiment page. Tutorial completed: True, Warmup completed: True. Step: experiment. - 03-08 14:06:02
+A3O9BE3PT7LVBA is on task page. Step: task. - 03-08 14:06:12
+Step: 0, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:06:17
+Step: 0, Selection: 2.0, Reward: 0.10169056159249269, Likelihood: 0.25, Explanation Post Selection: No explanation - 03-08 14:06:19
+Step: 1, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:06:24
+Step: 1, Selection: 3.0, Reward: 0.12163215806210435, Likelihood: 0.4375, Explanation Post Selection: No explanation - 03-08 14:06:27
+Step: 2, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:06:30
+Step: 2, Selection: 4.0, Reward: 0.7374595331624243, Likelihood: 0.578125, Explanation Post Selection: No explanation - 03-08 14:06:33
+Step: 4, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:06:37
+Step: 4, Selection: 5.0, Reward: 0.06033993367192685, Likelihood: 0.5751953125, Explanation Post Selection: No explanation - 03-08 14:06:38
+Step: 5, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:06:43
+Step: 5, Selection: 0.0, Reward: 0.01, Likelihood: 0.681396484375, Explanation Post Selection: No explanation - 03-08 14:06:45
+Step: 7, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:06:49
+Step: 7, Selection: 1.0, Reward: 1.277024465030038, Likelihood: 0.6332855224609375, Explanation Post Selection: No explanation - 03-08 14:06:51
+Step: 8, Intention: 4.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:06:56
+Step: 9, Selection: 1.0, Reward: 0.5634514218437502, Likelihood: 0.35622310638427734, Explanation Post Selection: No explanation - 03-08 14:07:00
+Attention check: true - 03-08 14:07:24
+Step: 12, Intention: 4.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:07:31
+Step: 12, Selection: 5.0, Reward: 0.051578779578276314, Likelihood: 0.150281623005867, Explanation Post Selection: No explanation - 03-08 14:07:34
+Step: 14, Intention: 4.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:07:43
+Step: 14, Selection: 3.0, Reward: 0.12107019989863016, Likelihood: 0.08453341294080019, Explanation Post Selection: No explanation - 03-08 14:07:46
+Step: 15, Intention: 2.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:07:53
+Step: 15, Selection: 0.0, Reward: 0.8608791564454102, Likelihood: 0.06340005970560014, Explanation Post Selection: No explanation - 03-08 14:07:56
+Strategy: 1 - Good Game strategy survey - 03-08 14:08:47
+Step: 20, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:08:50
+Step: 20, Selection: 3.0, Reward: 0.9906148319800417, Likelihood: 0.4525451313559188, Explanation Post Selection: No explanation - 03-08 14:08:54
+Step: 21, Intention: 4.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:08:59
+Step: 21, Selection: 1.0, Reward: 0.4475555580163845, Likelihood: 0.3394088485169391, Explanation Post Selection: No explanation - 03-08 14:09:02
+Step: 22, Intention: 2.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:09:10
+Step: 22, Selection: 3.0, Reward: 0.2623642593427538, Likelihood: 0.2545566363877043, Explanation Post Selection: No explanation - 03-08 14:09:13
+Step: 23, Intention: 2.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:09:18
+Step: 23, Selection: 1.0, Reward: 0.01, Likelihood: 0.19091747729077824, Explanation Post Selection: No explanation - 03-08 14:09:21
+Step: 24, Intention: 1.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:09:27
+Step: 24, Selection: 0.0, Reward: 0.2545977430068497, Likelihood: 0.14318810796808368, Explanation Post Selection: No explanation - 03-08 14:09:30
+Step: 25, Intention: 4.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:09:37
+Step: 25, Selection: 3.0, Reward: 0.8271087739579006, Likelihood: 0.10739108097606276, Explanation Post Selection: No explanation - 03-08 14:09:40
+Attention check: true - 03-08 14:09:50
+Step: 26, Intention: 3.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:09:53
+Step: 26, Selection: 1.0, Reward: 0.12945498508754946, Likelihood: 0.08054331073204707, Explanation Post Selection: No explanation - 03-08 14:09:55
+Step: 27, Intention: 2.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:10:03
+Step: 27, Selection: 3.0, Reward: 1.279500231095476, Likelihood: 0.0604074830490353, Explanation Post Selection: No explanation - 03-08 14:10:05
+Step: 28, Intention: 2.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:10:10
+Step: 28, Selection: 3.0, Reward: 0.9108095987493127, Likelihood: 0.04530561228677647, Explanation Post Selection: No explanation - 03-08 14:10:12
+Step: 29, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 14:10:17
+Step: 29, Selection: 3.0, Reward: 0.013387919855886877, Likelihood: 0.28397920921508235, Explanation Post Selection: No explanation - 03-08 14:10:19
+Strategy: 2 - Good Game strategy survey - 03-08 14:10:45
+A3O9BE3PT7LVBA is reloading experiment page. Step: task. - 03-08 14:12:27
