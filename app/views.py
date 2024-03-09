@@ -419,6 +419,8 @@ def warmup():
     mturk_id = session.get('mturk_id')
     log_experiment(f'{current_user.mturk_id} is on warmup page. Step: warmup.')
 
+    # Save bandit
+    session['bandit'] = bandit.to_json()
     return render_template('warmup.html', mturk_id=mturk_id)
 
 @app.route('/warmup/submit/', methods=['POST'])
