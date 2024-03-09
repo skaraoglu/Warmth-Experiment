@@ -1,0 +1,48 @@
+A2HBP3TEE27F2J is registered in the system. - 03-09 02:01:38
+A2HBP3TEE27F2J is given consent. - 03-09 02:01:46
+A2HBP3TEE27F2J is on demographics survey page. - 03-09 02:01:46
+A2HBP3TEE27F2J has submitted demographics survey. - 03-09 02:02:00
+Demographics: {'age': '45-54', 'gender': 'Male', 'ethnicity': 'White', 'education': "Master's/Graduate Degree", 'attention-check': '3'} - 03-09 02:02:00
+A2HBP3TEE27F2J is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-09 02:02:01
+A2HBP3TEE27F2J is on tutorial page. Step: tutorial. - 03-09 02:02:05
+A2HBP3TEE27F2J is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-09 02:02:31
+A2HBP3TEE27F2J is on warmup page. Step: warmup. - 03-09 02:02:33
+Step: 0, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:02:37
+Step: 0, Selection: 4.0, Reward: 0.7295692404799662, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:02:41
+Step: 1, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:02:47
+Step: 1, Selection: 1.0, Reward: 0.5981887558975356, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:02:49
+Step: 2, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:02:55
+Step: 2, Selection: 3.0, Reward: 0.20604761570808952, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:02:59
+Step: 3, Intention: 1.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:03:05
+Step: 3, Selection: 2.0, Reward: 0.14449571477601184, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:03:08
+Step: 4, Intention: 3.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:03:27
+Step: 4, Selection: 5.0, Reward: 0.0667739853900197, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:03:31
+Step: 5, Intention: 1.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:03:37
+Step: 5, Selection: 0.0, Reward: 0.6106849976136511, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:03:40
+Step: 6, Intention: 2.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:03:44
+Step: 6, Selection: 4.0, Reward: 0.5338288211287878, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:03:47
+Step: 7, Intention: 5.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:03:51
+Step: 7, Selection: 0.0, Reward: 0.734094037573212, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:03:54
+Step: 8, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:03:58
+Step: 8, Selection: 1.0, Reward: 0.12213759757774506, Likelihood: 0.25, Explanation Post Selection: No explanation - 03-09 02:04:03
+Step: 9, Intention: 2.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:04:07
+Step: 9, Selection: 0.0, Reward: 2.1156950323494996, Likelihood: 0.1875, Explanation Post Selection: No explanation - 03-09 02:04:09
+A2HBP3TEE27F2J has submitted warmup. Step: warmupcomplete. - 03-09 02:04:22
+Warmup: {'intentions': [3.0, 0.0, 2.0, 1.0, 3.0, 1.0, 2.0, 5.0, 1.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'recommendations': [3.0, 0.0, 2.0, 0.0, 5.0, 0.0, 4.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'selections': [4.0, 1.0, 3.0, 2.0, 5.0, 0.0, 4.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'rewards': [0.7295692404799662, 0.5981887558975356, 0.20604761570808952, 0.14449571477601184, 0.0667739853900197, 0.6106849976136511, 0.5338288211287878, 0.734094037573212, 0.12213759757774506, 2.1156950323494996, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'strategy': 'none'} - 03-09 02:04:22
+A2HBP3TEE27F2J is on experiment page. Tutorial completed: True, Warmup completed: True. Step: experiment. - 03-09 02:04:22
+A2HBP3TEE27F2J is on task page. Step: task. - 03-09 02:04:25
+Step: 0, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:04:28
+Step: 0, Selection: 2.0, Reward: 0.6898996076706386, Likelihood: 0.25, Explanation Post Selection: No explanation - 03-09 02:04:34
+Step: 1, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:04:57
+Step: 1, Selection: 1.0, Reward: 0.6969062991443923, Likelihood: 0.4375, Explanation Post Selection: No explanation - 03-09 02:05:01
+Step: 2, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:05:08
+Step: 2, Selection: 3.0, Reward: 2.352953770256169, Likelihood: 0.578125, Explanation Post Selection: No explanation - 03-09 02:05:12
+Step: 3, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:05:16
+Step: 3, Selection: 4.0, Reward: 0.11988560911556986, Likelihood: 0.68359375, Explanation Post Selection: No explanation - 03-09 02:05:20
+Step: 4, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:05:24
+Step: 4, Selection: 5.0, Reward: 0.04714826464221148, Likelihood: 0.7626953125, Explanation Post Selection: No explanation - 03-09 02:05:27
+Step: 5, Intention: 2.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:05:32
+Step: 5, Selection: 0.0, Reward: 1.2389518484432316, Likelihood: 0.572021484375, Explanation Post Selection: No explanation - 03-09 02:05:35
+Step: 6, Intention: 1.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:05:39
+Step: 6, Selection: 3.0, Reward: 1.8380124074233661, Likelihood: 0.42901611328125, Explanation Post Selection: No explanation - 03-09 02:05:47
+A2HBP3TEE27F2J has failed attention checks 2 times. Logging out user. - 03-09 02:05:56

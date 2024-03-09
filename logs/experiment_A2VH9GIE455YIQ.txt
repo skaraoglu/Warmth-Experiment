@@ -1,0 +1,29 @@
+A2VH9GIE455YIQ is registered in the system. - 03-09 12:16:41
+A2VH9GIE455YIQ is given consent. - 03-09 12:16:50
+A2VH9GIE455YIQ is on demographics survey page. - 03-09 12:16:50
+A2VH9GIE455YIQ has submitted demographics survey. - 03-09 12:17:26
+Demographics: {'age': '25-34', 'gender': 'Female', 'ethnicity': 'White', 'education': "Master's/Graduate Degree", 'attention-check': '5'} - 03-09 12:17:26
+A2VH9GIE455YIQ is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-09 12:17:26
+A2VH9GIE455YIQ is on tutorial page. Step: tutorial. - 03-09 12:17:31
+A2VH9GIE455YIQ is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-09 12:19:32
+A2VH9GIE455YIQ is on warmup page. Step: warmup. - 03-09 12:19:35
+Step: 0, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: Glad we think the same! Go ahead with this selection., Condition: 1 - 03-09 12:19:42
+Step: 0, Selection: 2.0, Reward: 0.05379953920811997, Likelihood: 0.25, Explanation Post Selection: Awesome, our exploring paid off!😃 - 03-09 12:19:50
+Step: 1, Intention: 2.0, Recommendation: 1.0, Explanation for Recommendation: We are better together. You could consider exploring this option instead as it could get you a higher reward., Condition: 1 - 03-09 12:19:59
+Step: 1, Selection: 1.0, Reward: 0.5836944621473916, Likelihood: 0.1875, Explanation Post Selection: Yay, let's keep exploring!🙂 - 03-09 12:20:03
+Step: 2, Intention: 1.0, Recommendation: 0.0, Explanation for Recommendation: We're a team. You could consider this option instead, as it could help you explore your options.🙂, Condition: 1 - 03-09 12:20:08
+Step: 2, Selection: 0.0, Reward: 1.1769154300102498, Likelihood: 0.140625, Explanation Post Selection: Awesome, our exploring paid off!😃 - 03-09 12:20:16
+Step: 3, Intention: 0.0, Recommendation: 4.0, Explanation for Recommendation: Let's keep going together. Exploring this option may benefit you in the long run.😊, Condition: 1 - 03-09 12:20:22
+Step: 3, Selection: 4.0, Reward: 0.23505600414211347, Likelihood: 0.10546875, Explanation Post Selection: Bad luck happens while exploring. We can improve together. - 03-09 12:20:26
+Step: 4, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: We're on the same page! Exploring this choice is a great decision.🙂, Condition: 1 - 03-09 12:20:32
+Step: 4, Selection: 5.0, Reward: 1.544368286954263, Likelihood: 0.3291015625, Explanation Post Selection: Wow, we should keep learning! - 03-09 12:20:36
+Step: 5, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Great minds think alike! Exploring this selection is good., Condition: 1 - 03-09 12:20:40
+Step: 5, Selection: 3.0, Reward: 0.4847521764705137, Likelihood: 0.496826171875, Explanation Post Selection: Our exploration was unlucky. 😔 Let's keep going. - 03-09 12:20:43
+Step: 6, Intention: 0.0, Recommendation: 5.0, Explanation for Recommendation: Let's do this together. Choosing this option may benefit you in the long run., Condition: 1 - 03-09 12:20:50
+Step: 6, Selection: 0.0, Reward: 0.8878732691209515, Likelihood: 0.62261962890625, Explanation Post Selection: Nice! Let's try to work together. - 03-09 12:20:54
+Step: 7, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: Glad we think the same! This selection looks good., Condition: 1 - 03-09 12:20:58
+Step: 7, Selection: 5.0, Reward: 0.6398681473096448, Likelihood: 0.7169647216796875, Explanation Post Selection: Mistakes happen. We can improve together. - 03-09 12:21:03
+Step: 8, Intention: 1.0, Recommendation: 5.0, Explanation for Recommendation: Teamwork is the key. You could consider this option instead as it could get you a higher reward. 🙂, Condition: 1 - 03-09 12:21:09
+Step: 8, Selection: 5.0, Reward: 0.9791034545969507, Likelihood: 0.5377235412597656, Explanation Post Selection: Yay, we should continue! - 03-09 12:21:12
+Step: 9, Intention: 4.0, Recommendation: 0.0, Explanation for Recommendation: Teamwork is the key. Choosing this option may benefit you in the long run., Condition: 1 - 03-09 12:21:17
+Step: 9, Selection: 0.0, Reward: 0.06846657654552851, Likelihood: 0.4032926559448242, Explanation Post Selection: Oh, how unlucky! We can always learn. - 03-09 12:21:21

@@ -1,0 +1,48 @@
+A183QWGBTCXCG is registered in the system. - 03-09 02:03:46
+A183QWGBTCXCG is given consent. - 03-09 02:04:01
+A183QWGBTCXCG is on demographics survey page. - 03-09 02:04:02
+A183QWGBTCXCG has submitted demographics survey. - 03-09 02:04:44
+Demographics: {'age': '25-34', 'gender': 'Male', 'ethnicity': 'White', 'education': "Bachelor's degree", 'attention-check': '1'} - 03-09 02:04:44
+A183QWGBTCXCG is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-09 02:04:44
+A183QWGBTCXCG is on tutorial page. Step: tutorial. - 03-09 02:04:51
+A183QWGBTCXCG is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-09 02:05:21
+A183QWGBTCXCG is on warmup page. Step: warmup. - 03-09 02:05:48
+Step: 0, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:05:51
+Step: 0, Selection: 1.0, Reward: 0.31622546098073107, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:06:03
+Step: 1, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:06:10
+Step: 1, Selection: 0.0, Reward: 0.49704612964739925, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:06:15
+Step: 2, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:06:20
+Step: 2, Selection: 3.0, Reward: 0.667692030436676, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:06:23
+Step: 3, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:06:30
+Step: 3, Selection: 5.0, Reward: 0.3758011909314766, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:06:34
+Step: 4, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:06:39
+Step: 4, Selection: 2.0, Reward: 0.02200321287283323, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:06:43
+Step: 5, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:06:49
+Step: 5, Selection: 2.0, Reward: 0.1688343904391173, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:06:55
+Step: 6, Intention: 2.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:06:59
+Step: 6, Selection: 4.0, Reward: 0.06889034300307943, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:07:02
+Step: 7, Intention: 0.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:07:07
+Step: 7, Selection: 4.0, Reward: 0.07400273648883013, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:07:09
+Step: 8, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:07:14
+Step: 8, Selection: 2.0, Reward: 0.23270731161079616, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:07:18
+Step: 9, Intention: 4.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:07:25
+Step: 9, Selection: 3.0, Reward: 0.9111977307772166, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:07:29
+A183QWGBTCXCG has submitted warmup. Step: warmupcomplete. - 03-09 02:08:00
+Warmup: {'intentions': [0.0, 2.0, 2.0, 4.0, 4.0, 4.0, 2.0, 0.0, 3.0, 4.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'recommendations': [0.0, 2.0, 2.0, 4.0, 4.0, 4.0, 4.0, 3.0, 3.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'selections': [1.0, 0.0, 3.0, 5.0, 2.0, 2.0, 4.0, 4.0, 2.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'rewards': [0.31622546098073107, 0.49704612964739925, 0.667692030436676, 0.3758011909314766, 0.02200321287283323, 0.1688343904391173, 0.06889034300307943, 0.07400273648883013, 0.23270731161079616, 0.9111977307772166, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'strategy': 'good'} - 03-09 02:08:00
+A183QWGBTCXCG is on experiment page. Tutorial completed: True, Warmup completed: True. Step: experiment. - 03-09 02:08:01
+A183QWGBTCXCG is on task page. Step: task. - 03-09 02:08:05
+Step: 0, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:08:09
+Step: 0, Selection: 1.0, Reward: 0.6159066075833025, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:08:11
+Step: 1, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:08:17
+Step: 1, Selection: 2.0, Reward: 0.1304759621634488, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:08:20
+Step: 2, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:08:25
+Step: 2, Selection: 0.0, Reward: 0.991217554773967, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:08:28
+Step: 3, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:08:32
+Step: 3, Selection: 3.0, Reward: 0.354197346139194, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:08:34
+Step: 4, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:08:39
+Step: 4, Selection: 5.0, Reward: 0.35069580708923154, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:08:41
+Step: 5, Intention: 2.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:08:47
+Step: 5, Selection: 4.0, Reward: 0.01, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:08:49
+Step: 6, Intention: 2.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 02:08:55
+Step: 6, Selection: 4.0, Reward: 0.014690040943872726, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-09 02:08:58
+A183QWGBTCXCG has failed attention checks 2 times. Logging out user. - 03-09 02:09:09
