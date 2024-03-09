@@ -42,10 +42,10 @@ def assign_condition():
     users2 = User.query.filter_by(intervention_condition=2, experiment_completed = True).filter(User.mturk_id.like('A%')).all()
     # Select the intervention condition with the fewest users
     min_users = min(len(users0), len(users1), len(users2))
-    if len(users0) == min_users:
-        cond = 0
-    elif len(users1) == min_users:
+    if len(users1) == min_users:
         cond = 1
+    elif len(users0) == min_users:
+        cond = 0
     elif len(users2) == min_users:
         cond = 2
         
