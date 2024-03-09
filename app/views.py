@@ -25,25 +25,6 @@ def load_user(mturk_id):
 def not_found_error(error):
     return render_template('404.html'), 404
 
-'''SELECT INTERVENTION CONDITION'''
-'''NONE = 0, LOW = 1, HIGH = 2
-users0 = User.query.filter_by(intervention_condition=0).filter(User.mturk_id.like('A%')).all()
-users1 = User.query.filter_by(intervention_condition=1).filter(User.mturk_id.like('A%')).all()
-users2 = User.query.filter_by(intervention_condition=2).filter(User.mturk_id.like('A%')).all()
-# Select the intervention condition with the fewest users
-min_users = min(len(users0), len(users1), len(users2))
-if len(users0) == min_users:
-    session['intervention_condition'] = 0
-elif len(users1) == min_users:
-    session['intervention_condition'] = 1
-elif len(users2) == min_users:
-    session['intervention_condition'] = 2
-    
-# Add to user model
-user = User.query.filter_by(mturk_id=session['mturk_id']).first()
-user.intervention_condition = session['intervention_condition']
-db.session.commit()
-'''
 attentionChecks = []
 _beta = [0.9, 0.85, 0.75, 0.8, 0.3, 0.2]
 num_arms = 6  # Number of stock options
@@ -54,27 +35,47 @@ warmCondition = 1
 noExpCondition = 2
 
 def assign_condition():
-    # Read the condition counts from the file
-    try:
-        with open('cond_counts.txt', 'r') as f:
-            condition_counts = list(map(int, f.read().split()))
-            if not condition_counts:
-                condition_counts = [0, 0, 0]
-    except FileNotFoundError:
-        # If the file doesn't exist, initialize the condition counts
-        condition_counts = [0, 0, 0]
+    
+    '''SELECT INTERVENTION CONDITION'''
+    users0 = User.query.filter_by(intervention_condition=0, experiment_completed = True).filter(User.mturk_id.like('A%')).all()
+    users1 = User.query.filter_by(intervention_condition=1, experiment_completed = True).filter(User.mturk_id.like('A%')).all()
+    users2 = User.query.filter_by(intervention_condition=2, experiment_completed = True).filter(User.mturk_id.like('A%')).all()
+    # Select the intervention condition with the fewest users
+    min_users = min(len(users0), len(users1), len(users2))
+    if len(users0) == min_users:
+        cond = 0
+    elif len(users1) == min_users:
+        cond = 1
+    elif len(users2) == min_users:
+        cond = 2
+        
+    # Add to user model
+    user = User.query.filter_by(mturk_id=session['mturk_id']).first()
+    user.intervention_condition = cond
+    db.session.commit()
+    return cond
 
-    # Find the condition with the minimum count
-    condition = condition_counts.index(min(condition_counts))
+    # # Read the condition counts from the file
+    # try:
+    #     with open('cond_counts.txt', 'r') as f:
+    #         condition_counts = list(map(int, f.read().split()))
+    #         if not condition_counts:
+    #             condition_counts = [0, 0, 0]
+    # except FileNotFoundError:
+    #     # If the file doesn't exist, initialize the condition counts
+    #     condition_counts = [0, 0, 0]
 
-    # Increment the count for the assigned condition
-    condition_counts[condition] += 1
-    print(condition_counts)
-    # Write the updated condition counts back to the file
-    with open('cond_counts.txt', 'w') as f:
-        f.write(' '.join(map(str, condition_counts)))
+    # # Find the condition with the minimum count
+    # condition = condition_counts.index(min(condition_counts))
 
-    return condition
+    # # Increment the count for the assigned condition
+    # condition_counts[condition] += 1
+    # print(condition_counts)
+    # # Write the updated condition counts back to the file
+    # with open('cond_counts.txt', 'w') as f:
+    #     f.write(' '.join(map(str, condition_counts)))
+
+    # return condition
 
 def get_bandit():
     # Get the bandit object from the session
@@ -191,9 +192,14 @@ def consent_submit():
             current_user.consent = True
             session['consent'] = True
             db.session.commit()
-            #cond = assign_condition()
             from app import bandit
             cond = assign_condition()
+            
+            # # Save condition to User model
+            # user = User.query.filter_by(mturk_id=session['mturk_id']).first()
+            # user.intervention_condition = cond
+            # db.session.commit()
+            
             bandit = bandit.Bandit(num_arms,
                                    num_episodes,
                                    beta_vals=_beta,
