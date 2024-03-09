@@ -155,7 +155,7 @@ class agent_feedback:
         # Cold: Bad reward, agreement
         self.cold_bad_agree_UCB = ["I'm refining my calculations. I'll be better equipped to provide assistance next time.", "I see that the results veered from the expected. I shall further improve my computation."]
         # Cold: Bad reward, disagreement
-        self.cold_bad_disagree_UCB = ["Don't forget. I am here to provide assistance.", "I recommend collaborating to maximize reward.", "I suggest that more collaboration be made.", "I would advise that more combined effors be made."]
+        self.cold_bad_disagree_UCB = ["Don't forget. I am here to provide assistance.", "I recommend collaborating to maximize reward.", "I suggest that more collaboration be made.", "I would advise that more combined efforts be made."]
 
         # Exploration
         # Warm: Good reward, agreement

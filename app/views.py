@@ -536,6 +536,10 @@ def gamecomplete():
     log_experiment('Reward code: ' + str(rewardC))
     log_experiment('Money earned: ' + str(money))
     #bandit.reset()
+    
+    user = User.query.filter_by(mturk_id=mturk_id).first()
+    user.experiment_completed = True
+    db.session.commit()
 
     return render_template('gamecomplete.html', mturk_id=mturk_id, money_earned=money, rewardC=rewardC)
 
