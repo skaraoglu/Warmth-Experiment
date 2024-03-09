@@ -1,0 +1,37 @@
+453242552432453 is registered in the system. - 03-08 13:05:23
+453242552432453 is given consent. - 03-08 13:06:00
+453242552432453 is on demographics survey page. - 03-08 13:06:00
+453242552432453 has submitted demographics survey. - 03-08 13:06:18
+Demographics: {'age': '18-24', 'gender': 'Male', 'ethnicity': 'White', 'education': 'Less than high school', 'attention-check': '2'} - 03-08 13:06:18
+453242552432453 is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 13:06:18
+453242552432453 is on tutorial page. Step: tutorial. - 03-08 13:06:19
+453242552432453 is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 13:06:21
+453242552432453 is on warmup page. Step: warmup. - 03-08 13:06:22
+Step: 0, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: A decent choice. I see no issues with this choice., Condition: 0 - 03-08 13:06:23
+Step: 0, Selection: 1.0, Reward: 0.43185125409776204, Likelihood: 0.0, Explanation Post Selection: Nice. Exploring together is something I would highly recommend. - 03-08 13:06:25
+Step: 2, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: A reasonable selection. I concur with exploring this selection., Condition: 0 - 03-08 13:06:28
+Step: 2, Selection: 2.0, Reward: 0.11426460053329286, Likelihood: 0.0, Explanation Post Selection: I suggest for more exploration to be made together to help better performance. - 03-08 13:06:30
+Step: 4, Intention: 3.0, Recommendation: 5.0, Explanation for Recommendation: I believe cooperation is a better strategy. If this option is not explored, it may lead to less accurate learning., Condition: 0 - 03-08 13:06:33
+Step: 4, Selection: 5.0, Reward: 0.4069999210353035, Likelihood: 0.0, Explanation Post Selection: As results show, mistakes can occur. I will calculate ways for better performance. - 03-08 13:06:35
+Step: 0, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Not bad. I see no issues with this choice., Condition: 0 - 03-08 13:06:39
+Step: 0, Selection: 1.0, Reward: 0.5101938612472892, Likelihood: 0.25, Explanation Post Selection: I'm liking what I see. - 03-08 13:06:40
+Step: 1, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: A satisfactory choice. I support exploring this option., Condition: 0 - 03-08 13:06:43
+Step: 1, Selection: 2.0, Reward: 1.47244643678192, Likelihood: 0.4375, Explanation Post Selection: An unfortunate result. I have learned from this exploration. - 03-08 13:06:44
+Step: 2, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: Quite plausible. I recommend proceeding with this choice., Condition: 0 - 03-08 13:06:49
+Step: 3, Selection: 4.0, Reward: 0.10672194316464644, Likelihood: 0.24609375, Explanation Post Selection: Don't forget. I am here to assist you in exploring. - 03-08 13:06:51
+Step: 5, Intention: 0.0, Recommendation: 5.0, Explanation for Recommendation: I believe there is a better option. If this option is selected, there may be some that are less fairly explored., Condition: 0 - 03-08 13:06:55
+Step: 5, Selection: 5.0, Reward: 0.2272323445069263, Likelihood: 0.325927734375, Explanation Post Selection: An unfortunate result. I have learned from this exploration. - 03-08 13:06:57
+Step: 7, Intention: 2.0, Recommendation: 1.0, Explanation for Recommendation: I believe cooperation is a better strategy. Choosing this option may result in a more positive outcome., Condition: 0 - 03-08 13:07:01
+Step: 7, Selection: 1.0, Reward: 2.3521739304126696, Likelihood: 0.3708343505859375, Explanation Post Selection: I see it worked out. - 03-08 13:07:03
+Step: 9, Intention: 2.0, Recommendation: 1.0, Explanation for Recommendation: I have a different suggestion. If this option is ignored, the optimal outcome may not be attained., Condition: 0 - 03-08 13:07:07
+Step: 9, Selection: 2.0, Reward: 0.6183114806553779, Likelihood: 0.6460943222045898, Explanation Post Selection: I would advise that more combined effors be made. - 03-08 13:07:08
+Step: 11, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: A satisfactory choice. I concur with this selection., Condition: 0 - 03-08 13:07:12
+Step: 11, Selection: 1.0, Reward: 1.3573760079998805, Likelihood: 0.6134280562400818, Explanation Post Selection: I'm liking what I see. - 03-08 13:07:14
+453242552432453 has submitted warmup. Step: warmupcomplete. - 03-08 13:07:18
+Warmup: {'intentions': [3.0, 2.0, 4.0, 0.0, 3.0, 0.0, 3.0, 2.0, 2.0, 2.0, 0.0, 1.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'recommendations': [3.0, 2.0, 4.0, 0.0, 1.0, 5.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'selections': [3.0, 2.0, 0.0, 4.0, 3.0, 5.0, 3.0, 1.0, 2.0, 2.0, 2.0, 1.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'rewards': [1.844758483368991, 1.47244643678192, 0.9399047433368847, 0.10672194316464644, 0.05351785379479876, 0.2272323445069263, 0.27678234822611575, 2.3521739304126696, 0.18619268316521986, 0.6183114806553779, 0.14407713271894565, 1.3573760079998805, 1.2238660185336427, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'strategy': 'h'} - 03-08 13:07:18
+453242552432453 is on experiment page. Tutorial completed: True, Warmup completed: True. Step: experiment. - 03-08 13:07:18
+453242552432453 is on task page. Step: task. - 03-08 13:07:19
+Step: 0, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: Not bad. I see no issues with this choice., Condition: 0 - 03-08 13:07:20
+Step: 0, Selection: 0.0, Reward: 0.04905890302618372, Likelihood: 0.25, Explanation Post Selection: It is pleasing to me to see a good outcome. - 03-08 13:07:22
+Step: 1, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Quite plausible. I see that a fair decision has been made., Condition: 0 - 03-08 13:07:26
+Step: 1, Selection: 1.0, Reward: 0.5068827313841501, Likelihood: 0.4375, Explanation Post Selection: It is satisfying to see the benefits that come from exploring. - 03-08 13:07:27

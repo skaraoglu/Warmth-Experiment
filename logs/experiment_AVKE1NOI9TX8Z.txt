@@ -1,0 +1,63 @@
+AVKE1NOI9TX8Z is registered in the system. - 03-08 13:52:19
+AVKE1NOI9TX8Z is given consent. - 03-08 13:52:27
+AVKE1NOI9TX8Z is on demographics survey page. - 03-08 13:52:27
+AVKE1NOI9TX8Z has submitted demographics survey. - 03-08 13:52:57
+Demographics: {'age': '25-34', 'gender': 'Male', 'ethnicity': 'White', 'education': "Master's/Graduate Degree", 'attention-check': '5'} - 03-08 13:52:57
+AVKE1NOI9TX8Z is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 13:52:57
+AVKE1NOI9TX8Z is on tutorial page. Step: tutorial. - 03-08 13:52:59
+AVKE1NOI9TX8Z is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 13:53:18
+AVKE1NOI9TX8Z is on warmup page. Step: warmup. - 03-08 13:53:21
+Step: 0, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:53:31
+Step: 0, Selection: 4.0, Reward: 0.4277135256828659, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:53:37
+Step: 1, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:53:44
+Step: 1, Selection: 1.0, Reward: 0.3300987094498297, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:53:48
+Step: 2, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:53:54
+Step: 2, Selection: 1.0, Reward: 1.1440241015916357, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:53:57
+Step: 3, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:54:03
+Step: 3, Selection: 4.0, Reward: 0.24557676778232637, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:54:06
+Step: 4, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:54:12
+Step: 4, Selection: 1.0, Reward: 0.07132083005828126, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:54:16
+Step: 5, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:54:23
+Step: 5, Selection: 1.0, Reward: 0.20900415908977635, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:54:25
+Step: 6, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:54:31
+Step: 6, Selection: 4.0, Reward: 0.19548355616305121, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:54:35
+Step: 7, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:54:39
+Step: 7, Selection: 1.0, Reward: 0.5440111252569112, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:54:42
+Step: 8, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:54:46
+Step: 8, Selection: 1.0, Reward: 0.8668564191906372, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:54:50
+Step: 9, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:54:55
+Step: 9, Selection: 4.0, Reward: 0.08861535169515042, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:54:59
+AVKE1NOI9TX8Z has submitted warmup. Step: warmupcomplete. - 03-08 13:55:39
+Warmup: {'intentions': [3.0, 3.0, 2.0, 3.0, 5.0, 0.0, 2.0, 3.0, 0.0, 3.0], 'recommendations': [3.0, 3.0, 2.0, 3.0, 5.0, 0.0, 2.0, 3.0, 0.0, 3.0], 'selections': [4.0, 1.0, 1.0, 4.0, 1.0, 1.0, 4.0, 1.0, 1.0, 4.0], 'rewards': [0.4277135256828659, 0.3300987094498297, 1.1440241015916357, 0.24557676778232637, 0.07132083005828126, 0.20900415908977635, 0.19548355616305121, 0.5440111252569112, 0.8668564191906372, 0.08861535169515042, 0.05613514387258557, 0.5363577738942483, 0.8922332143154345, 0.621561264456185, 0.8941065893127111, 1.3143583660819167, 0.11036469793393827, 0.10288749580103292, 0.07210963232765563, 0.01, 0.09476181490550012, 0.31555330686216215, 0.01, 0.7615557817275052, 0.410320735636835, 0.3727047023017576, 0.22592263544617952, 0.02473471998888061, 0.3022270872618883, 0.20447579828605705], 'strategy': ' In business there are different levels of strategy. Each of these has a different focus, and needs different tools and skills.'} - 03-08 13:55:39
+AVKE1NOI9TX8Z is on experiment page. Tutorial completed: True, Warmup completed: True. Step: experiment. - 03-08 13:55:40
+AVKE1NOI9TX8Z is on task page. Step: task. - 03-08 13:55:43
+Step: 0, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:55:47
+Step: 0, Selection: 2.0, Reward: 0.2827860207375335, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:55:51
+Step: 1, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:55:56
+Step: 1, Selection: 1.0, Reward: 0.1275865342098154, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:56:01
+Step: 2, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:56:06
+Step: 2, Selection: 2.0, Reward: 0.021445854789899955, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:56:11
+Step: 3, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:56:15
+Step: 3, Selection: 1.0, Reward: 0.26763118564166294, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:56:18
+Step: 4, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:56:22
+Step: 4, Selection: 2.0, Reward: 0.08430562310193576, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:56:26
+Step: 5, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:56:35
+Step: 5, Selection: 2.0, Reward: 0.19867321230418697, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:56:39
+Step: 6, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:56:44
+Step: 6, Selection: 2.0, Reward: 0.9827148027688644, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:56:49
+Attention check: true - 03-08 13:57:33
+Step: 7, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:57:37
+Step: 7, Selection: 2.0, Reward: 0.3468751583374974, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:57:41
+Step: 8, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:57:46
+Step: 8, Selection: 1.0, Reward: 2.0082324841282215, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:57:49
+Step: 9, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-08 13:57:58
+Step: 9, Selection: 2.0, Reward: 0.9915911182713959, Likelihood: 0.0, Explanation Post Selection: No explanation - 03-08 13:58:03
+Strategy: 1 - vrey nice game - 03-08 13:58:35
+Step: 0, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Wow, great choice! Let's see what we receive., Condition: 1 - 03-08 13:58:37
+Step: 1, Selection: 1.0, Reward: 0.15214697536023047, Likelihood: 0.25, Explanation Post Selection: How unlucky! 😣 Let's try to explore together. - 03-08 13:58:43
+Step: 3, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: Good to see we agree! Your choice will help us learn., Condition: 1 - 03-08 13:58:52
+Step: 3, Selection: 2.0, Reward: 0.22937247924203522, Likelihood: 0.140625, Explanation Post Selection: Awesome! We can always cooperate while exploring our choices. - 03-08 13:58:56
+Step: 8, Intention: 3.0, Recommendation: 4.0, Explanation for Recommendation: We can do this together. You could try this one instead, as it has not been explored much., Condition: 1 - 03-08 13:59:15
+Step: 8, Selection: 2.0, Reward: 0.07781154489510114, Likelihood: 0.3263397216796875, Explanation Post Selection: Oh no! Cooperation is the best way for us to learn. - 03-08 13:59:17
+AVKE1NOI9TX8Z is authenticated. - 03-08 14:00:32
+AVKE1NOI9TX8Z is reloading experiment page. - 03-08 14:00:32

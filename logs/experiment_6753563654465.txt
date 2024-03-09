@@ -1,0 +1,12 @@
+6753563654465 is registered in the system. - 03-08 23:12:51
+6753563654465 is given consent. - 03-08 23:13:18
+6753563654465 is on demographics survey page. - 03-08 23:13:18
+6753563654465 is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 23:13:47
+6753563654465 is on tutorial page. Step: tutorial. - 03-08 23:13:49
+6753563654465 is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 23:14:01
+6753563654465 is on warmup page. Step: warmup. - 03-08 23:14:14
+Step: 0, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Clever selection! We completely agree, we should explore this., Condition: 1 - 03-08 23:14:15
+Step: 0, Selection: 1.0, Reward: 0.22184060462004795, Likelihood: 0.25, Explanation Post Selection: Wow, we should keep learning! - 03-08 23:14:17
+Step: 1, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Good to see we agree! Checking out this choice looks promising. 😀, Condition: 1 - 03-08 23:14:20
+Step: 1, Selection: 3.0, Reward: 1.139806685468207, Likelihood: 0.4375, Explanation Post Selection: Yay, let's keep exploring!🙂 - 03-08 23:14:21
+6753563654465 is reloading experiment page. - 03-08 23:21:11

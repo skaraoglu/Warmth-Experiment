@@ -1,0 +1,16 @@
+AQ4UMWOUSOTB7 is registered in the system. - 03-08 13:56:14
+AQ4UMWOUSOTB7 is given consent. - 03-08 13:56:42
+AQ4UMWOUSOTB7 is on demographics survey page. - 03-08 13:56:42
+AQ4UMWOUSOTB7 has submitted demographics survey. - 03-08 13:57:19
+Demographics: {'age': '55-64', 'gender': 'Female', 'ethnicity': 'White', 'education': "Master's/Graduate Degree", 'attention-check': '5'} - 03-08 13:57:19
+AQ4UMWOUSOTB7 is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 13:57:19
+AQ4UMWOUSOTB7 is on tutorial page. Step: tutorial. - 03-08 13:57:22
+AQ4UMWOUSOTB7 is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 13:58:32
+AQ4UMWOUSOTB7 is on warmup page. Step: warmup. - 03-08 13:58:36
+Step: 1, Intention: 1.0, Recommendation: 3.0, Explanation for Recommendation: We're a team. You could consider exploring this option instead as it could get you a higher reward., Condition: 1 - 03-08 13:58:41
+Step: 2, Selection: 1.0, Reward: 0.041047579601836505, Likelihood: 0.1875, Explanation Post Selection: Oh no! Cooperation is the best way for us to learn. - 03-08 13:58:52
+Step: 4, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: We're on the same page! Your choice will help us learn., Condition: 1 - 03-08 13:58:57
+Step: 6, Selection: 3.0, Reward: 0.3002623449645239, Likelihood: 0.246826171875, Explanation Post Selection: Sweet! Working together is always an option. - 03-08 13:59:09
+Step: 9, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: We're on the same page! Checking out this choice looks promising. 😀, Condition: 1 - 03-08 13:59:17
+AQ4UMWOUSOTB7 is authenticated. - 03-08 14:00:29
+AQ4UMWOUSOTB7 is reloading experiment page. - 03-08 14:00:29

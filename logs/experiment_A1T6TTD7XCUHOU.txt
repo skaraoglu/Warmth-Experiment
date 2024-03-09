@@ -1,0 +1,17 @@
+A1T6TTD7XCUHOU is registered in the system. - 03-08 13:57:23
+A1T6TTD7XCUHOU is given consent. - 03-08 13:57:38
+A1T6TTD7XCUHOU is on demographics survey page. - 03-08 13:57:39
+A1T6TTD7XCUHOU has submitted demographics survey. - 03-08 13:58:31
+Demographics: {'age': '25-34', 'gender': 'Female', 'ethnicity': 'White', 'education': "Bachelor's degree", 'attention-check': '4'} - 03-08 13:58:31
+A1T6TTD7XCUHOU is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 13:58:31
+A1T6TTD7XCUHOU is on tutorial page. Step: tutorial. - 03-08 13:58:55
+A1T6TTD7XCUHOU is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 14:01:00
+A1T6TTD7XCUHOU is on warmup page. Step: warmup. - 03-08 14:01:03
+Step: 0, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: Not bad. Nice choice., Condition: 0 - 03-08 14:01:22
+Step: 2, Selection: 4.0, Reward: 0.19202713897198387, Likelihood: 0.328125, Explanation Post Selection: Don't forget. I am here to assist you in exploring. - 03-08 14:01:48
+Step: 6, Intention: 0.0, Recommendation: 5.0, Explanation for Recommendation: I believe cooperation is a better strategy. If this option is not explored, the calculations for it may not be as accurate., Condition: 0 - 03-08 14:02:09
+Step: 7, Selection: 5.0, Reward: 1.3009336953730137, Likelihood: 0.3239593505859375, Explanation Post Selection: Satisfactory work. Investigating different options together is something I would suggest. - 03-08 14:02:14
+Step: 8, Intention: 1.0, Recommendation: 0.0, Explanation for Recommendation: I recommend working with me on this. Choosing this option may result in a more positive outcome., Condition: 0 - 03-08 14:02:28
+Step: 8, Selection: 0.0, Reward: 0.10984628508345876, Likelihood: 0.24296951293945312, Explanation Post Selection: I see that the results veered from the expected. I shall further improve my computation. - 03-08 14:02:36
+Step: 9, Intention: 2.0, Recommendation: 0.0, Explanation for Recommendation: I believe cooperation is a better strategy. If this option is ignored, the optimal outcome may not be attained., Condition: 0 - 03-08 14:02:45
+A1T6TTD7XCUHOU is reloading experiment page. - 03-08 14:04:59

@@ -1,0 +1,23 @@
+AOXDT87CY4THW is registered in the system. - 03-08 13:41:49
+AOXDT87CY4THW is given consent. - 03-08 13:41:59
+AOXDT87CY4THW is on demographics survey page. - 03-08 13:41:59
+AOXDT87CY4THW has submitted demographics survey. - 03-08 13:42:31
+Demographics: {'age': '55-64', 'gender': 'Female', 'ethnicity': 'White', 'education': "Master's/Graduate Degree", 'attention-check': '5'} - 03-08 13:42:31
+AOXDT87CY4THW is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-08 13:42:31
+AOXDT87CY4THW is on tutorial page. Step: tutorial. - 03-08 13:42:35
+AOXDT87CY4THW is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-08 13:43:03
+AOXDT87CY4THW is on warmup page. Step: warmup. - 03-08 13:43:05
+Step: 0, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: Good thinking! Let's see what we receive., Condition: 1 - 03-08 13:43:10
+Step: 1, Selection: 0.0, Reward: 0.11410579923274514, Likelihood: 0.0, Explanation Post Selection: Awesome! We can always cooperate while exploring our choices. - 03-08 13:43:19
+Step: 2, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Great minds think alike! Exploring this choice is a great decision.🙂, Condition: 1 - 03-08 13:43:25
+Step: 2, Selection: 1.0, Reward: 0.016364785076066462, Likelihood: 0.25, Explanation Post Selection: Our exploration was unlucky. 😔 Let's keep going. - 03-08 13:43:32
+Step: 4, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: Good to see we agree! Checking out this choice looks promising. 😀, Condition: 1 - 03-08 13:43:37
+Step: 4, Selection: 4.0, Reward: 0.5638740660851341, Likelihood: 0.390625, Explanation Post Selection: Awesome, our exploring paid off!😃 - 03-08 13:43:40
+Step: 5, Intention: 2.0, Recommendation: 3.0, Explanation for Recommendation: Let's keep going together. Exploring this option may benefit you in the long run.😊, Condition: 1 - 03-08 13:43:45
+Step: 6, Selection: 3.0, Reward: 0.05599707265734828, Likelihood: 0.6572265625, Explanation Post Selection: Bad luck happens while exploring. We can improve together. - 03-08 13:43:52
+Step: 7, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: We're on the same page! Exploring this selection is good., Condition: 1 - 03-08 13:43:58
+Step: 8, Selection: 5.0, Reward: 0.05837700557386629, Likelihood: 0.36968994140625, Explanation Post Selection: That was unfortunate. 😞 We should learn together! - 03-08 13:44:01
+Step: 9, Intention: 2.0, Recommendation: 4.0, Explanation for Recommendation: Teamwork is the key. You could consider this option instead as it could get you a higher reward. 🙂, Condition: 1 - 03-08 13:44:07
+Step: 9, Selection: 4.0, Reward: 0.06302437047220717, Likelihood: 0.2772674560546875, Explanation Post Selection: Bad luck happens.🙁 Let's continue to work together! - 03-08 13:44:10
+AOXDT87CY4THW is authenticated. - 03-08 13:45:35
+AOXDT87CY4THW is reloading experiment page. - 03-08 13:45:36
