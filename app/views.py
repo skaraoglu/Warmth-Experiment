@@ -76,9 +76,11 @@ def assign_condition():
 
     return condition
 
-#cond = assign_condition()
-bandit = bandit.Bandit(num_arms,num_episodes,beta_vals=_beta,condition=-1)
-bandit.reset()
+def get_bandit():
+    # Get the bandit object from the session
+    b = session['bandit']
+    from app.bandit import Bandit
+    return Bandit.from_json(b)
 
 def log_experiment(message):
     path = 'logs/'
@@ -189,6 +191,26 @@ def consent_submit():
             current_user.consent = True
             session['consent'] = True
             db.session.commit()
+            #cond = assign_condition()
+            from app import bandit
+            cond = assign_condition()
+            bandit = bandit.Bandit(num_arms,
+                                   num_episodes,
+                                   beta_vals=_beta,
+                                   x = np.zeros(num_arms),
+                                   y = np.zeros(num_arms),
+                                   rewardPerRound = np.zeros(num_episodes),
+                                   r = np.zeros(num_episodes),
+                                   i = np.zeros(num_episodes),
+                                   s = np.zeros(num_episodes),
+                                   t = 0,
+                                   l = np.zeros(num_episodes),
+                                   condition=cond,
+                                   cases = np.zeros(num_episodes),
+            )
+                                   
+            session['bandit'] = bandit.to_json()
+        
             log_experiment(f'{current_user.mturk_id} is given consent.')
                             
             return redirect(url_for('demographics_survey'))
@@ -380,12 +402,12 @@ def warmup():
     session['warmup_start_time'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     # Set experiment length
-    cond = assign_condition()
-    bandit.condition = cond
+    
+    bandit = get_bandit()
     bandit.num_episodes = 10
     warmup_beta = [0.75, 0.8, 0.2, 0.85, 0.3, 0.9]
     bandit.beta_vals = warmup_beta
-    bandit.reset()
+    # bandit.reset()
     if not current_user.is_authenticated:
         print("User not authenticated.")
         return redirect(url_for('login'))
@@ -421,6 +443,7 @@ def warmupcomplete():
             db.session.add(warmup_completion)
             db.session.commit()
         
+        bandit = get_bandit()
         warmup_results = {}
         warmup_results['intentions'] = bandit.i.tolist()
         warmup_results['recommendations'] = bandit.r.tolist()
@@ -443,7 +466,8 @@ def warmupcomplete():
         log_experiment(f'{current_user.mturk_id} has submitted warmup. Step: warmupcomplete.')
         log_experiment('Warmup: ' + str(warmup_results))
 
-        bandit.reset()
+        # bandit.reset()
+        session['bandit'] = bandit.to_json()
 
     session['exp_page_loaded'] = False
 
@@ -452,10 +476,12 @@ def warmupcomplete():
 @app.route('/task/')
 @login_required
 def task():
-    # Set experiment length    
+    # Set experiment length
+    bandit = get_bandit()
     bandit.num_episodes = 30
     bandit.beta_vals = _beta
     bandit.reset()
+    session['bandit'] = bandit.to_json()
     if not current_user.is_authenticated:
         print("User not authenticated.")
         log_experiment(f'{current_user.mturk_id} is not authenticated. Step: task.')
@@ -489,7 +515,7 @@ def taskcomplete():
     
     if request.method == 'POST':
         mturk_id = session.get('mturk_id')
-
+        bandit = get_bandit()
         money = bandit.calculateMoney()
 
         task_completion = TaskCompletion.query.filter_by(user_id=current_user.mturk_id, task_type='task').first()
@@ -518,6 +544,7 @@ def taskcomplete():
 
         db.session.add(task)
         db.session.commit()
+        session['bandit'] = bandit.to_json()
         log_experiment(f'{current_user.mturk_id} has submitted task. Step: taskcomplete.')
         log_experiment('Task: ' + str(task_results))
 
@@ -530,13 +557,14 @@ def gamecomplete():
     
     print(session.get('endgame_loaded'))
     mturk_id = session.get('mturk_id')
+    bandit = get_bandit()
     money = bandit.calculateMoney()
     rewardC = rewardCode()
     log_experiment(f'{current_user.mturk_id} is on game complete page. Step: gamecomplete.')
     log_experiment('Reward code: ' + str(rewardC))
     log_experiment('Money earned: ' + str(money))
     #bandit.reset()
-    
+    session['bandit'] = bandit.to_json()
     user = User.query.filter_by(mturk_id=mturk_id).first()
     user.experiment_completed = True
     db.session.commit()
@@ -613,6 +641,7 @@ def get_recommendation():
     # get user intention
     user_curr_intention = int(request.args.get('intendedOption', 10))
     # update the intention
+    bandit = get_bandit()
     bandit.i[bandit.t] = int(user_curr_intention) 
     # get recommendation
     bandit.recommend_arm()
@@ -622,7 +651,7 @@ def get_recommendation():
     else:
         expForRec = bandit.getExplanation4Recommendation()
     log_experiment(f'Step: {bandit.t}, Intention: {bandit.i[bandit.t]}, Recommendation: {bandit.r[bandit.t]}, Explanation for Recommendation: {expForRec}, Condition: {bandit.condition}')
-    
+    session['bandit'] = bandit.to_json()
     return jsonify({'agents' : bandit.r[bandit.t] + 1, 'cases' : bandit.cases[bandit.t], 'expForRec': expForRec, 'condition': bandit.condition})
 
 @app.route('/get_reward')
@@ -630,6 +659,7 @@ def get_reward():
     # get user selection
     selected_option = int(request.args.get('selected_option', 0))
     # get reward
+    bandit = get_bandit()
     reward = bandit.pull_arm(selected_option)
 
     # Update bandit
@@ -646,7 +676,8 @@ def get_reward():
     bandit.updateLikelihood()
     log_experiment(f'Step: {bandit.t}, Selection: {bandit.s[bandit.t]}, Reward: {reward}, Likelihood: {bandit.l[bandit.t]}, Explanation Post Selection: {expPostSel}')
     bandit.t += 1
-
+    print("bandit.t in get reward: " + str(bandit.t))
+    session['bandit'] = bandit.to_json()
     return jsonify({'reward': reward, 'banditY': bandit.y[selected_option], 'banditX': bandit.x[selected_option], 'expPostSel': expPostSel, 'money': bandit.calculateMoney()})
 
 

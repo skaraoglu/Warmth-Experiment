@@ -2,10 +2,11 @@ import numpy as np
 import random
 import math
 from app.recommendation import agent_recommender, agent_feedback
+import json
 
 class Bandit:
 
-    def __init__(self, num_arms, num_episodes, condition, beta_vals=None):
+    def __init__(self, num_arms, num_episodes, beta_vals, x, y, rewardPerRound, r, i, s, t, l, condition, cases):
         #np.random.seed(seed=62)
         self.num_arms = num_arms
         self.num_episodes = num_episodes
@@ -13,30 +14,58 @@ class Bandit:
             self.beta_vals = np.random.uniform(0, 1, num_arms)
         else:
             self.beta_vals = beta_vals
-        self.x = np.zeros(num_arms) # Number of pulls for each arm
-        self.y = np.zeros(num_arms) # Rewards received each round
-        self.rewardPerRound = np.zeros(num_episodes) # Rewards received each round        
-        self.r = np.zeros(num_episodes) # Recommendations for each round
-        self.i = np.zeros(num_episodes) # Intentions for each round
-        self.s = np.zeros(num_episodes) # Selections for each round
-        self.t = 0
+        # self.x = np.zeros(num_arms) # Number of pulls for each arm
+        # self.y = np.zeros(num_arms) # Rewards received each round
+        # self.rewardPerRound = np.zeros(num_episodes) # Rewards received each round        
+        # self.r = np.zeros(num_episodes) # Recommendations for each round
+        # self.i = np.zeros(num_episodes) # Intentions for each round
+        # self.s = np.zeros(num_episodes) # Selections for each round
+        # self.t = 0
 
-        self.l = np.zeros(num_episodes) # Likelihood that the user adopts
+        # self.l = np.zeros(num_episodes) # Likelihood that the user adopts
         #self.l[0] = 1 # Complaint - Likelihood
         self.condition = condition # Cold = 0 or Warm = 1
-        self.cases = np.zeros(num_episodes) # Cases for each round
-
+        # self.cases = np.zeros(num_episodes) # Cases for each round
+        
+        self.x = x
+        self.y = y
+        self.rewardPerRound = rewardPerRound
+        self.r = r
+        self.i = i
+        self.s = s
+        self.t = t
+        self.l = l
+        self.cases = cases
+        
+        
+    def to_json(self):
+        dict_copy = self.__dict__.copy()
+        for key, value in dict_copy.items():
+            if isinstance(value, np.ndarray):
+                dict_copy[key] = value.tolist()
+        return json.dumps(dict_copy)
+    
+    @classmethod
+    def from_json(cls, json_str):
+        data = json.loads(json_str)
+        for key, value in data.items():
+            if isinstance(value, list):
+                data[key] = np.array(value)
+        return cls(**data)
+        
     def updateLikelihood(self, delta=.75):
         if(self.t < self.num_episodes):
             self.l[self.t] = delta * self.l[self.t-1] + (1 - delta) * (1 if self.i[self.t] == self.s[self.t] else 0)
     
     def recommend_arm(self):
+        print("INDEX at start", self.t)
         self.r[self.t] = 0
         if (self.x[int(self.i[self.t])] < 1):
             self.r[self.t] = self.i[self.t]
             self.cases[self.t] = 1
+            print("INDEX at end", self.t)
             return
-        
+    
         arms_to_recommend = []
         for i in range(self.num_arms):
             if self.x[i] < 1 and np.count_nonzero(self.r[:self.t] == i) < 2:
@@ -45,6 +74,7 @@ class Bandit:
         if arms_to_recommend:
             self.r[self.t] = random.choice(arms_to_recommend)
             self.cases[self.t] = 2
+            print("INDEX at end", self.t)
             return 
         '''
         # case 1:
@@ -100,10 +130,12 @@ class Bandit:
         if arms_to_recommend:
             self.r[self.t] = random.choice(arms_to_recommend)
             self.cases[self.t] = 3
+            print("INDEX at end", self.t)
             return
         else:
             self.cases[self.t] = 3
             self.r[self.t] = max_arm
+            print("INDEX at end", self.t)
             return
         
     def pull_arm(self, arm_index):
