@@ -1,0 +1,32 @@
+A2PAXZMD7Q7NKH is registered in the system. - 03-09 17:33:55
+A2PAXZMD7Q7NKH is given consent. - 03-09 17:34:02
+A2PAXZMD7Q7NKH is on demographics survey page. - 03-09 17:34:06
+A2PAXZMD7Q7NKH has submitted demographics survey. - 03-09 17:34:26
+Demographics: {'age': '55-64', 'gender': 'Female', 'ethnicity': 'White', 'education': "Master's/Graduate Degree", 'attention-check': '4'} - 03-09 17:34:26
+A2PAXZMD7Q7NKH is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-09 17:34:27
+A2PAXZMD7Q7NKH is on tutorial page. Step: tutorial. - 03-09 17:34:34
+A2PAXZMD7Q7NKH is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-09 17:34:44
+A2PAXZMD7Q7NKH is on warmup page. Step: warmup. - 03-09 17:34:47
+Step: 0, Selection: 3.0, Reward: 0.3840616343868128, Likelihood: 0.0, Explanation Post Selection: Awesome! We can always cooperate while exploring our choices. - 03-09 17:34:54
+Step: 0, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Seems like we agree! Checking out this choice looks promising. 😀, Condition: 1 - 03-09 17:34:56
+Step: 0, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: Seems like we agree! Exploring this selection is good., Condition: 1 - 03-09 17:35:00
+Step: 0, Selection: 4.0, Reward: 0.3711709535678729, Likelihood: 0.0, Explanation Post Selection: Nice! Let's try to explore together. 😊 - 03-09 17:35:08
+Step: 1, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: Good to see we agree! Your choice will help us learn., Condition: 1 - 03-09 17:35:16
+Step: 1, Selection: 3.0, Reward: 0.3215351524703663, Likelihood: 0.0, Explanation Post Selection: That was unfortunate. 😞 We should learn together! - 03-09 17:35:16
+Step: 2, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: Seems like we agree! Exploring this selection is good., Condition: 1 - 03-09 17:35:23
+Step: 2, Selection: 4.0, Reward: 0.2449072616162239, Likelihood: 0.0, Explanation Post Selection: Unfavorable outcomes happen. Let's not forget to explore together! - 03-09 17:35:25
+Step: 3, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: Glad we think the same! Exploring this choice is a great decision.🙂, Condition: 1 - 03-09 17:35:35
+Step: 3, Selection: 2.0, Reward: 0.19377670394950375, Likelihood: 0.0, Explanation Post Selection: Oh no! Cooperation is the best way for us to learn. - 03-09 17:35:37
+Step: 4, Intention: 4.0, Recommendation: 5.0, Explanation for Recommendation: We're a team. This choice may give us a better outome, as it hasn't been explored yet., Condition: 1 - 03-09 17:35:42
+Step: 4, Selection: 5.0, Reward: 2.570876806507846, Likelihood: 0.0, Explanation Post Selection: Awesome, our exploring paid off!😃 - 03-09 17:35:44
+Step: 5, Intention: 3.0, Recommendation: 1.0, Explanation for Recommendation: Let's do this together. Exploring this option may benefit you in the long run.😊, Condition: 1 - 03-09 17:35:50
+Step: 5, Selection: 1.0, Reward: 0.17008811179501293, Likelihood: 0.0, Explanation Post Selection: That was unfortunate. 😞 We should learn together! - 03-09 17:35:51
+Step: 6, Intention: 3.0, Recommendation: 5.0, Explanation for Recommendation: We are better together Choosing this option may benefit you in the long run., Condition: 1 - 03-09 17:35:56
+Step: 6, Selection: 1.0, Reward: 0.3821340930454211, Likelihood: 0.0, Explanation Post Selection: Oh no! Cooperation is the best way for us to succeed. - 03-09 17:35:59
+Step: 7, Intention: 2.0, Recommendation: 5.0, Explanation for Recommendation: Teamwork is the key. Choosing this option may benefit you in the long run., Condition: 1 - 03-09 17:36:06
+Step: 7, Selection: 5.0, Reward: 0.46080835119743163, Likelihood: 0.0, Explanation Post Selection: That was unfortunate. 😞 We should learn together! - 03-09 17:36:08
+Step: 8, Intention: 3.0, Recommendation: 0.0, Explanation for Recommendation: Let's work together. Choosing this option may benefit you in the long run., Condition: 1 - 03-09 17:36:14
+Step: 8, Selection: 0.0, Reward: 0.9261040773699533, Likelihood: 0.0, Explanation Post Selection: Fantastic, let's move onward! - 03-09 17:36:18
+A2PAXZMD7Q7NKH has submitted warmup. Step: warmupcomplete. - 03-09 17:36:30
+Warmup: {'intentions': [5.0, 0.0, 2.0, 0.0, 4.0, 0.0, 3.0, 0.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'recommendations': [5.0, 0.0, 2.0, 0.0, 5.0, 0.0, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'selections': [4.0, 3.0, 4.0, 2.0, 5.0, 1.0, 1.0, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'rewards': [0.3711709535678729, 0.3215351524703663, 0.2449072616162239, 0.19377670394950375, 2.570876806507846, 0.17008811179501293, 0.3821340930454211, 0.46080835119743163, 0.9261040773699533, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'strategy': 'no'} - 03-09 17:36:30
+A2PAXZMD7Q7NKH has already submitted warmup. Step: warmupcomplete. - 03-09 17:36:34

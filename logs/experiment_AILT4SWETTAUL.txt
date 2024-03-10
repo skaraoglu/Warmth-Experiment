@@ -1,0 +1,7 @@
+AILT4SWETTAUL is registered in the system. - 03-09 15:57:51
+AILT4SWETTAUL is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-09 15:57:55
+AILT4SWETTAUL is given consent. - 03-09 15:57:58
+AILT4SWETTAUL is on demographics survey page. - 03-09 15:57:58
+AILT4SWETTAUL has submitted demographics survey. - 03-09 15:58:13
+Demographics: {'age': '35-44', 'gender': 'Male', 'ethnicity': 'White', 'education': "Bachelor's degree", 'attention-check': '5'} - 03-09 15:58:13
+AILT4SWETTAUL is reloading experiment page. - 03-09 15:58:13

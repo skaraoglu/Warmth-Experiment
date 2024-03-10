@@ -1,0 +1,7 @@
+A2MN7M4VX36HTN is registered in the system. - 03-09 15:07:21
+A2MN7M4VX36HTN is given consent. - 03-09 15:07:34
+A2MN7M4VX36HTN is on demographics survey page. - 03-09 15:07:35
+A2MN7M4VX36HTN has submitted demographics survey. - 03-09 15:08:09
+Demographics: {'age': '35-44', 'gender': 'Male', 'ethnicity': 'White', 'education': "Bachelor's degree", 'attention-check': '4'} - 03-09 15:08:09
+A2MN7M4VX36HTN is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-09 15:08:09
+A2MN7M4VX36HTN is on tutorial page. Step: tutorial. - 03-09 15:08:15

@@ -1,0 +1,6 @@
+A1WZW4SCS5MV66 is registered in the system. - 03-09 16:56:54
+A1WZW4SCS5MV66 is given consent. - 03-09 16:57:05
+A1WZW4SCS5MV66 is on demographics survey page. - 03-09 16:57:05
+A1WZW4SCS5MV66 has submitted demographics survey. - 03-09 16:57:19
+Demographics: {'age': '55-64', 'gender': 'Female', 'ethnicity': 'White', 'education': 'PhD or similar', 'attention-check': '5'} - 03-09 16:57:19
+A1WZW4SCS5MV66 is reloading experiment page. - 03-09 16:57:19

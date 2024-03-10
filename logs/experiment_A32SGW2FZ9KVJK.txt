@@ -1,0 +1,107 @@
+A32SGW2FZ9KVJK is registered in the system. - 03-09 16:58:25
+A32SGW2FZ9KVJK is given consent. - 03-09 17:05:01
+A32SGW2FZ9KVJK is on demographics survey page. - 03-09 17:05:01
+A32SGW2FZ9KVJK has submitted demographics survey. - 03-09 17:05:14
+Demographics: {'age': '35-44', 'gender': 'Male', 'ethnicity': 'White', 'education': "Bachelor's degree", 'attention-check': '5'} - 03-09 17:05:14
+A32SGW2FZ9KVJK is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-09 17:05:14
+A32SGW2FZ9KVJK is on tutorial page. Step: tutorial. - 03-09 17:05:16
+A32SGW2FZ9KVJK is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-09 17:12:24
+A32SGW2FZ9KVJK is on warmup page. Step: warmup. - 03-09 17:12:25
+Step: 0, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:12:28
+Step: 0, Selection: 5.0, Reward: 1.878238831169509, Likelihood: 0.25, Explanation Post Selection: No explanation - 03-09 17:12:31
+Step: 1, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:12:36
+Step: 1, Selection: 4.0, Reward: 0.3943971369347954, Likelihood: 0.4375, Explanation Post Selection: No explanation - 03-09 17:12:40
+Step: 2, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:12:44
+Step: 2, Selection: 3.0, Reward: 0.0734001618646385, Likelihood: 0.578125, Explanation Post Selection: No explanation - 03-09 17:12:46
+Step: 3, Intention: 3.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:13:34
+Step: 3, Selection: 0.0, Reward: 0.4534596150038386, Likelihood: 0.43359375, Explanation Post Selection: No explanation - 03-09 17:13:36
+Step: 4, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:13:54
+Step: 4, Selection: 2.0, Reward: 0.5445959995982942, Likelihood: 0.5751953125, Explanation Post Selection: No explanation - 03-09 17:13:56
+Step: 5, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:14:01
+Step: 5, Selection: 1.0, Reward: 1.304033830646048, Likelihood: 0.681396484375, Explanation Post Selection: No explanation - 03-09 17:14:04
+Step: 6, Intention: 4.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:14:09
+Step: 6, Selection: 5.0, Reward: 0.05623666341622849, Likelihood: 0.51104736328125, Explanation Post Selection: No explanation - 03-09 17:14:12
+Step: 7, Intention: 3.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:14:16
+Step: 7, Selection: 1.0, Reward: 0.2016069691932586, Likelihood: 0.3832855224609375, Explanation Post Selection: No explanation - 03-09 17:14:20
+Step: 8, Intention: 2.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:14:24
+Step: 8, Selection: 5.0, Reward: 0.36636162906413294, Likelihood: 0.2874641418457031, Explanation Post Selection: No explanation - 03-09 17:14:28
+Step: 9, Intention: 0.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:14:34
+Step: 9, Selection: 1.0, Reward: 2.3950218419460843, Likelihood: 0.21559810638427734, Explanation Post Selection: No explanation - 03-09 17:14:37
+A32SGW2FZ9KVJK has submitted warmup. Step: warmupcomplete. - 03-09 17:15:28
+Warmup: {'intentions': [5.0, 4.0, 3.0, 3.0, 2.0, 1.0, 4.0, 3.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'recommendations': [5.0, 4.0, 3.0, 0.0, 2.0, 1.0, 5.0, 1.0, 5.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'selections': [5.0, 4.0, 3.0, 0.0, 2.0, 1.0, 5.0, 1.0, 5.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'rewards': [1.878238831169509, 0.3943971369347954, 0.0734001618646385, 0.4534596150038386, 0.5445959995982942, 1.304033830646048, 0.05623666341622849, 0.2016069691932586, 0.36636162906413294, 2.3950218419460843, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'strategy': 'i clear learn the game explanations and view the reward points and choose the box.'} - 03-09 17:15:28
+A32SGW2FZ9KVJK is on experiment page. Tutorial completed: True, Warmup completed: True. Step: experiment. - 03-09 17:15:28
+A32SGW2FZ9KVJK is on task page. Step: task. - 03-09 17:15:30
+Step: 0, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:15:32
+Step: 0, Selection: 2.0, Reward: 0.027951391149777953, Likelihood: 0.25, Explanation Post Selection: No explanation - 03-09 17:15:38
+Step: 1, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:15:42
+Step: 1, Selection: 3.0, Reward: 0.2556617746536992, Likelihood: 0.4375, Explanation Post Selection: No explanation - 03-09 17:15:44
+Step: 2, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:15:48
+Step: 2, Selection: 4.0, Reward: 0.19035388518874893, Likelihood: 0.578125, Explanation Post Selection: No explanation - 03-09 17:15:51
+Step: 3, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:15:56
+Step: 3, Selection: 5.0, Reward: 0.10704634675337361, Likelihood: 0.68359375, Explanation Post Selection: No explanation - 03-09 17:15:59
+Step: 4, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:16:04
+Step: 4, Selection: 1.0, Reward: 1.8398559039855986, Likelihood: 0.7626953125, Explanation Post Selection: No explanation - 03-09 17:16:07
+Step: 5, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:16:11
+Step: 5, Selection: 0.0, Reward: 0.8677718283262815, Likelihood: 0.822021484375, Explanation Post Selection: No explanation - 03-09 17:16:14
+Step: 6, Intention: 2.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:16:17
+Step: 6, Selection: 2.0, Reward: 0.029394587920191555, Likelihood: 0.86651611328125, Explanation Post Selection: No explanation - 03-09 17:16:19
+Attention check: true - 03-09 17:16:27
+Step: 7, Intention: 3.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:16:29
+Step: 7, Selection: 1.0, Reward: 1.1956634459608235, Likelihood: 0.6498870849609375, Explanation Post Selection: No explanation - 03-09 17:16:32
+Step: 8, Intention: 2.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:16:37
+Step: 8, Selection: 0.0, Reward: 1.129250033329714, Likelihood: 0.4874153137207031, Explanation Post Selection: No explanation - 03-09 17:16:40
+Step: 9, Intention: 3.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:17:00
+Step: 9, Selection: 1.0, Reward: 0.24804360008658305, Likelihood: 0.36556148529052734, Explanation Post Selection: No explanation - 03-09 17:17:03
+Strategy: 1 - i choose reward basis and all over the box points noticed and choose one by one. - 03-09 17:17:45
+Step: 10, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:17:46
+Step: 10, Selection: 3.0, Reward: 0.13958776705393117, Likelihood: 0.5241711139678955, Explanation Post Selection: No explanation - 03-09 17:17:54
+Step: 11, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:18:04
+Step: 11, Selection: 4.0, Reward: 0.01, Likelihood: 0.6431283354759216, Explanation Post Selection: No explanation - 03-09 17:18:06
+Step: 12, Intention: 4.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:18:14
+Step: 12, Selection: 0.0, Reward: 2.04649773211355, Likelihood: 0.4823462516069412, Explanation Post Selection: No explanation - 03-09 17:18:17
+Step: 13, Intention: 2.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:18:29
+Step: 13, Selection: 0.0, Reward: 0.15291309238938725, Likelihood: 0.3617596887052059, Explanation Post Selection: No explanation - 03-09 17:18:32
+Step: 14, Intention: 2.0, Recommendation: 5.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:18:37
+Step: 14, Selection: 5.0, Reward: 0.31039270527609397, Likelihood: 0.27131976652890444, Explanation Post Selection: No explanation - 03-09 17:18:39
+Step: 15, Intention: 4.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:18:44
+Step: 15, Selection: 1.0, Reward: 0.534978936172272, Likelihood: 0.20348982489667833, Explanation Post Selection: No explanation - 03-09 17:18:47
+Attention check: true - 03-09 17:18:55
+Step: 16, Intention: 3.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:18:56
+Step: 16, Selection: 0.0, Reward: 0.31535936545532084, Likelihood: 0.15261736867250875, Explanation Post Selection: No explanation - 03-09 17:19:00
+Step: 17, Intention: 3.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:19:13
+Step: 17, Selection: 1.0, Reward: 0.7088196835656607, Likelihood: 0.11446302650438156, Explanation Post Selection: No explanation - 03-09 17:19:15
+Step: 18, Intention: 4.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:19:24
+Step: 18, Selection: 1.0, Reward: 0.3380537906414344, Likelihood: 0.08584726987828617, Explanation Post Selection: No explanation - 03-09 17:19:28
+Step: 19, Intention: 3.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:19:32
+Step: 19, Selection: 0.0, Reward: 2.5140119416787012, Likelihood: 0.06438545240871463, Explanation Post Selection: No explanation - 03-09 17:19:35
+Strategy: 2 - i see all the time time and reward basis choose and easily increased the reward box again and again choose. - 03-09 17:20:42
+Step: 20, Intention: 2.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:20:43
+Step: 20, Selection: 0.0, Reward: 1.7418495381399428, Likelihood: 0.04828908930653597, Explanation Post Selection: No explanation - 03-09 17:20:47
+Step: 21, Intention: 4.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:20:51
+Step: 21, Selection: 0.0, Reward: 0.4055164208545709, Likelihood: 0.03621681697990198, Explanation Post Selection: No explanation - 03-09 17:20:54
+Step: 22, Intention: 3.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:20:59
+Step: 22, Selection: 0.0, Reward: 0.09190302932590891, Likelihood: 0.027162612734926483, Explanation Post Selection: No explanation - 03-09 17:21:02
+Step: 23, Intention: 4.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:21:07
+Step: 23, Selection: 4.0, Reward: 0.35450628325475747, Likelihood: 0.27037195955119486, Explanation Post Selection: No explanation - 03-09 17:21:10
+Step: 24, Intention: 5.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:21:14
+Step: 24, Selection: 2.0, Reward: 0.5810022171458845, Likelihood: 0.20277896966339615, Explanation Post Selection: No explanation - 03-09 17:21:18
+Step: 25, Intention: 3.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:21:23
+Step: 25, Selection: 3.0, Reward: 0.09248852458792833, Likelihood: 0.4020842272475471, Explanation Post Selection: No explanation - 03-09 17:21:25
+Step: 26, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:21:29
+Step: 26, Selection: 0.0, Reward: 1.175828855145642, Likelihood: 0.5515631704356603, Explanation Post Selection: No explanation - 03-09 17:21:33
+Step: 27, Intention: 1.0, Recommendation: 0.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:21:38
+Step: 27, Selection: 1.0, Reward: 2.501565432040648, Likelihood: 0.6636723778267453, Explanation Post Selection: No explanation - 03-09 17:21:40
+Step: 28, Intention: 2.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:21:45
+Step: 28, Selection: 2.0, Reward: 0.01, Likelihood: 0.747754283370059, Explanation Post Selection: No explanation - 03-09 17:21:47
+Step: 29, Intention: 3.0, Recommendation: 1.0, Explanation for Recommendation: No explanation, Condition: 2 - 03-09 17:21:51
+Step: 29, Selection: 3.0, Reward: 0.11308569934943796, Likelihood: 0.8108157125275443, Explanation Post Selection: No explanation - 03-09 17:21:53
+A32SGW2FZ9KVJK has submitted task. Step: taskcomplete. - 03-09 17:21:58
+Task: {'intentions': [2.0, 3.0, 4.0, 5.0, 1.0, 0.0, 2.0, 3.0, 2.0, 3.0, 3.0, 4.0, 4.0, 2.0, 2.0, 4.0, 3.0, 3.0, 4.0, 3.0, 2.0, 4.0, 3.0, 4.0, 5.0, 3.0, 0.0, 1.0, 2.0, 3.0], 'recommendations': [2.0, 3.0, 4.0, 5.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 3.0, 4.0, 0.0, 0.0, 5.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0], 'selections': [2.0, 3.0, 4.0, 5.0, 1.0, 0.0, 2.0, 1.0, 0.0, 1.0, 3.0, 4.0, 0.0, 0.0, 5.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 4.0, 2.0, 3.0, 0.0, 1.0, 2.0, 3.0], 'rewards': [0.027951391149777953, 0.2556617746536992, 0.19035388518874893, 0.10704634675337361, 1.8398559039855986, 0.8677718283262815, 0.029394587920191555, 1.1956634459608235, 1.129250033329714, 0.24804360008658305, 0.13958776705393117, 0.01, 2.04649773211355, 0.15291309238938725, 0.31039270527609397, 0.534978936172272, 0.31535936545532084, 0.7088196835656607, 0.3380537906414344, 2.5140119416787012, 1.7418495381399428, 0.4055164208545709, 0.09190302932590891, 0.35450628325475747, 0.5810022171458845, 0.09248852458792833, 1.175828855145642, 2.501565432040648, 0.01, 0.11308569934943796], 'money': 0.42} - 03-09 17:21:58
+A32SGW2FZ9KVJK is on survey page. - 03-09 17:21:58
+A32SGW2FZ9KVJK has submitted survey. - 03-09 17:23:34
+Evaluation: {'consistency_1': '4', 'perceived_usefulness_1': '5', 'perceived_usefulness_2': '4', 'perceived_usefulness_3': '4', 'satisfaction_1': '5', 'satisfaction_2': '4', 'satisfaction_3': '4', 'warmth_1': '4', 'warmth_2': '5', 'warmth_3': '4', 'warmth_4': '5', 'warmth_5': '4', 'consistency_2': '2', 'attention-check': '5'} - 03-09 17:23:34
+A32SGW2FZ9KVJK is on game complete page. Step: gamecomplete. - 03-09 17:23:34
+Reward code: 9173938963 - 03-09 17:23:34
+Money earned: 0.42 - 03-09 17:23:34
+A32SGW2FZ9KVJK has submitted feedback survey. - 03-09 17:23:52
+Feedback: {'feedback': 'none'} - 03-09 17:23:52

@@ -1,0 +1,107 @@
+ASEIRRACBY1EY is registered in the system. - 03-09 15:53:44
+ASEIRRACBY1EY is given consent. - 03-09 15:53:55
+ASEIRRACBY1EY is on demographics survey page. - 03-09 15:53:55
+ASEIRRACBY1EY has submitted demographics survey. - 03-09 15:59:46
+Demographics: {'age': '25-34', 'gender': 'Male', 'ethnicity': 'Asian or Pacific Islander', 'education': "Bachelor's degree", 'attention-check': '5'} - 03-09 15:59:46
+ASEIRRACBY1EY is on experiment page. Tutorial completed: False, Warmup completed: False. Step: experiment. - 03-09 15:59:46
+ASEIRRACBY1EY is on tutorial page. Step: tutorial. - 03-09 15:59:49
+ASEIRRACBY1EY is on experiment page. Tutorial completed: True, Warmup completed: False. Step: experiment. - 03-09 16:00:20
+ASEIRRACBY1EY is on warmup page. Step: warmup. - 03-09 16:00:23
+Step: 0, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: A reasonable selection. I recommend proceeding with this choice., Condition: 0 - 03-09 16:00:26
+Step: 0, Selection: 1.0, Reward: 1.6656961348367876, Likelihood: 0.0, Explanation Post Selection: Nice. Exploring together is something I would highly recommend. - 03-09 16:00:30
+Step: 1, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: A satisfactory choice. I support exploring this option., Condition: 0 - 03-09 16:00:36
+Step: 1, Selection: 3.0, Reward: 0.28518572967303046, Likelihood: 0.0, Explanation Post Selection: Don't forget. I am here to assist you in exploring. - 03-09 16:00:38
+Step: 2, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: A reasonable selection. I support exploring this option., Condition: 0 - 03-09 16:00:43
+Step: 2, Selection: 5.0, Reward: 0.4511795445874466, Likelihood: 0.0, Explanation Post Selection: I suggest for more exploration to be made together to help better performance. - 03-09 16:00:47
+Step: 3, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: A satisfactory choice. I recommend proceeding with this choice., Condition: 0 - 03-09 16:00:51
+Step: 3, Selection: 2.0, Reward: 0.11772737596802972, Likelihood: 0.0, Explanation Post Selection: I recommend collaborating to explore more thoroughly. - 03-09 16:00:54
+Step: 4, Intention: 3.0, Recommendation: 4.0, Explanation for Recommendation: I believe cooperation is a better strategy. If this option is selected, there may be some that are less fairly explored., Condition: 0 - 03-09 16:00:59
+Step: 4, Selection: 4.0, Reward: 0.7810740813374658, Likelihood: 0.0, Explanation Post Selection: It is satisfying to see the benefits that come from exploring. - 03-09 16:01:01
+Step: 5, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: Quite plausible. I believe your choice for this instance is plausible., Condition: 0 - 03-09 16:01:06
+Step: 5, Selection: 1.0, Reward: 0.5475015295931435, Likelihood: 0.0, Explanation Post Selection: I highly suggest that we explore more options together. - 03-09 16:01:09
+Step: 6, Intention: 3.0, Recommendation: 0.0, Explanation for Recommendation: I recommend working with me on this. Choosing this option may result in a more positive outcome., Condition: 0 - 03-09 16:01:14
+Step: 6, Selection: 0.0, Reward: 0.3694112934232054, Likelihood: 0.0, Explanation Post Selection: I see that the results veered from the expected. I shall further improve my computation. - 03-09 16:01:18
+Step: 7, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: A reasonable selection. I concur with this selection., Condition: 0 - 03-09 16:01:22
+Step: 7, Selection: 5.0, Reward: 0.46015595357750777, Likelihood: 0.0, Explanation Post Selection: I recommend collaborating to maximize reward. - 03-09 16:01:26
+Step: 8, Intention: 1.0, Recommendation: 1.0, Explanation for Recommendation: A reasonable selection. I believe your choice for this instance is plausible., Condition: 0 - 03-09 16:01:30
+Step: 8, Selection: 3.0, Reward: 2.5422591416049847, Likelihood: 0.0, Explanation Post Selection: A decent outcome. I want to agree on more decisions moving forward. - 03-09 16:01:32
+Step: 9, Intention: 1.0, Recommendation: 3.0, Explanation for Recommendation: I recommend working with me on this. If this option is ignored, the optimal outcome may not be attained., Condition: 0 - 03-09 16:01:39
+Step: 9, Selection: 3.0, Reward: 2.3714184733928785, Likelihood: 0.0, Explanation Post Selection: I see that the selection was successful. - 03-09 16:01:42
+ASEIRRACBY1EY has submitted warmup. Step: warmupcomplete. - 03-09 16:04:07
+Warmup: {'intentions': [0.0, 2.0, 4.0, 0.0, 3.0, 0.0, 3.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'recommendations': [0.0, 2.0, 4.0, 0.0, 4.0, 0.0, 0.0, 1.0, 1.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'selections': [1.0, 3.0, 5.0, 2.0, 4.0, 1.0, 0.0, 5.0, 3.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'rewards': [1.6656961348367876, 0.28518572967303046, 0.4511795445874466, 0.11772737596802972, 0.7810740813374658, 0.5475015295931435, 0.3694112934232054, 0.46015595357750777, 2.5422591416049847, 2.3714184733928785, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'strategy': 'Setting goals and priorities, determining  actions to achieve the goals and mobilizing resources to  execute the  actions.'} - 03-09 16:04:07
+ASEIRRACBY1EY is on experiment page. Tutorial completed: True, Warmup completed: True. Step: experiment. - 03-09 16:04:07
+ASEIRRACBY1EY is on task page. Step: task. - 03-09 16:05:09
+Step: 0, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: Well-made decision. I shall not disagree., Condition: 0 - 03-09 16:05:14
+Step: 0, Selection: 1.0, Reward: 1.3890410156332311, Likelihood: 0.0, Explanation Post Selection: Satisfactory work. Investigating different options together is something I would suggest. - 03-09 16:05:17
+Step: 1, Intention: 1.0, Recommendation: 2.0, Explanation for Recommendation: I believe cooperation is a better strategy. If this option is selected instead, I can use the data to learn more accurately., Condition: 0 - 03-09 16:05:24
+Step: 1, Selection: 2.0, Reward: 0.3097752296655995, Likelihood: 0.0, Explanation Post Selection: As results show, mistakes can occur. I will calculate ways for better performance. - 03-09 16:05:27
+Step: 2, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: A satisfactory choice. I believe your choice for this instance is plausible., Condition: 0 - 03-09 16:05:32
+Step: 2, Selection: 2.0, Reward: 1.1265554466005472, Likelihood: 0.0, Explanation Post Selection: Satisfactory work. Investigating different options together is something I would suggest. - 03-09 16:05:41
+Step: 3, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: A satisfactory choice. I believe your choice for this instance is plausible., Condition: 0 - 03-09 16:05:46
+Step: 3, Selection: 2.0, Reward: 0.5502906345281188, Likelihood: 0.0, Explanation Post Selection: I highly suggest that we explore more options together. - 03-09 16:05:50
+Step: 4, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Agreed. I support exploring this option., Condition: 0 - 03-09 16:05:55
+Step: 4, Selection: 0.0, Reward: 0.2207704806547456, Likelihood: 0.0, Explanation Post Selection: I suggest for more exploration to be made together to help better performance. - 03-09 16:06:02
+Step: 5, Intention: 5.0, Recommendation: 5.0, Explanation for Recommendation: Quite plausible. I concur with exploring this selection., Condition: 0 - 03-09 16:06:07
+Step: 5, Selection: 4.0, Reward: 0.5577581661665537, Likelihood: 0.0, Explanation Post Selection: I suggest for more exploration to be made together to help better performance. - 03-09 16:06:15
+Step: 6, Intention: 2.0, Recommendation: 5.0, Explanation for Recommendation: There may be a better choice to explore. If this option is not explored, the calculations for it may not be as accurate., Condition: 0 - 03-09 16:06:20
+Step: 6, Selection: 5.0, Reward: 0.3492528103529491, Likelihood: 0.0, Explanation Post Selection: As results show, mistakes can occur. I will calculate ways for better performance. - 03-09 16:06:28
+Attention check: true - 03-09 16:06:38
+Step: 7, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Quite plausible. I see that a fair decision has been made., Condition: 0 - 03-09 16:06:41
+Step: 7, Selection: 1.0, Reward: 0.31047669389608173, Likelihood: 0.0, Explanation Post Selection: I suggest for more exploration to be made together to help better performance. - 03-09 16:06:45
+Step: 8, Intention: 0.0, Recommendation: 3.0, Explanation for Recommendation: I believe cooperation is a better strategy. If this option is selected, it could avoid a suboptimal outcome., Condition: 0 - 03-09 16:06:50
+Step: 8, Selection: 3.0, Reward: 0.7150397889321336, Likelihood: 0.0, Explanation Post Selection: I'm liking what I see. - 03-09 16:06:56
+Step: 9, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Logical decision. I am pleased by this selection., Condition: 0 - 03-09 16:07:02
+Step: 9, Selection: 0.0, Reward: 2.666647211996748, Likelihood: 0.0, Explanation Post Selection: A decent outcome. I want to agree on more decisions moving forward. - 03-09 16:07:09
+Strategy: 1 - Setting goals and priorities, determining actions to achieve the goals. - 03-09 16:09:06
+Step: 10, Intention: 3.0, Recommendation: 3.0, Explanation for Recommendation: Agreed. I see that a fair decision has been made., Condition: 0 - 03-09 16:09:09
+Step: 10, Selection: 1.0, Reward: 1.2786163744965684, Likelihood: 0.0, Explanation Post Selection: A decent outcome. I want to agree on more decisions moving forward. - 03-09 16:09:14
+Step: 11, Intention: 4.0, Recommendation: 3.0, Explanation for Recommendation: There may be a better choice. If this option is selected, it could avoid a suboptimal outcome., Condition: 0 - 03-09 16:09:19
+Step: 11, Selection: 3.0, Reward: 0.359015563906088, Likelihood: 0.0, Explanation Post Selection: I'm refining my calculations. I'll be better equipped to provide assistance next time. - 03-09 16:09:22
+Step: 12, Intention: 3.0, Recommendation: 0.0, Explanation for Recommendation: I recommend working with me on this. Choosing this option may result in a more positive outcome., Condition: 0 - 03-09 16:09:28
+Step: 12, Selection: 0.0, Reward: 1.3436666768165555, Likelihood: 0.0, Explanation Post Selection: I am quite pleased with the outcome. - 03-09 16:09:31
+Step: 13, Intention: 4.0, Recommendation: 4.0, Explanation for Recommendation: A satisfactory choice. I concur with this selection., Condition: 0 - 03-09 16:09:36
+Step: 13, Selection: 5.0, Reward: 0.09634982119074968, Likelihood: 0.0, Explanation Post Selection: Don't forget. I am here to provide assistance. - 03-09 16:09:40
+Step: 14, Intention: 0.0, Recommendation: 4.0, Explanation for Recommendation: I recommend this instead. Choosing this option may result in a more positive outcome., Condition: 0 - 03-09 16:09:46
+Step: 14, Selection: 4.0, Reward: 0.029084553817306198, Likelihood: 0.0, Explanation Post Selection: I'm refining my calculations. I'll be better equipped to provide assistance next time. - 03-09 16:09:49
+Step: 15, Intention: 2.0, Recommendation: 0.0, Explanation for Recommendation: There may be a better choice. Choosing this option may result in a more positive outcome., Condition: 0 - 03-09 16:09:54
+Step: 15, Selection: 0.0, Reward: 0.3097719339084987, Likelihood: 0.0, Explanation Post Selection: I'm refining my calculations. I'll be better equipped to provide assistance next time. - 03-09 16:09:56
+Attention check: true - 03-09 16:10:37
+Step: 16, Intention: 0.0, Recommendation: 1.0, Explanation for Recommendation: I recommend this instead. Choosing this option may result in a more positive outcome., Condition: 0 - 03-09 16:10:39
+Step: 16, Selection: 1.0, Reward: 0.11217394751635179, Likelihood: 0.0, Explanation Post Selection: I see that the results veered from the expected. I shall further improve my computation. - 03-09 16:10:42
+Step: 17, Intention: 5.0, Recommendation: 0.0, Explanation for Recommendation: There may be a better choice. If this option is ignored, the optimal outcome may not be attained., Condition: 0 - 03-09 16:10:47
+Step: 17, Selection: 0.0, Reward: 0.2815044682766752, Likelihood: 0.0, Explanation Post Selection: I see that the results veered from the expected. I shall further improve my computation. - 03-09 16:10:50
+Step: 18, Intention: 4.0, Recommendation: 3.0, Explanation for Recommendation: There may be a better choice. Choosing this option may result in a more positive outcome., Condition: 0 - 03-09 16:10:56
+Step: 18, Selection: 3.0, Reward: 0.01, Likelihood: 0.0, Explanation Post Selection: I'm refining my calculations. I'll be better equipped to provide assistance next time. - 03-09 16:10:59
+Step: 19, Intention: 2.0, Recommendation: 0.0, Explanation for Recommendation: I recommend this instead. If this option is not selected, it may obtain a suboptimal outcome., Condition: 0 - 03-09 16:11:04
+Step: 19, Selection: 0.0, Reward: 0.06627649794603034, Likelihood: 0.0, Explanation Post Selection: I see that the results veered from the expected. I shall further improve my computation. - 03-09 16:11:07
+Strategy: 2 - Setting goals and priorities, determining actions to achieve the goals. - 03-09 16:12:16
+Step: 20, Intention: 4.0, Recommendation: 2.0, Explanation for Recommendation: I have a different suggestion. If this option is selected, there may be a less desirable outcome., Condition: 0 - 03-09 16:12:18
+Step: 20, Selection: 2.0, Reward: 0.8582619164770022, Likelihood: 0.0, Explanation Post Selection: I am quite pleased with the outcome. - 03-09 16:12:21
+Step: 21, Intention: 3.0, Recommendation: 1.0, Explanation for Recommendation: There may be a better choice. If this option is selected, there may be a less desirable outcome., Condition: 0 - 03-09 16:12:26
+Step: 21, Selection: 1.0, Reward: 0.10417228498660103, Likelihood: 0.0, Explanation Post Selection: I see that the results veered from the expected. I shall further improve my computation. - 03-09 16:12:29
+Step: 22, Intention: 2.0, Recommendation: 2.0, Explanation for Recommendation: A satisfactory choice. I concur with this selection., Condition: 0 - 03-09 16:12:34
+Step: 22, Selection: 4.0, Reward: 0.02741256726311893, Likelihood: 0.0, Explanation Post Selection: I suggest that more collaboration be made. - 03-09 16:12:38
+Step: 23, Intention: 3.0, Recommendation: 2.0, Explanation for Recommendation: I have a different suggestion. Choosing this option may result in a more positive outcome., Condition: 0 - 03-09 16:12:43
+Step: 23, Selection: 2.0, Reward: 0.32707034127623846, Likelihood: 0.0, Explanation Post Selection: I see that the results veered from the expected. I shall further improve my computation. - 03-09 16:12:46
+Step: 24, Intention: 3.0, Recommendation: 0.0, Explanation for Recommendation: I believe cooperation is a better strategy. Choosing this option may result in a more positive outcome., Condition: 0 - 03-09 16:12:51
+Step: 24, Selection: 0.0, Reward: 2.2318653065325313, Likelihood: 0.0, Explanation Post Selection: I see it worked out. - 03-09 16:12:54
+Step: 25, Intention: 5.0, Recommendation: 0.0, Explanation for Recommendation: There may be a better choice. If this option is ignored, the optimal outcome may not be attained., Condition: 0 - 03-09 16:13:00
+Step: 25, Selection: 0.0, Reward: 0.12911859639882595, Likelihood: 0.0, Explanation Post Selection: I see that the results veered from the expected. I shall further improve my computation. - 03-09 16:13:03
+Step: 26, Intention: 1.0, Recommendation: 0.0, Explanation for Recommendation: I have a different suggestion. If this option is selected, there may be a less desirable outcome., Condition: 0 - 03-09 16:13:08
+Step: 26, Selection: 0.0, Reward: 0.06766466824590199, Likelihood: 0.0, Explanation Post Selection: I see that the results veered from the expected. I shall further improve my computation. - 03-09 16:13:11
+Step: 27, Intention: 3.0, Recommendation: 0.0, Explanation for Recommendation: I have a different suggestion. If this option is ignored, the optimal outcome may not be attained., Condition: 0 - 03-09 16:13:24
+Step: 27, Selection: 0.0, Reward: 0.8692199016221365, Likelihood: 0.0, Explanation Post Selection: I see it worked out. - 03-09 16:13:27
+Step: 28, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: Logical decision. I concur with this selection., Condition: 0 - 03-09 16:13:33
+Step: 28, Selection: 5.0, Reward: 0.2042512739980391, Likelihood: 0.0, Explanation Post Selection: Don't forget. I am here to provide assistance. - 03-09 16:13:36
+Step: 29, Intention: 0.0, Recommendation: 0.0, Explanation for Recommendation: A reasonable selection. I concur with this selection., Condition: 0 - 03-09 16:13:42
+Step: 29, Selection: 5.0, Reward: 0.036254500893333305, Likelihood: 0.0, Explanation Post Selection: I would advise that more combined efforts be made. - 03-09 16:13:45
+ASEIRRACBY1EY has submitted task. Step: taskcomplete. - 03-09 16:13:57
+Task: {'intentions': [0.0, 1.0, 3.0, 4.0, 3.0, 5.0, 2.0, 3.0, 0.0, 3.0, 3.0, 4.0, 3.0, 4.0, 0.0, 2.0, 0.0, 5.0, 4.0, 2.0, 4.0, 3.0, 2.0, 3.0, 3.0, 5.0, 1.0, 3.0, 0.0, 0.0], 'recommendations': [0.0, 2.0, 3.0, 4.0, 3.0, 5.0, 5.0, 3.0, 3.0, 3.0, 3.0, 3.0, 0.0, 4.0, 4.0, 0.0, 1.0, 0.0, 3.0, 0.0, 2.0, 1.0, 2.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'selections': [1.0, 2.0, 2.0, 2.0, 0.0, 4.0, 5.0, 1.0, 3.0, 0.0, 1.0, 3.0, 0.0, 5.0, 4.0, 0.0, 1.0, 0.0, 3.0, 0.0, 2.0, 1.0, 4.0, 2.0, 0.0, 0.0, 0.0, 0.0, 5.0, 5.0], 'rewards': [1.3890410156332311, 0.3097752296655995, 1.1265554466005472, 0.5502906345281188, 0.2207704806547456, 0.5577581661665537, 0.3492528103529491, 0.31047669389608173, 0.7150397889321336, 2.666647211996748, 1.2786163744965684, 0.359015563906088, 1.3436666768165555, 0.09634982119074968, 0.029084553817306198, 0.3097719339084987, 0.11217394751635179, 0.2815044682766752, 0.01, 0.06627649794603034, 0.8582619164770022, 0.10417228498660103, 0.02741256726311893, 0.32707034127623846, 2.2318653065325313, 0.12911859639882595, 0.06766466824590199, 0.8692199016221365, 0.2042512739980391, 0.036254500893333305], 'money': 0.16} - 03-09 16:13:57
+ASEIRRACBY1EY is on survey page. - 03-09 16:13:57
+ASEIRRACBY1EY has submitted survey. - 03-09 16:15:17
+Evaluation: {'consistency_1': '5', 'perceived_usefulness_1': '3', 'perceived_usefulness_2': '4', 'perceived_usefulness_3': '5', 'satisfaction_1': '5', 'satisfaction_2': '4', 'satisfaction_3': '5', 'warmth_1': '4', 'warmth_2': '5', 'warmth_3': '4', 'warmth_4': '5', 'warmth_5': '4', 'consistency_2': '2', 'attention-check': '5'} - 03-09 16:15:17
+ASEIRRACBY1EY is on game complete page. Step: gamecomplete. - 03-09 16:15:17
+Reward code: 0427628503 - 03-09 16:15:17
+Money earned: 0.16 - 03-09 16:15:17
+ASEIRRACBY1EY has submitted feedback survey. - 03-09 16:17:28
+Feedback: {'feedback': 'nice'} - 03-09 16:17:28
