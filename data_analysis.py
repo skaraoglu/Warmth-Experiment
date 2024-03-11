@@ -5,13 +5,18 @@ from app.models import User, Task, Survey
 from scipy.stats import ttest_ind, f_oneway, levene
 
 import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+from numpy import mean
 
 
 METRIC = 'follow'
 # METRIC = 'change'
-# mode = 'boxplot'
-mode = None
+mode = 'boxplot'
+# mode = None
 # mode = 'histogram'
+mode = 'seaborn'
 
 app = Flask(__name__)
 app.config.from_object('app.configuration.DevelopmentConfig')
@@ -228,9 +233,9 @@ for condition in [users_0, users_1, users_2]:
             elif condition == users_2:
                 users_2_follow_third[2].append(proportion_followed)
 
-print("Average utility for condition 0: ", np.mean(users_0_util))
-print("Average utility for condition 1: ", np.mean(users_1_util))
-print("Average utility for condition 2: ", np.mean(users_2_util))
+print("Average utility for condition 0: ", np.mean(users_0_util), np.std(users_0_util))
+print("Average utility for condition 1: ", np.mean(users_1_util), np.std(users_1_util))
+print("Average utility for condition 2: ", np.mean(users_2_util), np.std(users_2_util))
 
 # print(users_0_follow_all)
 # print(users_1_follow_all)
@@ -244,9 +249,9 @@ print("Average utility for condition 2: ", np.mean(users_2_util))
 # print(users_1_follow_third)
 # print(users_2_follow_third)
 
-print("Average proportion of recommendations followed for condition 0: ", np.mean(users_0_follow_all))
-print("Average proportion of recommendations followed for condition 1: ", np.mean(users_1_follow_all))
-print("Average proportion of recommendations followed for condition 2: ", np.mean(users_2_follow_all))
+print("Average proportion of recommendations followed for condition 0: ", np.mean(users_0_follow_all), np.std(users_0_follow_all))
+print("Average proportion of recommendations followed for condition 1: ", np.mean(users_1_follow_all), np.std(users_1_follow_all))
+print("Average proportion of recommendations followed for condition 2: ", np.mean(users_2_follow_all), np.std(users_2_follow_all))
 
 print("Average proportion of recommendations followed for first half for condition 0: ", np.mean(users_0_follow_half[0]))
 print("Average proportion of recommendations followed for first half for condition 1: ", np.mean(users_1_follow_half[0]))
@@ -288,7 +293,7 @@ print("Levene's test statistic: " + str(levene_stat))
 print("P-value: " + str(p_val))
            
 # Check to see if means are significantly different using t-tests
-t_stat, p_val = ttest_ind(users_0_util, users_1_util, alternative='greater')
+t_stat, p_val = ttest_ind(users_0_util, users_1_util)
 print("Condition 0 and 1")
 print("T-statistic: " + str(t_stat))
 print("P-value: " + str(p_val))
@@ -319,7 +324,7 @@ print("P-value: " + str(p_val))
 
 # Check to see if means are significantly different using t-tests
 
-t_stat, p_val = ttest_ind(users_0_follow_all, users_1_follow_all, alternative='greater')
+t_stat, p_val = ttest_ind(users_0_follow_all, users_1_follow_all)
 print("Condition 0 and 1")
 print("T-statistic: " + str(t_stat))
 print("P-value: " + str(p_val))
@@ -400,36 +405,49 @@ for i in range(3):
 
 if mode == 'boxplot':
     # Plot utility
-    plt.figure()
+    plt.figure(dpi=400)
     plt.boxplot([users_2_util, users_1_util, users_0_util])
     plt.xticks([1, 2, 3], ['None', 'Warm', 'Cold'])
+    means = [np.mean(users_2_util), np.mean(users_1_util), np.mean(users_0_util)]
+    plt.plot([1, 2, 3], means, marker='o', markersize=8, color='green', linestyle='None')
 
-    plt.title('Utility')
-    plt.xlabel('Intervention Condition')
+    plt.title('Utility Score')
+    plt.xlabel('Agent Condition')
     plt.ylabel('Utility')
-    plt.show()
+    
+    # Save the figure to /figures
+    plt.savefig('figures/utility_score.png', dpi=400)
 
     if METRIC == 'follow':
     # Plot proportion of recommendations followed
-        plt.figure()
+        plt.figure(dpi=400)
         plt.boxplot([users_2_follow_all, users_1_follow_all, users_0_follow_all])
         plt.xticks([1, 2, 3], ['None', 'Warm', 'Cold'])
+        
+        means = [np.mean(users_2_follow_all), np.mean(users_1_follow_all), np.mean(users_0_follow_all)]
+        plt.plot([1, 2, 3], means, marker='o', markersize=8, color='green', linestyle='None')
 
-        plt.title('Proportion of Recommendations Followed')
-        plt.xlabel('Intervention Condition')
-        plt.ylabel('Proportion Followed')
-        plt.show()
+        plt.title('Recommendation Score')
+        plt.xlabel('Agent Condition')
+        plt.ylabel('Proportion')
+        
+        # Save the figure to /figures
+        plt.savefig('figures/recommendation_score.png', dpi=400)
 
     if METRIC == 'change':
         
-        plt.figure()
+        plt.figure(dpi=400)
         plt.boxplot([users_2_follow_all, users_1_follow_all, users_0_follow_all])
         plt.xticks([1, 2, 3], ['None', 'Warm', 'Cold'])
         
-        plt.title('Proportion of Intentions Changed')
-        plt.xlabel('Intervention Condition')
-        plt.ylabel('Proportion Changed')
-        plt.show()
+        means = [np.mean(users_2_follow_all), np.mean(users_1_follow_all), np.mean(users_0_follow_all)]
+        plt.plot([1, 2, 3], means, marker='o', markersize=8, color='green', linestyle='None')
+        
+        plt.title('Switching Score')
+        plt.xlabel('Agent Condition')
+        plt.ylabel('Proportion')
+        # Save the figure to /figures
+        plt.savefig('figures/switching_score.png', dpi=400)
 if mode == 'histogram':
     # Calculate the means
     means = [np.mean(users_2_util), np.mean(users_1_util), np.mean(users_0_util)]
@@ -462,7 +480,61 @@ if mode == 'histogram':
         plt.xlabel('Intervention Condition')
         plt.ylabel('Proportion Changed')
         plt.show()
+if mode == 'seaborn':
+    #Make violin plots
+    data = [users_2_util, users_1_util, users_0_util]
+    labels = ['None', 'Warm', 'Cold']
+    df = pd.DataFrame(data).T  # Transpose the DataFrame to align with your data
+    df.columns = labels  # Set column names
+    df = df.melt(var_name='Intervention Condition', value_name='Utility')
+    ax = sns.violinplot(x='Intervention Condition', y='Utility', data=df)
     
+    # Add the mean
+    means = [np.mean(users_2_util), np.mean(users_1_util), np.mean(users_0_util)]
+    ax.plot([0, 1, 2], means, marker='o', markersize=5, color='#c99342', linestyle='None')
+    
+    fig = ax.get_figure()
+    fig.savefig('figures/utility_violin.png', dpi=400)
+    
+    # Clear the seaborn plot
+    plt.clf()
+    
+    if METRIC == 'follow':
+        data = [users_2_follow_all, users_1_follow_all, users_0_follow_all]
+        labels = ['None', 'Warm', 'Cold']
+        df = pd.DataFrame(data).T
+        df.columns = labels
+        df = df.melt(var_name='Intervention Condition', value_name='Proportion')
+        ax = sns.violinplot(x='Intervention Condition', y='Proportion', data=df)
+        
+        # Add the mean
+        means = [np.mean(users_2_follow_all), np.mean(users_1_follow_all), np.mean(users_0_follow_all)]
+        ax.plot([0, 1, 2], means, marker='o', markersize=5, color='#c99342', linestyle='None')
+        
+        fig = ax.get_figure()
+        fig.savefig('figures/follow_violin.png', dpi=400)
+        
+        plt.clf()
+    
+    
+    if METRIC == 'change':
+        data = [users_2_follow_all, users_1_follow_all, users_0_follow_all]
+        labels = ['None', 'Warm', 'Cold']
+        df = pd.DataFrame(data).T
+        df.columns = labels
+        df = df.melt(var_name='Intervention Condition', value_name='Proportion')
+        ax = sns.violinplot(x='Intervention Condition', y='Proportion', data=df)
+        
+        # Add the mean
+        means = [np.mean(users_2_follow_all), np.mean(users_1_follow_all), np.mean(users_0_follow_all)]
+        ax.plot([0, 1, 2], means, marker='o', markersize=5, color='#c99342', linestyle='None')
+        
+        fig = ax.get_figure()
+        fig.savefig('figures/change_violin.png', dpi=400)
+        
+        plt.clf()
+    
+    # Save the figure to /figures
     
 ''' SURVEY DATA ANALYSIS '''
 
@@ -574,9 +646,153 @@ for i in range(13):
     print("T-statistic: " + str(t_stat))
     print("P-value: " + str(p_val))
     
+''' DEMOGRAPHICS '''
 
+def demographics(users_0, users_1, users_2):
+    
+    # Initialize counters for gender categories
+    female_count = 0
+    male_count = 0
+    other_count = 0
+    age_18_24 = 0
+    age_25_34 = 0
+    age_35_44 = 0
+    age_45_54 = 0
+    age_55_64 = 0
+    age_65 = 0
+    white = 0 
+    black = 0 
+    asian = 0
+    hispanic = 0
+    native = 0 
+    race_other = 0
+    
+    education_none = 0
+    education_hs = 0
+    education_some_college = 0
+    education_associate = 0
+    education_bachelors = 0
+    education_masters = 0
+    education_phd = 0
+    
+    # Iterate through users and parse survey demographics JSON
+    for group in [users_0, users_1, users_2]:
+        users_list = users_0 + users_1 + users_2
+        for user in group:
+            demographics = session.query(Survey).filter_by(mturk_id=user.mturk_id, type="demographics").first()
+            gender = demographics.data['gender']
+            
+            if gender == "Female":
+                female_count += 1
+            elif gender == "Male":
+                male_count += 1
+            else:
+                other_count += 1
+                
+            age = demographics.data['age']
+            
+            if age == "18-24":
+                age_18_24 += 1
+            elif age == "25-34":
+                age_25_34 += 1
+            elif age == "35-44":
+                age_35_44 += 1
+            elif age == "45-54":
+                age_45_54 += 1
+            elif age == "55-64":
+                age_55_64 += 1
+            else:
+                age_65 += 1
+                
+            education = demographics.data['education']
+            
+            if education == "Less than high school":
+                education_none += 1
+            elif education == "High school":
+                education_hs += 1
+            elif education == "Some college, no degree":
+                education_some_college += 1
+            elif education == "Associate degree":
+                education_associate += 1
+            elif education == "Bachelor's degree":
+                education_bachelors += 1
+            elif education == "Master's/Graduate Degree":
+                education_masters += 1
+            else:
+                education_phd += 1
+                
+            # Race
+            
+            race = demographics.data['ethnicity']
+            
+            if race == "White":
+                white += 1
+            elif race == "Hispanic/Latino":
+                hispanic += 1
+            elif race == "Black or African American":
+                black += 1
+            elif race == "Native or American Indian":
+                native += 1
+            elif race == "Asian or Pacific Islander":
+                asian += 1
+            else:
+                race_other += 1
+                
+    male_count /= len(users_list)
+    female_count /= len(users_list)
+    other_count /= len(users_list)
+    age_18_24 /= len(users_list)
+    age_25_34 /= len(users_list)
+    age_35_44 /= len(users_list)
+    age_45_54 /= len(users_list)
+    age_55_64 /= len(users_list)
+    age_65 /= len(users_list)
+    white /= len(users_list)
+    black /= len(users_list)
+    asian /= len(users_list)
+    hispanic /= len(users_list)
+    native /= len(users_list)
+    race_other /= len(users_list)
+    education_none /= len(users_list)
+    education_hs /= len(users_list)
+    education_some_college /= len(users_list)
+    education_associate /= len(users_list)
+    education_bachelors /= len(users_list)
+    education_masters /= len(users_list)
+    education_phd /= len(users_list)
+            
+            
+            
+    
+    print("Number of female users: " + str(female_count))
+    print("Number of male users: " + str(male_count))
+    print("Number of users with other gender: " + str(other_count))
+    
+    print("Number 18-24 " + str(age_18_24))
+    print("Number 25-34 " + str(age_25_34))
+    print("Number 35-44 " + str(age_35_44))
+    print("Number 45-54 " + str(age_45_54))
+    print("Number 55-64 " + str(age_55_64))
+    print("Number 65+ " + str(age_65))
+    
+    print("Number with no education: " + str(education_none))
+    print("Number with high school education: " + str(education_hs))
+    print("Number with some college education: " + str(education_some_college))
+    print("Number with associate degree: " + str(education_associate))
+    print("Number with bachelor's degree: " + str(education_bachelors))
+    print("Number with master's degree: " + str(education_masters))
+    print("Number with PhD: " + str(education_phd))
+    
+    print("Percent white: " + str(white))
+    print("Percent black: " + str(black))
+    print("Percent asian: " + str(asian))
+    print("Percent hispanic: " + str(hispanic))
+    print("Percent native: " + str(native))
+    print("Percent other: " + str(race_other))
+    
+    
         
         
-
+demographics(users_0, users_1, users_2)
 
 
